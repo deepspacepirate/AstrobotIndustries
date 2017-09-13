@@ -1,10 +1,22 @@
-var lastScrollTop = false;
-var didScroll = false;
+var page = window.location.pathname.split('/').pop();
+// var page = location.href.split("/").slice(0,11); 
+page.replace(".html", "");
+
+console.log(page);
+
+if(window.location.href.indexOf(page) > -1) {
+   console.log(	'your url contains the name ' + page);
+}
+
+var lastScrollTop = 0;
+var timer;
+screenResize();
+
 
 $(document).ready(function() {
 
-	screenResize();
 	$('#bodyContent').css( 'margin-top', $('#navbar')[0].offsetHeight+20);
+	screenResize();
 
 	if (window.innerWidth > 650) {
 		var t;
@@ -12,11 +24,8 @@ $(document).ready(function() {
 			clearTimeout(t);
 			t = setTimeout(function() {
 				screenResize();
-					$('.grid').masonry({
-					itemSelector: '.grid-item',
-				});
 				console.log('resize event');
-			}, 250);
+			}, 200);
 		};
 	}
 
@@ -24,12 +33,12 @@ $(document).ready(function() {
 	// sticky( $('#chaticon') );
 
 
-	// window.addEventListener("scroll", bringmenu, false);
-	$(window).scroll(function() {
-    	didScroll = true;
+	$(window).scroll(function(){
+		if ( timer ) clearTimeout(timer);
+		timer = setTimeout( bringmenu, 200);
 	});
 
-	setInterval( bringmenu, 250);
+	// setInterval( bringmenu, 250);
 
 
 });
@@ -50,12 +59,17 @@ function screenResize() {
 	scale($("#bodyContent"), 'width', '%', window.innerWidth, 650, 100, 900, 90, 2000, 70);
 	scale($("body"), 'font-size', 'px', window.innerWidth, 800, 9, 1200, 10, 2000, 12);
 	scale($(".img-circle"), 'width', 'em', window.innerWidth, 500, 7, 1200, 8.5, 2000, 12);
-	changeNumCards();
-	if (window.innerWidth > 650){
-		$('.grid').masonry({
-			itemSelector: '.grid-item',
-		});
+
+	if ( page === 'projects.html'){
 		changeNumCards();
+		console.log('numcards changed');
+
+		if (window.innerWidth > 650){
+
+			$('.grid').masonry({
+				itemSelector: '.grid-item',
+			});
+		}
 	}
 }
 
@@ -103,8 +117,7 @@ function sticky(element) {
 
 // Find number of cards per row
 function changeNumCards() {
-	var bodyPercentWidth = parseInt( document.getElementById("bodyContent").style.width ) / 100;
-	var bodyWidth = Math.floor(bodyPercentWidth * window.innerWidth);
+	var bodyWidth = $("#bodyContent").width();
 	var card = $(".grid-item");
 
 	var numCards;
@@ -115,5 +128,5 @@ function changeNumCards() {
 		cardWidth = 100/numCards + '%';
 	}
 	card.css('width', cardWidth);
-
+	console.log( bodyWidth + ' ' + numCards + ' ' + cardWidth )
 }
