@@ -1,0 +1,153 @@
+@font-face {
+	font-family: HackX;
+	src: url('../fonts/Hack-Regular.eot?') format('eot'),
+		url('../fonts/Hack-Regular.woff') format('woff'),
+		url('../onts/Hack-Regular.ttf') format('truetype');
+}
+
+#bodycontent {
+	background-color: white;
+	color: black;
+	font-family: "HackX";
+	font-size: 10px;
+	overflow: hidden;
+}
+
+.wrapper {
+	position: relative;
+	top: 0;
+	margin-right: 50px;
+	overflow: auto;
+}
+
+#bodycontent h1 {
+	font-size: 4em;
+	line-height: 1em;
+	font-weight: normal;
+	decoration: none;
+}
+
+#bodycontent h2 {
+	font-size: 1.8em;
+	line-height: 1.4em;
+	width: 100%;
+}
+
+#bodycontent p {
+	font-size: 1.5em;
+	line-height: 1.6em;
+}
+
+#bodycontent emp {
+	color: gold;
+}
+
+@media screen and (max-width: 720px){}
+
+/*Chatbox*/
+#bodycontent .question, .answer {
+	padding: .7em 2.5em;
+	margin: 1em 2em;
+	border-radius: 1em;
+	max-width: 70%;
+	overflow: visible;
+}
+#bodycontent .question {
+	float: right;
+	clear: right;
+	border-top-right-radius: 0;
+	background-color: cyan;
+	color: black;
+}
+#bodycontent .answer {
+	float: left;
+	clear: left;
+	background-color: black;
+	color: white;
+	/*border: 1px solid rgb(255,245,0);*/
+	/*rgb(255, 249, 0)*/
+}
+.a1 {
+	clear:none;
+	border-top-left-radius: 0;
+}
+
+#bodycontent .question:before {
+	content: ' ';
+	position: relative;
+	float: right;
+	right: -3.9em;
+	top: -.7em;
+
+	border-top: .7em solid cyan;
+	border-right: .7em solid transparent;
+	border-bottom: .7em solid transparent;
+	border-left: .7em solid cyan;
+
+	height: 0;
+	width: 0;
+}
+.a1:before {
+	content: ' ';
+	position: relative;
+	float: left;
+	left: -3.9em;
+	top: -.7em;
+
+	border-top: .7em solid black;
+	border-right: .7em solid black;
+	border-bottom: .7em solid transparent;
+	border-left: .7em solid transparent;
+
+	height: 0;
+	width: 0;
+}
+
+.cf:after {
+	content: " ";
+	display: table;
+	clear: both;
+}
+
+.img-circle {
+	border-radius: 50%;
+	width: 11em;
+	height: auto;
+
+	border: 5px solid rgb(255,245,0);
+	margin: 1em;
+
+	float: left;
+	position: relative;
+
+	-webkit-transition: left .7s; /* Safari */
+    transition: left .7s;
+
+}
+
+@media screen and (max-width: 720px){
+	.wrapper {
+		margin-left: 0%;
+		margin-right: 0%;
+		overflow: auto;
+	}
+
+	.img-circle {
+		display: none;
+	}
+	#bodycontent h1 {
+		font-size: 2.4em;
+	}
+	#bodycontent h2 {
+		font-size: 1.5em;
+	}
+
+	#bodycontent p {
+		font-size: 1.4em;
+		line-height: 1.3em;
+	}
+
+	#bodycontent .question, .answer {
+		margin: 0.6em 2em;
+	}
+}

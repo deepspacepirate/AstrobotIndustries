@@ -1,0 +1,138 @@
+/** {border: 1px solid red;}*/
+
+@font-face {
+	font-family: BowmanX;
+	src: url('../fonts/Bowman.eot?') format('eot'),
+		url('../fonts/Bowman.woff') format('woff'),
+		url('../fonts/Bowman.ttf') format('truetype');
+}
+
+body {
+	height: auto;
+	font-size: 10px;
+	margin: 0;
+}
+
+a {
+	color: hotpink;
+	text-decoration: none;
+}
+::selection {
+	color: black;
+	background-color: rgb(255,245,0);
+
+}
+/*  Header image */
+.header {
+	overflow: hidden;
+}
+.header img.logo{
+	width:50%;
+	max-width:800px;
+	position: absolute;
+	top: 6vw;
+	left: -1.5vw;
+	z-index: 1;
+}
+.header img.robot {
+	width: 80%;
+	max-width: 1200px;
+	float: right;
+	z-index: 0;
+}
+
+@media screen and (min-width: 1590px) {
+	.header img.logo{
+		top: 95px;
+	}
+}
+
+/* Navigation bar */
+#navbar {
+	width: 100%;
+	overflow: hidden;
+	background-color: black;
+
+	-webkit-box-shadow: 0 10px 15px -6px rgba(0, 0, 0, 0.2);
+	   -moz-box-shadow: 0 10px 15px -6px rgba(0, 0, 0, 0.2);
+		   box-shadow: 0 10px 15px -6px rgba(0, 0, 0, 0.2);
+
+	top: 0;
+	-webkit-transition: top .7s;
+	transition: top .7s;
+
+	z-index: 10;
+}
+
+#navbar  a {
+	float: left;
+     display: block;
+     width: 12%;
+     min-width: 7em;
+
+     font-family: "BowmanX";
+	font-style: normal;
+     color: white;
+     background-color: black;
+     text-decoration: none;
+
+     font-size: 2em;
+     text-align: center;
+     line-height: 1em;
+     padding: 1em 0em;
+}
+
+#navbar  a:hover {
+	background-color: rgba(230, 230, 230, 1);
+	color: black;
+}
+
+#navbar a.icon {
+	display: none;
+	padding: 1em 0em;
+}
+
+#navbar  a.active {
+	background-color: rgb(255,245,0);
+	color: black;
+}
+
+
+@media screen and (max-width: 780px) {
+	#navbar  a {
+		text-align: left;
+		text-indent: 1em;
+		width: 7em;
+	}
+	#navbar  a:not(.active) {
+		display: none;
+	}
+	#navbar  a.icon {
+		text-align: center;
+		float: right;
+		display: block;
+	     text-indent: 0em;
+	}
+	#navbar .hamExpand {position: relative;}
+
+	#navbar .hamExpand a {
+		float: none;
+		display: block;
+		width: 100%;
+	}
+	#navbar .hamExpand .icon {
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 5em;
+	}
+}
+
+/* body Content */
+#bodyContent {
+	min-width: 320px;
+	position:relative;
+	margin: 2em auto;
+	z-index: 1;
+	overflow: auto;
+}
