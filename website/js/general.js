@@ -1,31 +1,52 @@
-var lastScrollTop = 0;
+var lastScrollTop = false;
+var didScroll = false;
 
 $(document).ready(function() {
 
 	screenResize();
+	$('#bodyContent').css( 'margin-top', $('#navbar')[0].offsetHeight+20);
 
 	if (window.innerWidth > 650) {
 		var t;
 		window.onresize = function() {
-		    clearTimeout(t);
-		    t = setTimeout(function() {
-			    screenResize();
-				   $('.grid').masonry({
-			   		itemSelector: '.grid-item',
+			clearTimeout(t);
+			t = setTimeout(function() {
+				screenResize();
+					$('.grid').masonry({
+					itemSelector: '.grid-item',
 				});
 				console.log('resize event');
-		   	}, 250);
+			}, 250);
 		};
 	}
 
-	$('#menuButton').on('click', toggleHamStack());
+	$('#menuButton').on('click', toggleHamStack);
 	// sticky( $('#chaticon') );
+
+
+	// window.addEventListener("scroll", bringmenu, false);
+	$(window).scroll(function() {
+    	didScroll = true;
+	});
+
+	setInterval( bringmenu, 250);
+
 
 });
 
+function bringmenu() {
+	var st = window.pageYOffset || document.documentElement.scrollTop;  
+		if (st > lastScrollTop) {
+			$('#navbar').css('top', '-100%');
+		} 
+		else if (st < lastScrollTop) {
+			$('#navbar').css('top', 0);
+		}
+	lastScrollTop = st;
+}
+
 // Resize body width
 function screenResize() {
-	$('#bodyContent').css( 'margin-top', $('#navbar')[0].offsetHeight+20);
 	scale($("#bodyContent"), 'width', '%', window.innerWidth, 650, 100, 900, 90, 2000, 70);
 	scale($("body"), 'font-size', 'px', window.innerWidth, 800, 9, 1200, 10, 2000, 12);
 	scale($(".img-circle"), 'width', 'em', window.innerWidth, 500, 7, 1200, 8.5, 2000, 12);
@@ -36,7 +57,6 @@ function screenResize() {
 		});
 		changeNumCards();
 	}
-
 }
 
 function scale(element, property, unit, x, x1, y1, x2, y2, x3, y3){
@@ -57,22 +77,16 @@ function Y(x1, y1, x2, y2, x) { // given two points (x1, y1), (x2, y2), and inpu
 	return y;
 }
 
-// Menu toggle
-$('#menuButton').click(function(){
-	toggleHamStack();
-	console.log('menu toggle button clicked');
-});
-
 function toggleHamStack() {
-    var nav = document.getElementById('navbar');
-    if (nav.classList.contains('hamExpand')) {
-	    nav.classList.remove('hamExpand');
-	    console.log('menu collapsed');
-    }
-    else {
-	    nav.classList.add('hamExpand');
-	    console.log('menu expanded');
-    }
+	var nav = document.getElementById('navbar');
+	if (nav.classList.contains('hamExpand')) {
+		nav.classList.remove('hamExpand');
+		console.log('menu collapsed');
+	}
+	else {
+		nav.classList.add('hamExpand');
+		console.log('menu expanded');
+	}
 }
 
 function sticky(element) {
@@ -100,6 +114,6 @@ function changeNumCards() {
 		numCards =  Math.floor(bodyWidth/ parseInt(card.css('min-width')) ) ;
 		cardWidth = 100/numCards + '%';
 	}
-    card.css('width', cardWidth);
+	card.css('width', cardWidth);
 
 }
