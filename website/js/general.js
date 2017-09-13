@@ -30,12 +30,12 @@ function screenResize() {
 	scale($("body"), 'font-size', 'px', window.innerWidth, 800, 9, 1200, 10, 2000, 12);
 	scale($(".img-circle"), 'width', 'em', window.innerWidth, 500, 7, 1200, 8.5, 2000, 12);
 	changeNumCards();
-	// if (window.innerWidth > 650){
-	// 	$('.grid').masonry({
-	// 		itemSelector: '.grid-item',
-	// 	});
-	// 	changeNumCards();
-	// }
+	if (window.innerWidth > 650){
+		$('.grid').masonry({
+			itemSelector: '.grid-item',
+		});
+		changeNumCards();
+	}
 
 }
 
