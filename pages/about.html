@@ -67,38 +67,41 @@ ASTROBOT!
 
 		</div>
 
-		<a href="contact.html" class="formcontainer">
-			<form action="/beam-to-the-moon" method="post">
-				<textarea 
-					id="message" 
-					name="userMessage" 
-					onfocusin="if (this.innerHTML == 'Ask me a question or just say hello!') this.innerHTML='' " 
-					onfocusout="if (this.innerHTML == '') this.innerHTML='Ask me a question or just say hello!' "
-				>Ask me a question or just say hello!</textarea>
+		<div class="formcontainer">
 
-				<div class="nameEmail">
-					<input type="text" 
-						id="name" 
-						class="slInput" 
-						name="userName" 
-						value="Name" 
-						onfocusin="if (this.value == 'Name') this.value = '' "
-						onfocusout="if (this.value == '') this.value = 'Name' "
-					>
-					<input type="text"
-						id="email"  
-						class="slInput" 
-						name="userEmail" 
-						value="Email" 
-						onfocusin="if (this.value == 'Email') this.value = '' "
-						onfocusout="if (this.value == '') this.value = 'Email' "
-					>	
-				</div>
+			<a href="contact.html">
+				<form action="/beam-to-the-moon" method="post">
+					<textarea 
+						id="message" 
+						name="userMessage" 
+						onfocusin="if (this.innerHTML == 'Ask me a question or just say hello!') this.innerHTML='' " 
+						onfocusout="if (this.innerHTML == '') this.innerHTML='Ask me a question or just say hello!' "
+					>Ask me a question or just say hello!</textarea>
 
-				<button type="submit">Send</button>
-			</form>
-		</a>
+					<div class="nameEmail">
+						<input type="text" 
+							id="name" 
+							class="slInput" 
+							name="userName" 
+							value="Name" 
+							onfocusin="if (this.value == 'Name') this.value = '' "
+							onfocusout="if (this.value == '') this.value = 'Name' "
+						>
+						<input type="text"
+							id="email"  
+							class="slInput" 
+							name="userEmail" 
+							value="Email" 
+							onfocusin="if (this.value == 'Email') this.value = '' "
+							onfocusout="if (this.value == '') this.value = 'Email' "
+						>	
+					</div>
 
+					<button type="submit">Send</button>
+				</form>
+			</a>
+			
+		</div>
 	</div>
 
 </body>

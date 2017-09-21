@@ -127,6 +127,10 @@
 
 }
 
+.formcontainer {
+	margin: 0em;
+}
+
 @media screen and (max-width: 720px){
 	.wrapper {
 		margin-left: 0%;
@@ -152,6 +156,10 @@
 	#bodycontent .question, .answer {
 		margin: 0.6em 2em;
 	}
+
+	.formcontainer {
+		margin: 1.5em;
+	}
 }
 
 
@@ -159,6 +167,4 @@
 	clear: both;
 }
 
-a .formcontainer:hover {
-	background: gray;
-}
+
