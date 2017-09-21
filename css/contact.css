@@ -1,0 +1,25 @@
+@font-face {
+	font-family: HackX;
+	src: url('../fonts/Hack-Regular.eot?') format('eot'),
+		url('../fonts/Hack-Regular.woff') format('woff'),
+		url('../onts/Hack-Regular.ttf') format('truetype');
+}
+
+.formcontainer {
+	margin: 0 2em;
+}
+
+@media screen and (min-width: 680px) {
+	
+	#bodyContent{
+		height: 80vh;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+	.formcontainer {
+		width: 60%;
+		position: relative;
+		margin: 0;
+	}
+}

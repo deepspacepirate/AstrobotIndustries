@@ -1,0 +1,157 @@
+@font-face {
+	font-family: HackX;
+	src: url('../fonts/Hack-Regular.eot?') format('eot'),
+		url('../fonts/Hack-Regular.woff') format('woff'),
+		url('../onts/Hack-Regular.ttf') format('truetype');
+}
+
+#bodyContent {
+	font-family: "Arial";
+	font-size: 1em;
+}
+
+.subtopic {
+	margin: 2em;
+	overflow: hidden;
+}
+
+.wrapperL, .wrapperR {
+	overflow: hidden;
+}
+
+/* Text formatting */
+.subtopic h1 {
+	font-family: BowmanX;
+	font-size: 4em;
+	color: white;
+	background: black;
+	padding: .2em;
+	text-transform: uppercase;
+	margin-top: 10px;
+}
+
+.subtopic p {
+	font-size: 16px;
+	line-height: 1.4em;
+}
+
+/* Button */
+#contactButton {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	margin: 15px;
+
+	height: 65px;
+	width: 65px;
+	border-radius: 100%;
+	border: none;
+	background-color: hotpink;
+
+	float: right;
+	
+	font-size: 28px;
+	color: rgba(255, 255, 255, .85);
+	font-family: HackX;
+	text-decoration: none;
+
+	-webkit-box-shadow: 0 7px 10px -6px rgba(0, 0, 0, 0.3);
+		-moz-box-shadow: 0 7px 10px -6px rgba(0, 0, 0, 0.3);
+			box-shadow: 0 7px 10px -6px rgba(0, 0, 0, 0.3);
+
+	cursor: pointer;
+
+	-webkit-transition: background-color .2s;
+	transition: background-color .2s;
+
+	-webkit-transition: opacity .1s;
+	transition: opacity .1s;
+}
+
+#contactButton:hover{
+	content: '>';
+	background-color: white;
+	color: hotpink;
+	border: 1px solid hotpink;
+}
+
+@media screen and (min-width: 425px) {
+
+}
+
+/* Numbered list */
+ol {
+	font-size: 16px;
+	line-height: 1.4em;
+}
+
+ol li {
+	margin: 1em;
+	margin-left: -.7em;
+}
+
+
+/* Table */
+table {
+	width: 100%;
+	font-size: 1.5em;
+}
+
+tr {
+	border-top: 1px solid hotpink;
+	border-bottom: 1px solid hotpink;
+}
+
+table, td, th {
+    border-collapse: collapse;
+}
+
+th, td {
+	padding: .7em;
+	text-align: left;
+}
+
+th{
+	font-family: HackX;
+	font-size: 1.0em;
+}
+
+tr:nth-of-type(odd) td:nth-of-type(1) {
+	background: rgba(255,105,180,.04);
+}
+
+
+@media screen and (min-width: 780px) {
+	.subtopic h1 {
+		font-family: BowmanX;
+		font-size: 6.5em;
+		text-align: center;
+	}
+
+	.wrapperR {
+		width: 48%;
+		float: left;
+		margin-left: 4%;
+	}
+
+	.wrapperL {
+		width: 48%;
+		float: left;
+	}
+
+	table {
+		font-size: 15px;
+	}
+
+	th, td {
+		padding: 1em;
+	}
+
+	form {
+		width: 40%;
+		overflow: hidden;
+		float: right;
+	}
+}
+
+

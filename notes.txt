@@ -1,26 +1,14 @@
-Revert all changes made online, update with local files.
 
-Add to the beginning of each page in html:
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-Remove header for all sub pages.
+TODO------------------------------------------------------------------------
 
 Create home page with Header and planets body.
-
-Change hamstack icon on all menu bars to 
-&#8801;
 
 Change the size of &#8801; in CSS, make larger.
 Reduce div width
 
 Figure out what the fuck is going on with the menu toggle!!!
 
-Change status from "In progress" to "Planned" on planned projects.
-
-No fixed navbar for mobile. Instead show when scrolling up.
-
 Add return to top button for mobile.
-
 
 Reducing data use
 Mobile first dev
@@ -29,4 +17,17 @@ Detect font in browser cache
 https://www.filamentgroup.com/lab/font-loading.html
 
 
+DONE------------------------------------------------------------------------
+
+Add to the beginning of each page in html:
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+Remove header for all sub pages.
+
+Change hamstack icon on all menu bars to 
+&#8801;
+
+No fixed navbar for mobile. Instead show when scrolling up.
+
+Change status from "In progress" to "Planned" on planned projects.
 

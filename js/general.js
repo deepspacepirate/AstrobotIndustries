@@ -1,78 +1,86 @@
+// Get page name, for activating almonds
 var page = window.location.pathname.split('/').pop();
-// var page = location.href.split("/").slice(0,11); 
-page.replace(".html", "");
+page = page.replace(".html", "");
 
-console.log(page);
+// Current distance from top, for bringmenu()
+var lastScrollTop1 = 0;
+var lastScrollTop2 = 0;
 
-if(window.location.href.indexOf(page) > -1) {
-   console.log(	'your url contains the name ' + page);
-}
-
-var lastScrollTop = 0;
-var timer;
-screenResize();
+// For scroll timeout
+var timer0, timer1, timer2;
 
 
 $(document).ready(function() {
+	// var defaultText
+	screenResize();
 
+	// Activate your almonds
+	$('#navbar').children().each( function(){
+		var element = $(this);
+		var navTitle = element.text();
+		navTitle = navTitle.toLowerCase();
+		if (navTitle == page) {
+			element.addClass('active');
+		}
+		if ( navTitle === 'blog' || navTitle === 'endeavors') element.hide();
+	});
+
+	// Position body content from top
 	$('#bodyContent').css( 'margin-top', $('#navbar')[0].offsetHeight+20);
 	screenResize();
 
+	// Adjust with of body content
 	if (window.innerWidth > 650) {
-		var t;
 		window.onresize = function() {
-			clearTimeout(t);
-			t = setTimeout(function() {
-				screenResize();
-				console.log('resize event');
-			}, 200);
+			clearTimeout(timer0);
+			timer0 = setTimeout(screenResize, 200);
 		};
 	}
 
 	$('#menuButton').on('click', toggleHamStack);
 	// sticky( $('#chaticon') );
 
-
+	// Detect scroll, bring/hide navbar
 	$(window).scroll(function(){
-		if ( timer ) clearTimeout(timer);
-		timer = setTimeout( bringmenu, 200);
+		if ( timer1 ) clearTimeout(timer1);
+		timer1 = setTimeout( bringmenu, 50 );
 	});
-
-	// setInterval( bringmenu, 250);
 
 
 });
 
-function bringmenu() {
-	var st = window.pageYOffset || document.documentElement.scrollTop;  
-		if (st > lastScrollTop) {
-			$('#navbar').css('top', '-100%');
-		} 
-		else if (st < lastScrollTop) {
-			$('#navbar').css('top', 0);
-		}
-	lastScrollTop = st;
+function debounce(f, t) {
+	clearTimeout(timer);
+	timer = setTimeout(f, t);
 }
 
-// Resize body width
+function bringmenu() {
+	var st = window.pageYOffset || document.documentElement.scrollTop;  
+		if (st > lastScrollTop1 + 10) {
+			$('#navbar').css('top', '-100%');
+		} 
+		else if (st < lastScrollTop1 -10) {
+			$('#navbar').css('top', 0);
+		}
+	lastScrollTop1 = st;
+}
+
+// All the thins to do when screen is resized
 function screenResize() {
 	scale($("#bodyContent"), 'width', '%', window.innerWidth, 650, 100, 900, 90, 2000, 70);
 	scale($("body"), 'font-size', 'px', window.innerWidth, 800, 9, 1200, 10, 2000, 12);
-	scale($(".img-circle"), 'width', 'em', window.innerWidth, 500, 7, 1200, 8.5, 2000, 12);
 
-	if ( page === 'projects.html'){
+	if ( page === 'about' ){
+		scale($(".img-circle"), 'width', 'em', window.innerWidth, 500, 7, 1200, 8.5, 2000, 12);
+	}
+
+	if ( page === 'projects' || page === 'academics'){
 		changeNumCards();
-		console.log('numcards changed');
-
-		if (window.innerWidth > 650){
-
-			$('.grid').masonry({
-				itemSelector: '.grid-item',
-			});
-		}
+		if (window.innerWidth > 650) { $('.grid').masonry({itemSelector: '.grid-item'}); }
 	}
 }
 
+// Scale property of element to another element (x). Set points as (x1, y1), (x2, y2), (x3, y3)
 function scale(element, property, unit, x, x1, y1, x2, y2, x3, y3){
 	if (x <= x1) {
 		element.css(property, y1 + unit);
@@ -86,11 +94,13 @@ function scale(element, property, unit, x, x1, y1, x2, y2, x3, y3){
 	else element.css(property, Math.floor(y3) + unit );
 }
 
-function Y(x1, y1, x2, y2, x) { // given two points (x1, y1), (x2, y2), and input, returns y for given x_input
+// Given two points (x1, y1), (x2, y2), and x-input, returns y-output
+function Y(x1, y1, x2, y2, x) { 
 	var y = (y2-y1)/(x2-x1) * (x - x1) + y1 ;
 	return y;
 }
 
+// Open/close collapsed navbar
 function toggleHamStack() {
 	var nav = document.getElementById('navbar');
 	if (nav.classList.contains('hamExpand')) {
@@ -103,6 +113,7 @@ function toggleHamStack() {
 	}
 }
 
+// Stick things to top when scrolled to
 function sticky(element) {
 	var position = element.offset().top;
 	if ( $(window).scrollTop() >= position) {
@@ -128,5 +139,4 @@ function changeNumCards() {
 		cardWidth = 100/numCards + '%';
 	}
 	card.css('width', cardWidth);
-	console.log( bodyWidth + ' ' + numCards + ' ' + cardWidth )
 }

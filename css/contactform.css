@@ -1,0 +1,72 @@
+/* Form */
+form {
+	display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+
+	margin: 0;
+	font-size: 1.4em;
+}
+
+#subjectDropdown {
+	width: 100%;
+}
+#tutorDropdown, .tutorSubjSpecify {
+	width: 90%;
+	margin-left: 10%;
+	display: none;
+}
+
+.nameEmail {
+	display: flex;
+	flex-direction: column;
+	width: calc(100% - 110px);
+	margin-right: 10px;
+}
+
+ #message, .slInput {
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 10px;
+	margin-top: 10px; 
+
+	font-family: HackX;
+	word-wrap: break-word;
+}
+
+#message {
+	height: 10em;
+	width: 100%;
+	margin-top: 10px;
+}
+
+.slInput{
+	line-height: 1.4em;
+}
+
+
+form button {
+	background-color: hotpink;
+	border: none;
+	width: 100px;
+	margin-top: 10px;
+
+	font-size: 18px;
+	color: black;
+	line-height: 1.8em;
+	font-family: BowmanX;
+	text-align: center;
+	text-decoration: none;
+
+	cursor: pointer;
+
+	-webkit-transition: background-color .2s;
+	transition: background-color .2s;
+}
+
+form button:hover{
+	content: '>';
+	background-color: white;
+	color: hotpink;
+	border: 1px solid hotpink;
+}
