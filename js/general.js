@@ -2,6 +2,8 @@
 var page = window.location.pathname.split('/').pop();
 page = page.replace(".html", "");
 
+var topFly = window.innerHeight - $('#navbar').outerHeight();
+
 // Current distance from top, for bringmenu()
 var lastScrollTop1 = 0;
 var lastScrollTop2 = 0;
@@ -9,8 +11,10 @@ var lastScrollTop2 = 0;
 // For scroll timeout
 var timer0, timer1, timer2;
 
+var navStuck = false;
 
 $(document).ready(function() {
+
 	// var defaultText
 	screenResize();
 
@@ -26,7 +30,7 @@ $(document).ready(function() {
 	});
 
 	// Position body content from top
-	$('#bodyContent').css( 'margin-top', $('#navbar')[0].offsetHeight+20);
+	$('#bodyContent').css( 'margin-top', $('#navbar').outerHeight() + 20);
 	screenResize();
 
 	// Adjust with of body content
@@ -42,8 +46,30 @@ $(document).ready(function() {
 
 	// Detect scroll, bring/hide navbar
 	$(window).scroll(function(){
-		if ( timer1 ) clearTimeout(timer1);
-		timer1 = setTimeout( bringmenu, 50 );
+		if (page != 'index'){
+			if ( timer1 ) clearTimeout(timer1);
+			timer1 = setTimeout( bringmenu, 50 );
+		}
+	});
+
+	// Home sticky menu
+	$(window).scroll(function(){
+		if (page === 'index' ) {
+			var headerHeight = $('.header').offset().top + $('.header').outerHeight();
+			var st = $(window).scrollTop();
+			
+			if ( !navStuck && headerHeight < st ) {
+				$('#navbar').css('position', 'fixed');
+				$('#navbar').css('top', '0');
+				$('#bodyContent').css('margin-top', '8em')
+				navStuck = true;
+			}
+			else if ( navStuck && headerHeight > st ){
+				$('#navbar').css('position', 'relative');
+				$('#bodyContent').css('margin-top', '2em')
+				navStuck = false;
+			}
+		}
 	});
 
 
@@ -57,13 +83,14 @@ function debounce(f, t) {
 function bringmenu() {
 	var st = window.pageYOffset || document.documentElement.scrollTop;  
 		if (st > lastScrollTop1 + 10) {
-			$('#navbar').css('top', '-100%');
+			$('#navbar').css('top', '-6em');
 		} 
 		else if (st < lastScrollTop1 -10) {
 			$('#navbar').css('top', 0);
 		}
 	lastScrollTop1 = st;
 }
+
 
 // All the thins to do when screen is resized
 function screenResize() {

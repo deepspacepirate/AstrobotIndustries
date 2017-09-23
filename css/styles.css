@@ -69,8 +69,8 @@ a:hover {
 
 	top: 0;
 	transition-timing-function: ease-out;
-	-webkit-transition: top .7s;
-	transition: top .7s;
+	-webkit-transition: top .4s;
+	transition: top .4s;
 
 	z-index: 10;
 
@@ -88,11 +88,10 @@ a:hover {
 	text-transform: uppercase;
 	
 	line-height: 1em;
-	padding: 1em 0em;
+	padding: 1em;
 
 	float: left;
 	text-align: left;
-	text-indent: 1em;
 	width: 7em;
 }
 
@@ -115,7 +114,6 @@ a:hover {
 	text-align: center;
 	float: right;
 	display: block;
-	text-indent: 0em;
 	padding: 1em 0em;
 }
 
@@ -144,7 +142,6 @@ a:hover {
 		width: 12%;
 
 		text-align: center;
-		text-indent: 0;
 	}
 
 	#navbar a:not(.active) {
@@ -163,6 +160,8 @@ a:hover {
 
 /* body Content */
 #bodyContent {
+	display: flex;
+	flex-direction: column;
 	min-width: 320px;
 	position: relative;
 	margin: 2em auto;

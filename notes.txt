@@ -3,11 +3,6 @@ TODO------------------------------------------------------------------------
 
 Create home page with Header and planets body.
 
-Change the size of &#8801; in CSS, make larger.
-Reduce div width
-
-Figure out what the fuck is going on with the menu toggle!!!
-
 Add return to top button for mobile.
 
 Reducing data use
@@ -18,6 +13,12 @@ https://www.filamentgroup.com/lab/font-loading.html
 
 
 DONE------------------------------------------------------------------------
+
+Figure out what the fuck is going on with the menu toggle!!!
+It was CSS heirarchy bullshit
+
+Change the size of &#8801; in CSS, make larger.
+Reduce div width
 
 Add to the beginning of each page in html:
 <meta name="viewport" content="width=device-width, initial-scale=1">
