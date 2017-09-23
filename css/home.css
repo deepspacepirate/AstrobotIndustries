@@ -150,7 +150,7 @@ a:hover {
 	color: black;
 }
 
-#navbar  a.active {
+#navbar a.active {
 	background-color: rgb(255, 245, 0);
 	color: black;
 }
@@ -168,14 +168,14 @@ a:hover {
 	padding: 1em 0em;
 }
 
-#nav .hamExpand a{
+#navbar.hamExpand a {
 	position: relative;
 	display: block;
 	float: none;
 	width: 100%;
-	background-color: red;
+	background-color: ;
 }
- #nav .hamExpand a.icon {
+#navbar.hamExpand a.icon {
 	position: absolute;
 	right: 0;
 	top: 0;
