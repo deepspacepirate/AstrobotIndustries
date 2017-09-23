@@ -18,6 +18,7 @@ body {
 	height: auto;
 	font-size: 10px;
 	margin: 0;
+	background-color: black;
 }
 
 a {
@@ -27,8 +28,9 @@ a {
 ::selection {
 	color: black;
 	background-color: rgb(255,245,0);
-
 }
+
+img { -ms-interpolation-mode: bicubic; }
 
 /*  Header image */
 .header {
@@ -50,7 +52,8 @@ a {
 
 @-webkit-keyframes pulse {
 	0%   {opacity: .0;}
-	50%  {opacity: 1;}
+	40%  {opacity: 1;}
+	60%  {opacity: 1;}
 	100% {opacity: .0;}
 }
 
@@ -167,38 +170,6 @@ a {
 	}
 }
 
-@font-face {
-	font-family: BowmanX;
-	src: url('../fonts/Bowman.eot?') format('eot'),
-		url('../fonts/Bowman.woff') format('woff'),
-		url('../fonts/Bowman.ttf') format('truetype');
-}
-
-/* Body content */
-body {
-	height: auto;
-	margin: 0;
-	font-size: 10px;
-}
-
-a {
-	color: hotpink;
-	text-decoration: none;
-
-	-webkit-transition: background-color .3s;
-	transition: background-color .3s;
-}
-
-a:hover {
-	color: rgba(0, 210, 255, 1);
-	background-color: rgba(0, 210, 255,.2);
-}
-
-::selection {
-	color: black;
-	background-color: rgb(255,245,0);
-}
-
 
 /* Navigation bar */
 #navbar {
@@ -289,14 +260,88 @@ a:hover {
 
 /* body Content */
 #bodyContent {
-	min-width: 320px;
-	width: 100%;
 	position: relative;
-	margin: 2em auto;
+	margin: 0 auto;
+
+	min-width: 320px;
+	min-height: 100vh;
 	z-index: 1;
-	overflow: auto;
-	background: white;
+	overflow: hidden;
+
+	font-family: "Arial";
+	/*background-color: white;*/
 }
+
+
+h1 {
+	font-size: 4em;
+	margin: 1em 0 .5em;
+	color: rgb(255, 245, 0);
+}
+
+p {
+	font-family: Courier;
+	color: white;
+	font-size: 1.6em;
+	line-height: 1.4em;
+}
+
+p.moon {
+	font-family: Courier; 
+			
+	font-size: .8vw;
+	line-height: .3vw;
+	text-align: center;
+	background-color: black;
+	color: white;
+}
+
+st {
+	color: red;
+}
+
+@media screen and (min-width: 533px) {
+	p.moon{
+		font-size: .8vw;
+		line-height: .2vw;
+	}
+}
+
+@media screen and (min-width: 1335px) {
+	p.moon{
+		font-size: 10px;
+		line-height: 2px;
+	}
+}
+/*
+.planet {
+	width: 20vw;
+	height: 20vw;
+
+	background-color: hotpink;
+	border-radius: 100%;
+}
+
+.planet img.ring {
+	opacity: 0;
+	border: 5px solid white;
+	border-radius: 100%;
+	width: calc(100% - 10px);
+	height: calc(100% - 10px);
+	margin: auto;
+}
+
+.planet:hover > .ring {
+	-webkit-animation: pulse 2s ease-out infinite;
+	opacity: 0;
+}
+
+
+@-webkit-keyframes pulsate {
+    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+    50% {opacity: 1.0;}
+    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
+}*/
 
 
 /*
@@ -341,27 +386,3 @@ Saved header images
 	font-family: Molot Regular;
 */
 
-.planet {
-	width: 20vw;
-	height: 20vw;
-	
-}
-
-.planet .ring {
-	border: 3px solid black;
-	border-radius: 100%;
-	width: 100%;
-	height: 100%;
-}
-
-.planet:hover > .ring {
-	-webkit-animation: pulse 2s ease-out infinite;
-	opacity: 0;
-}
-
-
-@-webkit-keyframes pulsate {
-    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
-    50% {opacity: 1.0;}
-    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
-}

@@ -14,8 +14,6 @@ var timer0, timer1, timer2;
 var navStuck = false;
 
 $(document).ready(function() {
-
-	// var defaultText
 	screenResize();
 
 	// Activate your almonds
@@ -53,32 +51,34 @@ $(document).ready(function() {
 	});
 
 	// Home sticky menu
-	$(window).scroll(function(){
-		if (page === 'index' ) {
-			var headerHeight = $('.header').offset().top + $('.header').outerHeight();
-			var indHeight = $('.ind').offset().top;
-			var st = $(window).scrollTop();
-			
-			if ( !navStuck && headerHeight < st ) {
-				$('#navbar').css('position', 'fixed');
-				$('#navbar').css('top', '0');
-				$('#bodyContent').css('margin-top', '8em')
-				navStuck = true;
-			}
-			else if ( navStuck && headerHeight > st ){
-				$('#navbar').css('position', 'relative');
-				$('#bodyContent').css('margin-top', '2em')
-				navStuck = false;
-			}
-
-			if ( indHeight < st ) {
-				$('.ind').addClass('swing');
-			}
-		}
-	});
+	$(window).scroll(navStick);
 
 
 });
+
+function navStick() {
+	if (page === 'index' ) {
+		var headerHeight = $('.header').offset().top + $('.header').outerHeight();
+		var indHeight = $('.ind').offset().top;
+		var st = $(window).scrollTop();
+		
+		if ( !navStuck && headerHeight < st ) {
+			$('#navbar').css('position', 'fixed');
+			$('#navbar').css('top', '0');
+			$('#bodyContent').css('margin-top', '6em')
+			navStuck = true;
+		}
+		else if ( navStuck && headerHeight > st ){
+			$('#navbar').css('position', 'relative');
+			$('#bodyContent').css('margin-top', '0em')
+			navStuck = false;
+		}
+
+		if ( indHeight < st ) {
+			$('.ind').addClass('swing');
+		}
+	}
+}
 
 function debounce(f, t) {
 	clearTimeout(timer);
