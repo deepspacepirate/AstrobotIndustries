@@ -56,6 +56,7 @@ $(document).ready(function() {
 	$(window).scroll(function(){
 		if (page === 'index' ) {
 			var headerHeight = $('.header').offset().top + $('.header').outerHeight();
+			var indHeight = $('.ind').offset().top;
 			var st = $(window).scrollTop();
 			
 			if ( !navStuck && headerHeight < st ) {
@@ -68,6 +69,10 @@ $(document).ready(function() {
 				$('#navbar').css('position', 'relative');
 				$('#bodyContent').css('margin-top', '2em')
 				navStuck = false;
+			}
+
+			if ( indHeight < st ) {
+				$('.ind').addClass('swing');
 			}
 		}
 	});

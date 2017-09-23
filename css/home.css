@@ -88,8 +88,8 @@ a {
 	font-family: ;
 	font-size: 4.3vw;
 	letter-spacing: 0em;
-	background-color: ;
 }
+
 
 .header .robot {
 	background-size: cover;
@@ -136,7 +136,7 @@ a {
 	.header .robot {
 		background-position: center;
 
-		background-color: blue;
+		background-color: darkgreen;
 		background-image: url(http://i.imgur.com/ErNLemm.jpg);
 		/*background-image: url(../images/astrobot.png);*/
 
@@ -144,9 +144,57 @@ a {
 		float: right;
 	}
 
+	.header .logo .swing {
+		transform-origin: 2% 50%;
+
+		-webkit-animation-iteration-count: 1; /* Safari 4.0 - 8.0 */
+				animation-iteration-count: 1;
+
+		-webkit-animation-fill-mode: forwards;
+				animation-fill-mode: forwards;
+
+		-webkit-animation: dangle 3s;
+	}
+
+	@-webkit-keyframes dangle {
+		0% {
+			-webkit-transform: rotate(0deg);
+		}
+		10% {
+			-webkit-transform: rotate(142deg);
+		}
+		20% {
+			-webkit-transform: rotate(56deg);
+		}
+		30% {
+			-webkit-transform: rotate(122deg);
+		}
+		40% {
+			-webkit-transform: rotate(61deg);
+		}
+		50% {
+			-webkit-transform: rotate(110deg);
+		}
+		60% {
+			-webkit-transform: rotate(76deg);
+		}
+		70% {
+			-webkit-transform: rotate(105deg);
+		}
+		80% {
+			-webkit-transform: rotate(82deg);
+		}
+		90% {
+			-webkit-transform: rotate(95deg);
+		}
+		80% {
+			-webkit-transform: rotate(90deg);
+		}
+	}
+
 	@media screen and (min-width: 1590px) {
 		.header .logo{
-			top: 95px;
+			top: 9vw;
 		}
 	}
 }
@@ -318,4 +366,4 @@ Saved header images
 	.header img.logo{
 		top: 95px;
 	}
-}*/
+}
