@@ -8,7 +8,7 @@
 }
 
 @font-face {
-	font-family: LabelX;
+	font-family: ImpactLabel;
 	src: url('../fonts/Impact-Label.eot?') format('eot'),
 		url('../fonts/Impact-Label.woff') format('woff'),
 		url('../fonts/Impact-Label.ttf') format('truetype');
@@ -36,14 +36,22 @@ a {
 	height: calc(100vh - 6em);
 }
 
-.header svg .chevron {
-	position: fixed;
+.header img.chevron {
+	display: block;
+	position: relative;
+	bottom: calc(6em + 1vh);
 	margin: 0 auto;
-	top: 0;
 
-	width: 20vw;
-	height: auto;
-	z-index: 10;
+	height: 4vh;
+	max-height: 50px;
+
+	-webkit-animation: pulse 1.7s ease-in infinite;
+}
+
+@-webkit-keyframes pulse {
+	0%   {opacity: .0;}
+	50%  {opacity: 1;}
+	100% {opacity: .0;}
 }
 
 .header .logo{
@@ -67,41 +75,24 @@ a {
 	left: -.87vw;
 }
 .header .logo .ind{
-	/*font-family: Stockholm Mono;
-	font-family: Telegraphem;
-	font-family: "Teletype 1945-1985";
-	font-family: "TeXGyreCursor";
-	font-family: "USIS 1949";
-	font-family: "Bohemian typewriter";
-	font-family: Canard;
-	font-family: Carosello;
-	font-family: Decade;
-	font-family: Halogen Rough by Pixel Surplus;
-	font-family: Heavyweight;*/
-	font-family: LabelX;
-	/*font-family: Impact Label Reversed;*/
-	/*font-family: Microgramma D Extended Bold;
-	font-family: Molot Regular;*/
-	font-family: ;
-	font-family: ;
-	font-family: ;
-	font-family: ;
+	font-family: ImpactLabel;
 	font-size: 4.3vw;
 	letter-spacing: 0em;
 }
 
 
 .header .robot {
+	height: 100%;
+	width: 100%;
+	z-index: 0;
+
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-attachment: fixed;
+	background-color: rgb(101, 91, 75);
 	background-image: url(https://2.bp.blogspot.com/-ZoUTwmrlFLY/VJRiCZO2OrI/AAAAAAAAXbU/ycO5GkmhqQE/s1600/b017d8dc419f30e7952e91d90c12f430.jpg);
 	/*background-image: url('../images/____);*/
-
-	height: 100%;
-	width: 100%;
-	z-index: 0;
 }
 
 @media screen and (min-aspect-ratio: 3/4) {
@@ -109,7 +100,7 @@ a {
 		display: none;
 	}
 	.header .robot {
-		background-color: orange;
+		background-color: rgb(149, 170, 193);;
 		background-image: url(http://www.dailydetroit.com/wp-content/uploads/2016/02/12307324_982229198501840_258900842496848226_o.jpg);
 		/*background-image: url(../images/_____);*/
 	}
@@ -117,31 +108,30 @@ a {
 
 @media screen and (min-aspect-ratio: 11/8) {
 	.header .logo{
+		position: absolute;
+		top: 12vw;
+		left: 5vw;
+		z-index: 1;
+
+		max-width: 1800px;
+		/*width: 50vw;*/
+
 		display: flex;
 		flex-direction: column-reverse;
 		
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-image: url(../images/logo.png);
-		
-		/*max-width: 800px;*/
-		/*width: 50vw;*/
-
-		position: absolute;
-		top: 12vw;
-		left: 5vw;
-		/*top: 6vw;*/
-		z-index: 1;
+				
 	}
 	.header .robot {
-		background-position: center;
-
-		background-color: darkgreen;
-		background-image: url(http://i.imgur.com/ErNLemm.jpg);
-		/*background-image: url(../images/astrobot.png);*/
-
 		/*width: calc(1.846153846153846 * (100vh - 6em));*/
 		float: right;
+
+		background-position: center;
+		background-color: rgb(63, 85, 57);
+		background-image: url(http://i.imgur.com/ErNLemm.jpg);
+		/*background-image: url(../images/astrobot.png);*/
 	}
 
 	.header .logo .swing {
@@ -157,39 +147,17 @@ a {
 	}
 
 	@-webkit-keyframes dangle {
-		0% {
-			-webkit-transform: rotate(0deg);
-		}
-		10% {
-			-webkit-transform: rotate(142deg);
-		}
-		20% {
-			-webkit-transform: rotate(56deg);
-		}
-		30% {
-			-webkit-transform: rotate(122deg);
-		}
-		40% {
-			-webkit-transform: rotate(61deg);
-		}
-		50% {
-			-webkit-transform: rotate(110deg);
-		}
-		60% {
-			-webkit-transform: rotate(76deg);
-		}
-		70% {
-			-webkit-transform: rotate(105deg);
-		}
-		80% {
-			-webkit-transform: rotate(82deg);
-		}
-		90% {
-			-webkit-transform: rotate(95deg);
-		}
-		80% {
-			-webkit-transform: rotate(90deg);
-		}
+		0%   { -webkit-transform: rotate(0deg); }
+		10%  { -webkit-transform: rotate(142deg); }
+		20%  { -webkit-transform: rotate(56deg); }
+		30%  { -webkit-transform: rotate(122deg); }
+		40%  { -webkit-transform: rotate(61deg); }
+		50%  { -webkit-transform: rotate(110deg); }
+		60%  { -webkit-transform: rotate(76deg); }
+		70%  { -webkit-transform: rotate(105deg); }
+		80%  { -webkit-transform: rotate(82deg); }
+		90%  { -webkit-transform: rotate(95deg); }
+		100% { -webkit-transform: rotate(90deg); }
 	}
 
 	@media screen and (min-width: 1590px) {
@@ -209,8 +177,8 @@ a {
 /* Body content */
 body {
 	height: auto;
-	font-size: 10px;
 	margin: 0;
+	font-size: 10px;
 }
 
 a {
@@ -229,7 +197,6 @@ a:hover {
 ::selection {
 	color: black;
 	background-color: rgb(255,245,0);
-
 }
 
 
@@ -253,8 +220,6 @@ a:hover {
 	transition: top .7s;
 
 	z-index: 10;
-
-	display: block;
 }
 
 #navbar  a {	
@@ -269,7 +234,6 @@ a:hover {
 	padding: 1em 0em;
 
 	text-align: center;
-	text-indent: 1em;
 }
 
 #navbar  a:hover {
@@ -294,18 +258,11 @@ a:hover {
 	padding: 1em 0em;
 }
 
-#navbar a.icon:before {
-	content: "  \2228  \2228  \2228  \2228  \2228  \2228";
-}
-
 #navbar.hamExpand a {
 	position: relative;
 	display: block;
 	float: none;
 	width: 100%;
-}
-#navbar.hamExpand a.icon:before {
-	content: "  \2227  \2227  \2227  \2227  \2227  \2227";
 }
 
 @media screen and (min-width: 630px) {
@@ -366,4 +323,45 @@ Saved header images
 	.header img.logo{
 		top: 95px;
 	}
+}
+
+	font-family: Stockholm Mono;
+	font-family: Telegraphem;
+	font-family: "Teletype 1945-1985";
+	font-family: "TeXGyreCursor";
+	font-family: "USIS 1949";
+	font-family: "Bohemian typewriter";
+	font-family: Canard;
+	font-family: Carosello;
+	font-family: Decade;
+	font-family: Halogen Rough by Pixel Surplus;
+	font-family: Heavyweight;
+	font-family: Impact Label Reversed;
+	/*font-family: Microgramma D Extended Bold;
+	font-family: Molot Regular;
+*/
+
+.planet {
+	width: 20vw;
+	height: 20vw;
+	
+}
+
+.planet .ring {
+	border: 3px solid black;
+	border-radius: 100%;
+	width: 100%;
+	height: 100%;
+}
+
+.planet:hover > .ring {
+	-webkit-animation: pulse 2s ease-out infinite;
+	opacity: 0;
+}
+
+
+@-webkit-keyframes pulsate {
+    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+    50% {opacity: 1.0;}
+    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
 }

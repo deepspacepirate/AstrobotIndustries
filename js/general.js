@@ -89,6 +89,7 @@ function bringmenu() {
 	var st = window.pageYOffset || document.documentElement.scrollTop;  
 		if (st > lastScrollTop1 + 10) {
 			$('#navbar').css('top', '-6em');
+			$('#navbar').removeClass('hamExpand');
 		} 
 		else if (st < lastScrollTop1 -10) {
 			$('#navbar').css('top', 0);

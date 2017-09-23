@@ -31,30 +31,6 @@ a:hover {
 	background-color: rgb(255,245,0);
 
 }
-/*  Header image */
-.header {
-	overflow: hidden;
-}
-.header img.logo{
-	width:50%;
-	max-width:800px;
-	position: absolute;
-	top: 6vw;
-	left: -1.5vw;
-	z-index: 1;
-}
-.header img.robot {
-	width: 80%;
-	max-width: 1200px;
-	float: right;
-	z-index: 0;
-}
-
-@media screen and (min-width: 1590px) {
-	.header img.logo{
-		top: 95px;
-	}
-}
 
 /* Navigation bar */
 #navbar {
@@ -87,12 +63,12 @@ a:hover {
 	text-decoration: none;
 	text-transform: uppercase;
 	
-	line-height: 1em;
+	line-height: .8em;
 	padding: 1em;
 
 	float: left;
 	text-align: left;
-	width: 7em;
+	min-width: 5em;
 }
 
 #navbar  a:hover {
@@ -116,6 +92,10 @@ a:hover {
 	display: block;
 	padding: 1em 0em;
 }
+#navbar a.icon:hover {
+	color: white;
+	background-color: black;
+}
 
 #navbar.hamExpand a {
 	position: relative;
@@ -138,8 +118,7 @@ a:hover {
 		justify-content: center;
 	}
 	#navbar a {
-		min-width: 7em;
-		width: 12%;
+		width: 10%;
 
 		text-align: center;
 	}
