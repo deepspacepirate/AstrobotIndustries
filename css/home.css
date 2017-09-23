@@ -8,10 +8,10 @@
 }
 
 @font-face {
-	font-family: ScribbleX;
-	src: url('../fonts/Scribble-Scrawl.eot?') format('eot'),
-		url('../fonts/Scribble-Scrawl.woff') format('woff'),
-		url('../fonts/Scribble-Scrawl.ttf') format('truetype');
+	font-family: LabelX;
+	src: url('../fonts/Impact-Label.eot?') format('eot'),
+		url('../fonts/Impact-Label.woff') format('woff'),
+		url('../fonts/Impact-Label.ttf') format('truetype');
 }
 
 body {
