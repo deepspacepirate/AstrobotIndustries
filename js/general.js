@@ -37,7 +37,7 @@ $(document).ready(function() {
 		};
 	}
 
-	$('#menuButton').on('click', toggleHamStack);
+	$('#menuButton').click(toggleHamStack);
 	// sticky( $('#chaticon') );
 
 	// Detect scroll, bring/hide navbar
@@ -102,15 +102,7 @@ function Y(x1, y1, x2, y2, x) {
 
 // Open/close collapsed navbar
 function toggleHamStack() {
-	var nav = document.getElementById('navbar');
-	if (nav.classList.contains('hamExpand')) {
-		nav.classList.remove('hamExpand');
-		console.log('menu collapsed');
-	}
-	else {
-		nav.classList.add('hamExpand');
-		console.log('menu expanded');
-	}
+	$('#navbar').toggleClass('hamExpand');
 }
 
 // Stick things to top when scrolled to
