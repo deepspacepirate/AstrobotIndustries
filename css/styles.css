@@ -11,6 +11,7 @@ body {
 	height: auto;
 	font-size: 10px;
 	margin: 0;
+	/*background-color: black;*/
 }
 
 a {
@@ -37,7 +38,7 @@ a:hover {
 	width: 100%;
 	position: fixed;
 	overflow: hidden;
-	background-color: rgba(12, 12, 12, 1);
+	background-color: rgba(17, 17, 17, 1);
 
 	-webkit-box-shadow: 0 10px 15px -6px rgba(0, 0, 0, 0.2);
 		-moz-box-shadow: 0 10px 15px -6px rgba(0, 0, 0, 0.2);

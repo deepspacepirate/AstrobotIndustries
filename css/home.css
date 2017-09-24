@@ -18,7 +18,8 @@ body {
 	height: auto;
 	font-size: 10px;
 	margin: 0;
-	background-color: black;
+	overflow-x: hidden;
+	/*background-color: black;*/
 }
 
 a {
@@ -64,6 +65,8 @@ img { -ms-interpolation-mode: bicubic; }
 	height: 19vw;
 	/*border: 1px solid white;*/
 	padding: 0 3vw;
+
+	z-index: 15;
 }
 .header .logo .ast {
 	font-size: 10vw;
@@ -83,11 +86,10 @@ img { -ms-interpolation-mode: bicubic; }
 	letter-spacing: 0em;
 }
 
-
 .header .robot {
 	height: 100%;
 	width: 100%;
-	z-index: 0;
+	z-index: -10;
 
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -114,7 +116,6 @@ img { -ms-interpolation-mode: bicubic; }
 		position: absolute;
 		top: 12vw;
 		left: 5vw;
-		z-index: 1;
 
 		max-width: 1800px;
 		/*width: 50vw;*/
@@ -133,11 +134,16 @@ img { -ms-interpolation-mode: bicubic; }
 
 		background-position: center;
 		background-color: rgb(63, 85, 57);
-		background-image: url(http://i.imgur.com/ErNLemm.jpg);
+		background-image: 
+			url(https://www.walldevil.com/wallpapers/h13/destiny-tower-game-wallpapers-galaxy-space.jpg) /*moonbase*/
+			/*url(http://i.imgur.com/ErNLemm.jpg), */
+			/*url(https://airbitz.co/go/wp-content/uploads/2016/04/milky_way_sky-1920x1200.jpg), */
+			/*url(http://freakelitex.com/wp-content/uploads/2015/04/18m4om4npi8wpjpg.jpg) */
+		;
 		/*background-image: url(../images/astrobot.png);*/
 	}
 
-	.header .logo .swing {
+	.header .logo .ind.swing {
 		transform-origin: 2% 50%;
 
 		-webkit-animation-iteration-count: 1; /* Safari 4.0 - 8.0 */
@@ -146,7 +152,7 @@ img { -ms-interpolation-mode: bicubic; }
 		-webkit-animation-fill-mode: forwards;
 				animation-fill-mode: forwards;
 
-		-webkit-animation: dangle 3s;
+		/*-webkit-animation: dangle 3s;*/
 	}
 
 	@-webkit-keyframes dangle {
@@ -176,14 +182,15 @@ img { -ms-interpolation-mode: bicubic; }
 	display: flex;
 	flex-direction: column;
 
-	width: 100%;
-	position: relative;
+	width: 106%;
+	left: -3%;
 	overflow: hidden;
-	background-color: rgba(12, 12, 12, 1);
+	position: relative;
+	background-color: rgba(17, 17, 17, 1);
 
-	-webkit-box-shadow: 0 10px 15px -6px rgba(0, 0, 0, 0.2);
-		-moz-box-shadow: 0 10px 15px -6px rgba(0, 0, 0, 0.2);
-			box-shadow: 0 10px 15px -6px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0 8px 15px -6px rgba(255, 255, 255, .3);
+		-moz-box-shadow: 0 8px 15px -6px rgba(255, 255, 255, .3);
+			box-shadow: 0 8px 15px -6px rgba(255, 255, 255, .3);
 
 	top: 0;
 	transition-timing-function: ease-out;
@@ -261,20 +268,25 @@ img { -ms-interpolation-mode: bicubic; }
 /* body Content */
 #bodyContent {
 	position: relative;
-	margin: 0 auto;
+	margin: 2em auto;
 
 	min-width: 300px;
 	width: 100%;
 	min-height: 100vh;
-	z-index: 1;
+
 	overflow: hidden;
 
 	font-family: "Arial";
 	/*background-color: white;*/
+	
+	z-index: 1;
 }
 
-.wrapper {
+.terminal {
 	margin: 1em;
+	padding: 3em;
+	background-color: black;
+	border-radius: 3em;
 }
 
 h1 {
@@ -297,10 +309,8 @@ p.moon {
 	width: 100%;
 	font-family: Courier; 
 			
-	font-size: 5.9px;
+	font-size: 4.5px;
 	line-height: 1.7px;
-	font-size: 1.6vw;
-	line-height: .4vw;
 	text-align: center;
 	word-break: break-all;
 
@@ -313,7 +323,7 @@ st {
 }
 
 
-@media screen and (min-width: 536px) {
+@media screen and (min-width: 566px) {
 	.moon-large {
 		display: block;
 	}

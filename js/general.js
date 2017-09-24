@@ -65,12 +65,12 @@ function navStick() {
 		if ( !navStuck && headerHeight < st ) {
 			$('#navbar').css('position', 'fixed');
 			$('#navbar').css('top', '0');
-			$('#bodyContent').css('margin-top', '6em')
+			$('#bodyContent').css('margin-top', '8em')
 			navStuck = true;
 		}
 		else if ( navStuck && headerHeight > st ){
 			$('#navbar').css('position', 'relative');
-			$('#bodyContent').css('margin-top', '0em')
+			$('#bodyContent').css('margin-top', '2em')
 			navStuck = false;
 		}
 

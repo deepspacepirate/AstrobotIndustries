@@ -1,17 +1,6 @@
 /*Project Cards*/
 
 .grid-item {
-		
-		
-	}
-	.grid-item .projectCard {
-		
-	}
-	.grid-item .projectCard .description {
-		margin: 1em 1em 0;
-	}
-
-.grid-item {
 	float: none;
 	min-width: 1;
 	overflow: hidden;
