@@ -1,0 +1,102 @@
+body {
+	background-color: #1a1e1e;
+	color: #ddddd8;
+	font-family: Verdana;
+	background-size: 100% auto;
+	background-repeat: repeat-y;
+	/*background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/K9PMWUI/mushroom-effect-with-dust-particles-filling-screen-shot-in-studio_n1vgfkkme__F0002.png);*/
+	/*background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/K9PMWUI/atmospheric-dust-particles-floating-in-the-air-shot-in-studio_4jikwg1qx__F0007.png);*/
+	/*background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/Rp3ZIJe/videoblocks-slow-motion-of-dust-particles-flow-and-float-over-black-background-180fps-prores-footage_stjdpjzyb_thumbnail-full01.png);*/
+	/*background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/sun-effect-with-dust-particles_bysqd9z-b__F0000.png);*/
+	/*background-image: url(http://33.media.tumblr.com/8deca5058414d741af9c7b3674be440f/tumblr_nfr4mnmicU1rcye4mo1_500.gif);*/
+	background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://i.ytimg.com/vi/HHm5QFXv9-E/maxresdefault.jpg);
+	/*background-image: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75) ), url(http://mediad.publicbroadcasting.net/p/wvpn/files/styles/x_large/public/201609/2048px-Night-sky-milky-way-galaxy-astrophotography_-_West_Virginia_-_ForestWander.jpg);*/
+}
+
+::selection {
+	color: white;
+	background-color: rgba(255, 171, 100, 1);
+}
+
+a {
+	color: #fca92d;
+}
+
+a:hover {
+	background-color: rgba(255, 241, 77, .15);
+}
+
+#navbar {
+	-webkit-box-shadow: 0 10px 15px -6px rgba(255, 255, 225, 0.2);
+		-moz-box-shadow: 0 10px 15px -6px rgba(255, 255, 225, 0.2);
+			 box-shadow: 0 10px 15px -6px rgba(255, 255, 225, 0.2);
+}
+#navbar  a:hover {
+	background-color: #c8dfdd;
+}
+
+#navbar a.active {
+	color: black;
+	background-color: #f7fcf9;
+}
+
+/*About*/
+#bodycontent .answer {
+	border: 1px solid white;
+	background-color: transparent;
+}
+#bodycontent .a1:before {
+	border-top: .7em solid white;
+	border-right: .7em solid white;
+	top: -.8em;
+}
+
+
+/*tutoring*/
+.subtopic:not(:first-of-type) {
+	border: dashed white;
+	border-width: 2px 0px 0px 0px;
+}
+
+.subtopic h1 {
+	display: auto;
+	width: auto;
+	color: white;
+	text-shadow: 0 0 10px #6dffe4;
+	background-color: /*#d1d0cc*/ transparent;
+}
+
+.subtopic ol li {
+	margin: 1em;
+	margin-left: -.7em;
+}
+
+tr:nth-of-type(odd) td:nth-of-type(1) {
+	background: rgba(255, 255, 255, .1);
+	/*background: transparent;*/
+}
+
+
+/*projects*/
+.grid-item .projectCard {
+	background-color: rgba(0,0,0,.6);
+	border: 1px solid #707e89;
+	/*margin: 15px;*/
+	/*padding: 2em;*/
+}
+
+.grid-item .projectCard .slideshow {
+	margin:  1em 1em 0 1em;
+}
+
+.grid-item .projectCard a {
+	color: #aff7e8;
+}
+
+.grid-item .projectCard a:hover {
+	background-color: transparent;
+}
+
+.grid-item .projectCard h1 {
+	color: #aff7e8;
+}

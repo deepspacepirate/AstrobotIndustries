@@ -27,8 +27,8 @@ a {
 	text-decoration: none;
 }
 ::selection {
-	color: black;
-	background-color: rgb(255,245,0);
+	color: white;
+	background-color: rgba(255, 171, 100, 1);
 }
 
 img { -ms-interpolation-mode: bicubic; }
@@ -66,13 +66,10 @@ img { -ms-interpolation-mode: bicubic; }
 	/*border: 1px solid white;*/
 	padding: 0 3vw;
 
-	z-index: 15;
+	z-index: 0;
 }
 .header .logo .ast {
-	font-size: 10vw;
-	font-family: Extrafine;
-	text-align: center;
-	letter-spacing: -.87vw;
+	background-attachment: fixed;
 
 	position: absolute;
 	bottom: 0;
@@ -186,11 +183,11 @@ img { -ms-interpolation-mode: bicubic; }
 	left: -3%;
 	overflow: hidden;
 	position: relative;
-	background-color: rgba(17, 17, 17, 1);
+	background-color: rgb(17,17,17);
 
-	-webkit-box-shadow: 0 8px 15px -6px rgba(255, 255, 255, .3);
-		-moz-box-shadow: 0 8px 15px -6px rgba(255, 255, 255, .3);
-			box-shadow: 0 8px 15px -6px rgba(255, 255, 255, .3);
+	-webkit-box-shadow: 0 8px 15px -3px rgba(0, 0, 0, .3);
+		-moz-box-shadow: 0 8px 15px -3px rgba(0, 0, 0, .3);
+			box-shadow: 0 8px 15px -3px rgba(0, 0, 0, .3);
 
 	top: 0;
 	transition-timing-function: ease-out;
@@ -215,7 +212,7 @@ img { -ms-interpolation-mode: bicubic; }
 }
 
 #navbar  a:hover {
-	background-color: rgba(253, 255, 252, 1);
+	background-color: white;
 	color: black;
 }
 
@@ -285,7 +282,7 @@ img { -ms-interpolation-mode: bicubic; }
 .terminal {
 	margin: 1em;
 	padding: 3em;
-	background-color: black;
+	background-color: #16181c;
 	border-radius: 3em;
 }
 
@@ -313,8 +310,6 @@ p.moon {
 	line-height: 1.7px;
 	text-align: center;
 	word-break: break-all;
-
-	background-color: black;
 	color: white;
 }
 

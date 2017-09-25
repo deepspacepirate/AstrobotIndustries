@@ -9,9 +9,11 @@ form {
 }
 
 #subjectDropdown {
+	background-color: #f7fcff;
 	width: 100%;
 }
 #tutorDropdown, .tutorSubjSpecify {
+	background-color: #f7fcff;
 	width: 90%;
 	margin-left: 10%;
 	display: none;
@@ -25,6 +27,7 @@ form {
 }
 
  #message, .slInput {
+	background-color: #f7fcff;
 	border: 1px solid black;
 	border-radius: 5px;
 	padding: 10px;
@@ -46,7 +49,7 @@ form {
 
 
 form button {
-	background-color: hotpink;
+	background-color: #f7b10e;
 	border: none;
 	width: 100px;
 	margin-top: 10px;
@@ -66,7 +69,7 @@ form button {
 
 form button:hover{
 	content: '>';
-	background-color: white;
-	color: hotpink;
-	border: 1px solid hotpink;
+	background-color: #f7fcff;
+	color: #ff8300;
+	border: 1px solid #ff8300;
 }

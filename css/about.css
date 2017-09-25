@@ -6,23 +6,27 @@
 }
 
 #bodycontent {
-	background-color: white;
-	color: black;
 	font-family: "HackX";
 	font-size: 10px;
-	overflow: hidden;
+	overflow: auto;
 	background-color: ;
+}
+
+.break {
+	clear: both;
 }
 
 .wrapper {
 	overflow: auto;
+	margin: 0 auto;
+	max-width: 900px;
 }
 
 #bodycontent h1 {
 	font-size: 4em;
 	line-height: 1em;
 	font-weight: normal;
-	decoration: none;
+	text-decoration: none;
 }
 
 #bodycontent h2 {
@@ -37,7 +41,7 @@
 }
 
 #bodycontent emp {
-	color: rgba(255, 245, 0, 1);
+	color: #fff369;
 }
 
 /*Chatbox*/
@@ -49,12 +53,12 @@
 	opacity: 1;
 }
 
-#bodycontent .question, .answer {
+#bodycontent .question, #bodycontent .answer {
 	padding: .7em 2.5em;
 	margin: 1em 2em;
 	border-radius: 1em;
-	max-width: 70%;
 	overflow: visible;
+	max-width: 60%
 }
 #bodycontent .question {
 	float: right;
@@ -70,12 +74,12 @@
 	position: relative;
 	left: 2em;
 	clear: left;
-	background-color: rgba(37, 37, 42, 1);
-	color: rgba(253, 255, 252, 1);
+	background-color: #16181c;
+	color: #f7fcff;
 	/*border: 1px solid rgb(255,245,0);*/
 	/*rgb(255, 249, 0)*/
 }
-.a1 {
+#bodycontent .answer.a1 {
 	clear:none;
 	border-top-left-radius: 0;
 }
@@ -102,8 +106,8 @@
 	left: -3.9em;
 	top: -.7em;
 
-	border-top: .7em solid rgba(37, 37, 42, 1);
-	border-right: .7em solid rgba(37, 37, 42, 1);
+	border-top: .7em solid #232830;
+	border-right: .7em solid #232830;
 	border-bottom: .7em solid transparent;
 	border-left: .7em solid transparent;
 
@@ -116,7 +120,7 @@
 	width: 11em;
 	height: auto;
 
-	border: 5px solid rgb(255,245,0);
+	border: 5px solid #fff369;
 	margin: 1em;
 
 	float: left;
@@ -128,7 +132,9 @@
 }
 
 .formcontainer {
-	margin: 0em;
+	margin: 0px auto;
+	width: 100%;
+	max-width: 900px;
 }
 
 @media screen and (max-width: 720px){
@@ -159,6 +165,9 @@
 
 	.formcontainer {
 		margin: 1.5em;
+	}
+	#bodycontent .question, .answer {
+		max-width: 70%;
 	}
 }
 

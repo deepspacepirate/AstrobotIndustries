@@ -14,6 +14,37 @@ var timer0, timer1, timer2;
 var navStuck = false;
 
 $(document).ready(function() {
+	$('.toggle').click(function() {
+		console.log('toggle click');
+		screenResize();
+
+		var newfront = $('.back')
+		var newback = $('.front')
+
+		newfront.addClass('front');
+		newfront.removeClass('back');
+		if (newfront.hasClass('front')) console.log('cool');
+
+		newback.removeClass('front');
+		newback.addClass('back');
+		if (newback.hasClass('back')) console.log('beans');
+
+		if(document.getElementById("darkCSS") == null) {
+			$('head').append('<link id="darkCSS" rel="stylesheet" type="text/css" href="../css/dark.css">');
+			newfront.css('background-color', '#243b6d')
+			newback.css('background-color', 'skyblue')
+		}
+		else {
+			$('#darkCSS').remove();
+			newback.css('background-color', '#243b6d')
+			newfront.css('background-color', 'skyblue')
+		}
+		if ( page === 'projects' || page === 'academics'){
+			changeNumCards();
+			if (window.innerWidth > 650) { $('.grid').masonry({itemSelector: '.grid-item'}); }
+		}
+	});
+
 	screenResize();
 
 	// Activate your almonds

@@ -1,109 +1,30 @@
-/*Project Cards*/
-
-.grid-item {
-	float: none;
-	min-width: 1;
-	overflow: hidden;
+.slideshow{
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
-::-webkit-scrollbar {
-    width: 0px;
-    background: transparent; /* make scrollbar transparent */
+#img100 {
+	/*background-size: contain;*/
+	background-image: url(http://www.cosmiclight.com/ofquasars/images/lightcone1.gif);
+}
+#img5 {
+	background-image: url(https://ak6.picdn.net/shutterstock/videos/15238906/thumb/1.jpg);
+}
+#img4 {
+	background-image: url(http://www.pocproject.com/wp-content/uploads/2011/08/Wilder-Mann-series-Charles-Freger-2010-2.jpg);
+}
+#img3 {
+	background-image: url(http://www.yotrioint.com/blog/wp-content/uploads/2014/03/london_2012_olympics_led_umbrellas_1.jpg);
+	background-size: 140% auto;
+	background-position: 50% 35%;
+	background-image: url(https://www.tinyme.com/blog/wp-content/uploads/10-illuminating-kids-lights/10-Illuminating-Kids-Lights-5.jpg);
 }
 
-.grid-item .projectCard {
-	margin: 1.0em;
-	padding: 1.1em;
-	border: 1px solid;
-	border-radius: 10px;
-	background-color: white;
-
-	font-family: "Arial";
+#img2 {
+	background-position: 20% 0;
+	background-image: url(https://flipermag.com/wp-content/uploads/2014/12/fhmvMVq.png);
 }
-
-.grid-item .projectCard:hover {
-	border: 1px solid hotpink;
-	-webkit-box-shadow: 0 10px 15px -7px rgba(0, 0, 0, 0.2);
-	   -moz-box-shadow: 0 10px 15px -7px rgba(0, 0, 0, 0.2);
-		   box-shadow: 0 10px 15px -7px rgba(0, 0, 0, 0.2);
-}
-
-.grid-item .projectCard img {
-	display: block;
-	width: 100%;
-	height: 350;
-
-	background-color: black;
-}
-
-.grid-item .projectCard .description {
-	margin: 1em 1em 0;
-}
-
-
-/*Status*/
-.grid-item .projectCard .stats {
-	overflow: hidden;
-	margin: .4em 0;
-
-	font-size: 1.6em;
-	color: gray;
-	font-style: italic;
-}
-
-.grid-item .projectCard .stats .status {
-	float: left;
-}
-
-.grid-item .projectCard .stats .date {
-	float: right;
-}
-
-
-/*Text formatting*/
-.grid-item .projectCard h1 {
-	font-size: 2.4em;
-	margin: 0;
-	color: hotpink;
-}
-
-.grid-item .projectCard h2 {
-	font-size: 1.8em;
-	width: 100%;
-}
-
-.grid-item .projectCard p {
-	font-size: 1.6em;
-	line-height: 1.4em;
-}
-
-.grid-item .projectCard a.readmore {
-	width: 100%;
-	font-size: 1.8em;
-	text-decoration: none;
-}
-
-
-@media screen and (min-width: 755px) {
-	.grid-item {
-		float: left;
-		min-width: 350;
-	}
-	.grid-item .projectCard {
-		padding: 2em;
-	}
-	.grid-item .projectCard .description {
-		margin: 1.5em;
-	}
-	.grid-item .projectCard h2 {
-		font-size: 18px;
-	}
-
-	.grid-item .projectCard p {
-		font-size: 16px;
-	}
-
-	.grid-item .projectCard a.readmore {
-		font-size: 18px;
-	}
+#img1 {
+	background-image: url(https://imaginationinternationalinc.com/media/featured-image/2017/01/30/iii-Catalog-10-28-160814.jpg);
 }
