@@ -10,6 +10,7 @@
 	font-size: 10px;
 	overflow: auto;
 	background-color: ;
+	width: 100%
 }
 
 .break {
@@ -19,25 +20,26 @@
 .wrapper {
 	overflow: auto;
 	margin: 0 auto;
+	width: 90%;
 	max-width: 900px;
 }
 
 #bodycontent h1 {
-	font-size: 4em;
+	font-size: 2.4em;
 	line-height: 1em;
 	font-weight: normal;
 	text-decoration: none;
 }
 
 #bodycontent h2 {
-	font-size: 1.8em;
+	font-size: 1.5em;
 	line-height: 1.4em;
 	width: 100%;
 }
 
 #bodycontent p {
-	font-size: 1.5em;
-	line-height: 1.6em;
+	font-size: 1.3em;
+	line-height: 1.5em;
 }
 
 #bodycontent emp {
@@ -54,11 +56,11 @@
 }
 
 #bodycontent .question, #bodycontent .answer {
-	padding: .7em 2.5em;
-	margin: 1em 2em;
+	padding: .7em 2em;
+	margin: .4em 0;
 	border-radius: 1em;
 	overflow: visible;
-	max-width: 60%
+	max-width: 60%;
 }
 #bodycontent .question {
 	float: right;
@@ -75,7 +77,7 @@
 	left: 2em;
 	clear: left;
 	background-color: #16181c;
-	color: #f7fcff;
+	color: #d0dfdf;
 	/*border: 1px solid rgb(255,245,0);*/
 	/*rgb(255, 249, 0)*/
 }
@@ -88,7 +90,7 @@
 	content: ' ';
 	position: relative;
 	float: right;
-	right: -3.9em;
+	right: -3.3em;
 	top: -.7em;
 
 	border-top: .7em solid rgba(0, 210, 255, 1);
@@ -103,11 +105,11 @@
 	content: ' ';
 	position: relative;
 	float: left;
-	left: -3.9em;
+	left: -3.4em;
 	top: -.7em;
 
-	border-top: .7em solid #232830;
-	border-right: .7em solid #232830;
+	border-top: .7em solid #16181c;
+	border-right: .7em solid #16181c;
 	border-bottom: .7em solid transparent;
 	border-left: .7em solid transparent;
 
@@ -116,6 +118,7 @@
 }
 
 .img-circle {
+	display: none;
 	border-radius: 50%;
 	width: 11em;
 	height: auto;
@@ -132,42 +135,33 @@
 }
 
 .formcontainer {
-	margin: 0px auto;
-	width: 100%;
+	margin: 0 auto;
 	max-width: 900px;
+	min-width: 250px;
 }
 
-@media screen and (max-width: 720px){
-	.wrapper {
-		margin-left: 0%;
-		margin-right: 0%;
-		overflow: auto;
-	}
+@media screen and (min-width: 720px){
 
 	.img-circle {
-		display: none;
+		display: block;
 	}
 	#bodycontent h1 {
-		font-size: 2.4em;
+		font-size: 4em;
 	}
 	#bodycontent h2 {
 		font-size: 1.5em;
 	}
 
 	#bodycontent p {
-		font-size: 1.4em;
-		line-height: 1.3em;
+		font-size: 1.5em;
+		line-height: 1.6em;
+	}
+	#bodycontent .question, #bodycontent .answer {
+		max-width: 50%;
 	}
 
 	#bodycontent .question, .answer {
-		margin: 0.6em 2em;
-	}
-
-	.formcontainer {
-		margin: 1.5em;
-	}
-	#bodycontent .question, .answer {
-		max-width: 70%;
+		margin: 1em 2em;
 	}
 }
 

@@ -12,6 +12,5 @@ function showChats(){
 		if (scrollPosition + window.innerHeight > element.offset().top + .2*window.innerHeight) {
 			element.addClass('appear');
 		}
-
 	});
 }

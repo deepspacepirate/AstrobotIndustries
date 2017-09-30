@@ -14,6 +14,7 @@ ASTROBOT!
 	<script src="../js/jquery-3.2.1.min.js"></script>
 	<script src="../js/masonry.pkgd.min.js"></script>
 	<script src="../js/general.js"></script>
+	<script src="../js/projects.js"></script>
 
 </head>
 
@@ -30,173 +31,207 @@ ASTROBOT!
 		<a href="javascript:void(0);" class="icon" id="menuButton">&#8801;</a>
 	</div>
 
+	<div class="toggle">
+		<div class="front">
+			<img class="day" src="../images/sun1.svg" alt="go light" title="go light">
+		</div>
+		<div class="back">
+			<img class="night" src="../images/star1.svg" alt="go dark" title="go dark">
+		</div>
+	</div>
 
-	<div id="bodyContent" class="grid">
-
-		<div class="grid-item">
-			<div class="projectCard">
-
-				<div id="img100" class="slideshow"></div>
-
-				<div class="description">
-					<h1><a href="">The Future Project</a></h1>
-
-					<div class="stats">
-						<div class="status">
-							In progress
-						</div>
-
-						<div class="date">
-							20~7̃012
-						</div>
-					</div>
-
-					<p>
-						This happens in the future.
-					</p>
-
-
+	<div id="bodyContent">
+		<div id="search">
+			<div class="searchbar">
+				<div class="searchbox">
+					Search
+					<div class="icon">&#9906;</div>
 				</div>
 			</div>
+			<form >
+				<div class="checkboxes tags">
+					<h1>Tags</h1>
+					<div class="col1">
+						<input type="checkbox" name="software" value=0>Software<br>
+						<input type="checkbox" name="wetware" value=0>Wetware<br>
+						<input type="checkbox" name="hardware" value=0>Electrical<br>
+						<input type="checkbox" name="mechanical" value=0>Mechanical<br>
+					</div>
+					<div class="col2">
+						<input type="checkbox" name="science" value=0>Science<br>
+						<input type="checkbox" name="flight" value=0>Aeronautics<br>
+						<input type="checkbox" name="artistic" value=0>Artistic<br>
+						<input type="checkbox" name="costumes" value=0>Costumes<br>
+					</div>
+				</div>
+
+				<div class="checkboxes cost">
+					<h1>Cost</h1>
+					<input type="checkbox" name="verylow" value=0>$<br>
+					<input type="checkbox" name="low" value=0>$$<br>
+					<input type="checkbox" name="medium" value=0>$$$<br>
+					<input type="checkbox" name="high" value=0>$$$$<br>
+				</div>
+
+				<div class="checkboxes complexity">
+					<h1>Complexity</h1>
+					<input type="checkbox" name="simple" value=0>Simple<br>
+					<input type="checkbox" name="intermediate" value=0>Intermediate<br>
+					<input type="checkbox" name="complex" value=0>Complex<br>
+				</div>
+			</form>
 		</div>
 
-		<div class="grid-item">
-			<div class="projectCard">
+		<div class="grid">
 
-				<div id="img5" class="slideshow"></div>
+			<div id="project-0100" class="grid-item">
+				<div class="projectCard">
 
-				<div class="description">
-					<h1><a href="">Alien Geometries</a></h1>
+					<div class="slideshow"></div>
 
-					<div class="stats">
-						<div class="status">
-							Planned
+					<div class="description">
+						<h1><a>The Future Project</a></h1>
+
+						<div class="stats">
+							<div class="status">
+								In progress
+							</div>
+
+							<div class="date">
+								20~7̃012
+							</div>
 						</div>
 
-						<div class="date">
-							2019
-						</div>
+						<p>This happens in the future.</p>
+
 					</div>
-
-					<p>
-						Its iridescent black surface shimmers as it emits a constant cacophany of noises. A haunting, echoing, wailing, screaming, howling into the infinite night. You don't know where it came from, but you are certain it is not from this world.
-					</p>
-
-
 				</div>
 			</div>
-		</div>
 
-		<div class="grid-item">
-			<div class="projectCard">
+			<div id="project-0005" class="grid-item">
+				<div class="projectCard">
 
-				<div id="img4" class="slideshow"></div>
+					<div class="slideshow"></div>
 
-				<div class="description">
-					<h1><a href="">?</a></h1>
+					<div class="description">
+						<h1><a>Alien Geometries</a></h1>
 
-					<div class="stats">
-						<div class="status">
-							Planned
+						<div class="stats">
+							<div class="status">
+								Planned
+							</div>
+
+							<div class="date">
+								2019
+							</div>
 						</div>
 
-						<div class="date">
-							Oct 2018
-						</div>
+						<p>Its iridescent black surface shimmers as it emits a constant cacophany of noises. A haunting, echoing, wailing, screaming, howling into the infinite night. You don't know where it came from, but you are certain it is not from this world.</p>
+
 					</div>
-
-					<p>Lonely and ancient, it spends its nights looking at the stars, yearning to go home. You feel like it is your friend.</p>
-
-
 				</div>
 			</div>
-		</div>
 
-		<div class="grid-item">
-			<div class="projectCard">
+			<div id="project-0004" class="grid-item">
+				<div class="projectCard">
 
-				<div id="img3" class="slideshow"></div>
+					<div class="slideshow"></div>
 
-				<div class="description">
-					<h1><a href="">The Bird Machine</a></h1>
+					<div class="description">
+						<h1><a>?</a></h1>
 
-					<div class="stats">
-						<div class="status">
-							In progress
+						<div class="stats">
+							<div class="status">
+								Planned
+							</div>
+
+							<div class="date">
+								Oct 2018
+							</div>
 						</div>
 
-						<div class="date">
-							Oct 2017
-						</div>
+						<p>Lonely and ancient, it spends its nights looking at the stars, yearning to go home. You feel like it is your friend.</p>
+
+
 					</div>
-
-					<p>You hear the haunting wail of an air raid siren as the spotlight upon you grows to blinding intensity. It stares silently for a moment. Then, in a burst of light, joyous music begins to play and the technicolor lights dance in time.</p>
-
 				</div>
 			</div>
-		</div>
-		<div class="grid-item">
-			<div class="projectCard">
 
-				<div id="img2" class="slideshow"></div>
+			<div id="project-0003" class="grid-item">
+				<div class="projectCard">
 
-				<div class="description">
-					<h1><a href="">Enoch</a></h1>
+					<div class="slideshow"></div>
 
-					<div class="stats">
-						<div class="status">
-							Completed
+					<div class="description">
+						<h1><a>The Bird Machine</a></h1>
+
+						<div class="stats">
+							<div class="status">
+								In progress
+							</div>
+
+							<div class="date">
+								Oct 2017
+							</div>
 						</div>
 
-						<div class="date">
-							Oct 2016
-						</div>
+						<p>You hear its haunting wail as the spotlight upon you grows to blinding intensity. It stares silently for a moment. Then, in a burst of light, joyous music begins to play and the technicolor lights dance in time.</p>
+
 					</div>
-
-					<p>He sweeps silently across the road, ribbons of burlap swaying gently in the breeze. He looks down upon you. “Good evening.” </p>
-					<p>A fan favorite, or at least my favorite, from the Cartoon Network mini-series, Over the Garden Wall.</p>
-
 				</div>
 			</div>
-		</div>
-		<div class="grid-item">
-			<div class="projectCard">
+			<div id="project-0002" class="grid-item">
+				<div class="projectCard">
 
-				<div id="img1" class="slideshow"></div>
+					<div class="slideshow"></div>
 
-				<div class="description">
-					<h1><a href="">Fox Spirit</a></h1>
+					<div class="description">
+						<h1><a>Enoch</a></h1>
 
-					<div class="stats">
-						<div class="status">
-							Completed
+						<div class="stats">
+							<div class="status">
+								Completed
+							</div>
+
+							<div class="date">
+								Oct 2016
+							</div>
 						</div>
 
-						<div class="date">
-							Oct 2015
-						</div>
+						<p>Patient is the night.</p>
+						<p>A fan favorite, or at least my favorite, from the Cartoon Network mini-series, Over the Garden Wall.</p>
+
 					</div>
+				</div>
+			</div>
+			<div id="project-0001" class="grid-item">
+				<div class="projectCard">
 
-					<p>
-						Wreathed in dark robes and forest flora, it stands in silence, watching patiently, vigilantly. What is it waiting for?
-					</p>
+					<div class="slideshow"></div>
 
+					<div class="description">
+						<h1><a>Fox Spirit</a></h1>
 
+						<div class="stats">
+							<div class="status">
+								Completed
+							</div>
+
+							<div class="date">
+								Oct 2015
+							</div>
+						</div>
+
+						<p>Wreathed in dark robes and forest flora, it stands in silence, watching patiently, vigilantly. What is it waiting for?</p>
+
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
 	<div id="footer">
-		<div class="toggle">
-			<div class="front">
-				<img class="day" src="../images/sun1.svg" alt="go light" title="go light">
-			</div>
-			<div class="back">
-				<img class="night" src="../images/star1.svg" alt="go dark" title="go dark">
-			</div>
-
-		<div>
+		<button class="seemore">See more</button>
 	</div>
 	
 

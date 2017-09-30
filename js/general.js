@@ -1,8 +1,8 @@
-// Get page name, for activating almonds
-var page = window.location.pathname.split('/').pop();
-page = page.replace(".html", "");
-
-var topFly = window.innerHeight - $('#navbar').outerHeight();
+// Get page name, for activating almonds, directory navigation
+var path = window.location.pathname,
+	// file = path.match(/[^\/]+$/)[0],
+	page = path.match(/[^\/]+(?=\.html)/)[0] // match faster than split+pop https://jsperf.com/split-pop-vs-regex-match
+	rootpath = path.match(/^.+AstrobotIndustries\//)[0];
 
 // Current distance from top, for bringmenu()
 var lastScrollTop1 = 0;
@@ -14,36 +14,11 @@ var timer0, timer1, timer2;
 var navStuck = false;
 
 $(document).ready(function() {
-	$('.toggle').click(function() {
-		console.log('toggle click');
-		screenResize();
-
-		var newfront = $('.back')
-		var newback = $('.front')
-
-		newfront.addClass('front');
-		newfront.removeClass('back');
-		if (newfront.hasClass('front')) console.log('cool');
-
-		newback.removeClass('front');
-		newback.addClass('back');
-		if (newback.hasClass('back')) console.log('beans');
-
-		if(document.getElementById("darkCSS") == null) {
-			$('head').append('<link id="darkCSS" rel="stylesheet" type="text/css" href="../css/dark.css">');
-			newfront.css('background-color', '#243b6d')
-			newback.css('background-color', 'skyblue')
-		}
-		else {
-			$('#darkCSS').remove();
-			newback.css('background-color', '#243b6d')
-			newfront.css('background-color', 'skyblue')
-		}
-		if ( page === 'projects' || page === 'academics'){
-			changeNumCards();
-			if (window.innerWidth > 650) { $('.grid').masonry({itemSelector: '.grid-item'}); }
-		}
-	});
+	console.log('Well, aren\'t you nosy. Click on the $$$$$ checkbox twelve times.');
+	console.log(page);
+	// console.log(getCookie('daynight'));
+	// if (getCookie('daynight') == 'night' ) ldToggle();
+	$('.toggle').click(ldToggle);
 
 	screenResize();
 
@@ -86,6 +61,60 @@ $(document).ready(function() {
 
 
 });
+
+function ldToggle() {
+		screenResize();
+
+		var newfront = $('.back')
+		var newback = $('.front')
+
+		newfront.addClass('front');
+		newfront.removeClass('back');
+
+		newback.removeClass('front');
+		newback.addClass('back');
+
+		if(document.getElementById("darkCSS") == null) {
+			$('head').append('<link id="darkCSS" rel="stylesheet" type="text/css" href="' + rootpath + '/css/dark.css">');
+			newfront.css('background-color', '#243b6d')
+			newback.css('background-color', 'skyblue')
+			setCookie('daynight', 'night', .5)
+			console.log(getCookie('daynight'));
+		}
+		else {
+			$('#darkCSS').remove();
+			newback.css('background-color', '#243b6d')
+			newfront.css('background-color', 'skyblue')
+			setCookie('daynight', 'day', .5)
+			console.log(getCookie('daynight'));
+		}
+		if ( page === 'projects' || page === 'academics'){
+			changeNumCards();
+			if (window.innerWidth > 650) { $('.grid').masonry({itemSelector: '.grid-item'}); }
+		}
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
 
 function navStick() {
 	if (page === 'index' ) {

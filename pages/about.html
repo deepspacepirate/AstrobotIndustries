@@ -15,8 +15,6 @@ ASTROBOT!
 	<script src="../js/jquery-3.2.1.min.js"></script>
 	<script src="../js/general.js"></script>
 	<script src="../js/about.js"></script>
-	<script src="../js/contactform.js"></script>
-
 </head>
 
 <body>
@@ -30,6 +28,15 @@ ASTROBOT!
 		<a href="blog.html">Blog</a>
 		<a href="contact.html">Contact</a>
 		<a href="javascript:void(0);" class="icon" id="menuButton">&#8801;</a>
+	</div>
+
+	<div class="toggle">
+		<div class="front">
+			<img class="day" src="../images/sun1.svg" alt="go light" title="go light">
+		</div>
+		<div class="back">
+			<img class="night" src="../images/star1.svg" alt="go dark" title="go dark">
+		</div>
 	</div>
 
 	<div id="bodyContent">
@@ -88,34 +95,28 @@ ASTROBOT!
 			<div class="chat answer a1"><p>		</p></div>
 			<div class="break"></div>
 
+			<div class="formcontainer">
+
+				<a href="contact.html">
+					<form action="/beam-to-the-moon" method="post">
+						<textarea 
+							id="message" 
+							name="userMessage" 
+							onfocusin="if (this.innerHTML == 'Send me a message?') this.innerHTML='' " 
+							onfocusout="if (this.innerHTML == '') this.innerHTML='Send me a message?' "
+						>Send me a message?</textarea>
+					</form>
+				</a>
+
+			</div>
+
 		</div>
 
-		<div class="formcontainer">
-
-			<a href="contact.html">
-				<form action="/beam-to-the-moon" method="post">
-					<textarea 
-						id="message" 
-						name="userMessage" 
-						onfocusin="if (this.innerHTML == 'Send me a message?') this.innerHTML='' " 
-						onfocusout="if (this.innerHTML == '') this.innerHTML='Send me a message?' "
-					>Send me a message?</textarea>
-				</form>
-			</a>
-
-		</div>
+		
 	</div>
 
 	<div id="footer">
-		<div class="toggle">
-			<div class="front">
-				<img class="day" src="../images/sun1.svg" alt="go light" title="go light">
-			</div>
-			<div class="back">
-				<img class="night" src="../images/star1.svg" alt="go dark" title="go dark">
-			</div>
-
-		<div>
+		
 	</div>
 
 </body>
