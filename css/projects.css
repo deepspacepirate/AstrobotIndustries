@@ -101,7 +101,7 @@ form input[type="checkbox"]{
 	transition: all .2s ease;
 }
 form input[type="checkbox"]:checked{
-	background-color: #16E0B5;
+	background-color: #f7b10e;
 	-webkit-box-shadow: none;
 	   -moz-box-shadow: none;
 			box-shadow: none;

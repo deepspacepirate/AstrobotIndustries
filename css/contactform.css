@@ -9,11 +9,11 @@ form {
 }
 
 #subjectDropdown {
-	background-color: #f7fcff;
+	background-color: #FFFEFC;
 	width: 100%;
 }
 #tutorDropdown, .tutorSubjSpecify {
-	background-color: #f7fcff;
+	background-color: #FFFEFC;
 	width: 90%;
 	margin-left: 10%;
 	display: none;
@@ -27,7 +27,7 @@ form {
 }
 
  #message, .slInput {
-	background-color: #f7fcff;
+	background-color: #FFFEFC;
 	border: 1px solid black;
 	border-radius: 5px;
 	padding: 10px;

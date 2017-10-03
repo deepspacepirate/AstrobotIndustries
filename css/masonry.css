@@ -1,5 +1,5 @@
-a {color: #ff8300;}
-a:hover {background-color: transparent;}
+.grid-item a {color: #fea300;}
+.grid-item a:hover {background-color: transparent;}
 
 .grid::-webkit-scrollbar {
 	width: 0px;
@@ -38,7 +38,7 @@ a:hover {background-color: transparent;}
 }
 
 .grid-item .projectCard .description {
-	margin: 1em;
+	/*margin: 1em;*/
 	overflow: auto;
 }
 
@@ -63,8 +63,9 @@ a:hover {background-color: transparent;}
 
 
 /*Text formatting*/
-.grid-item .projectCard h1 {
+.grid-item .projectCard h1{
 	font-size: 2.4em;
+	margin-top: .2em;
 }
 
 .grid-item .projectCard h2 {
