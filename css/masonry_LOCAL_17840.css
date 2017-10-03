@@ -1,17 +1,9 @@
-<<<<<<< HEAD
 .grid-item a {color: #fea300;}
 .grid-item a:hover {background-color: transparent;}
 
 .grid::-webkit-scrollbar {
 	width: 0px;
 	background: transparent;
-=======
-a {
-	color: #ff8300  /**/;
-}
-a:hover {
-	background-color: transparent;
->>>>>>> ab054825d2c7192fd1f04d9d6a8872b7f035722a
 }
 
 .grid-item {

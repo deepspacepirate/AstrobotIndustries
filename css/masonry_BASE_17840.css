@@ -1,17 +1,10 @@
-<<<<<<< HEAD
-.grid-item a {color: #fea300;}
-.grid-item a:hover {background-color: transparent;}
+/*Project Cards*/
 
-.grid::-webkit-scrollbar {
-	width: 0px;
-	background: transparent;
-=======
 a {
 	color: #ff8300  /**/;
 }
 a:hover {
 	background-color: transparent;
->>>>>>> ab054825d2c7192fd1f04d9d6a8872b7f035722a
 }
 
 .grid-item {
@@ -20,20 +13,22 @@ a:hover {
 	overflow: hidden;
 }
 
+.grid::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
 
 .grid-item .projectCard {
 	margin: 1.0em;
 	padding: 1.1em;
 	border: 1px solid;
-	-webkit-border-radius: 10px;
-	   -moz-border-radius: 10px;
-			border-radius: 10px;
+	border-radius: 10px;
 }
 
 .grid-item .projectCard:hover {
 	-webkit-box-shadow: 0 10px 15px -7px rgba(0, 0, 0, 0.2);
 	   -moz-box-shadow: 0 10px 15px -7px rgba(0, 0, 0, 0.2);
-			box-shadow: 0 10px 15px -7px rgba(0, 0, 0, 0.2);
+		   box-shadow: 0 10px 15px -7px rgba(0, 0, 0, 0.2);
 }
 
 .grid-item .projectCard .slideshow {
@@ -46,7 +41,7 @@ a:hover {
 }
 
 .grid-item .projectCard .description {
-	/*margin: 1em;*/
+	margin: 1em;
 	overflow: auto;
 }
 
@@ -71,9 +66,9 @@ a:hover {
 
 
 /*Text formatting*/
-.grid-item .projectCard h1{
+.grid-item .projectCard h1 {
 	font-size: 2.4em;
-	margin-top: .2em;
+	color: #ff8300;
 }
 
 .grid-item .projectCard h2 {
