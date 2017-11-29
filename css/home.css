@@ -8,10 +8,10 @@
 }
 
 @font-face {
-	font-family: ImpactLabel;
-	src: url('../fonts/Impact-Label.eot?') format('eot'),
-		url('../fonts/Impact-Label.woff') format('woff'),
-		url('../fonts/Impact-Label.ttf') format('truetype');
+	font-family: SquareX;
+	src: url('../fonts/simply-square.eot?') format('eot'),
+		url('../fonts/simply-square.woff') format('woff'),
+		url('../fonts/simply-square.ttf') format('truetype');
 }
 
 body {
@@ -52,38 +52,13 @@ img { -ms-interpolation-mode: bicubic; }
 }
 
 @-webkit-keyframes pulse {
-	0%   {opacity: .0;}
+	0%   {opacity: 0;}
 	40%  {opacity: 1;}
 	60%  {opacity: 1;}
-	100% {opacity: .0;}
+	100% {opacity: 0;}
 }
 
-.header .logo{
-	display: none;
-	color: white;
-	text-transform: uppercase;
-	height: 19vw;
-	/*border: 1px solid white;*/
-	padding: 0 3vw;
-
-	z-index: 0;
-}
-.header .logo .ast {
-	background-attachment: fixed;
-
-	position: absolute;
-	bottom: 0;
-	margin-bottom: .87vw;
-	position: relative;
-	left: -.87vw;
-}
-.header .logo .ind{
-	font-family: ImpactLabel;
-	font-size: 4.3vw;
-	letter-spacing: 0em;
-}
-
-.header .robot {
+.header .heroimage {
 	height: 100%;
 	width: 100%;
 	z-index: -10;
@@ -92,19 +67,34 @@ img { -ms-interpolation-mode: bicubic; }
 	background-repeat: no-repeat;
 	background-position: center;
 	background-attachment: fixed;
+}
+.header .logo{
+	display: block;
+	font-family: SquareX;
+	text-transform: uppercase;
+
+	position: absolute;
+	left: 6vw;
+	top: 12vw;
+
+	z-index: 0;
+}
+
+.header .logo {color: #faed26;}
+.header .logo .ast{font-size: 7.4em;}
+.header .logo .ind{font-size: 4.8em;}
+.header .heroimage {
 	background-color: rgb(101, 91, 75);
 	background-image: url(https://2.bp.blogspot.com/-ZoUTwmrlFLY/VJRiCZO2OrI/AAAAAAAAXbU/ycO5GkmhqQE/s1600/b017d8dc419f30e7952e91d90c12f430.jpg);
-	/*background-image: url('../images/____);*/
 }
 
 @media screen and (min-aspect-ratio: 3/4) {
-	.header .logo{
-		display: none;
-	}
-	.header .robot {
+	.header .logo{color: #faed26;}
+	.header .logo .ast{font-size: 13em;}
+	.header .logo .ind{font-size: 8.5em;}
+	.header .heroimage {
 		background-color: rgb(149, 170, 193);;
 		background-image: url(http://www.dailydetroit.com/wp-content/uploads/2016/02/12307324_982229198501840_258900842496848226_o.jpg);
-		/*background-image: url(../images/_____);*/
 	}
 }
 
@@ -115,55 +105,21 @@ img { -ms-interpolation-mode: bicubic; }
 		left: 5vw;
 
 		max-width: 1800px;
-		/*width: 50vw;*/
 
 		display: flex;
-		flex-direction: column-reverse;
-		
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-image: url(../images/logo.png);
-				
+		flex-direction: column;
 	}
-	.header .robot {
+	.header .heroimage {
 		/*width: calc(1.846153846153846 * (100vh - 6em));*/
 		float: right;
 
 		background-position: center;
 		background-color: rgb(63, 85, 57);
-		background-image: 
-			url(https://www.walldevil.com/wallpapers/h13/destiny-tower-game-wallpapers-galaxy-space.jpg) /*moonbase*/
-			/*url(http://i.imgur.com/ErNLemm.jpg), */
-			/*url(https://airbitz.co/go/wp-content/uploads/2016/04/milky_way_sky-1920x1200.jpg), */
-			/*url(http://freakelitex.com/wp-content/uploads/2015/04/18m4om4npi8wpjpg.jpg) */
-		;
+		/*background-image: url(https://www.walldevil.com/wallpapers/h13/destiny-tower-game-wallpapers-galaxy-space.jpg)*/
+		/*background-image: url(http://i.imgur.com/ErNLemm.jpg); */
+		background-image: url(https://airbitz.co/go/wp-content/uploads/2016/04/milky_way_sky-1920x1200.jpg);
+		/*background-image: url(http://freakelitex.com/wp-content/uploads/2015/04/18m4om4npi8wpjpg.jpg); */
 		/*background-image: url(../images/astrobot.png);*/
-	}
-
-	.header .logo .ind.swing {
-		transform-origin: 2% 50%;
-
-		-webkit-animation-iteration-count: 1; /* Safari 4.0 - 8.0 */
-				animation-iteration-count: 1;
-
-		-webkit-animation-fill-mode: forwards;
-				animation-fill-mode: forwards;
-
-		/*-webkit-animation: dangle 3s;*/
-	}
-
-	@-webkit-keyframes dangle {
-		0%   { -webkit-transform: rotate(0deg); }
-		10%  { -webkit-transform: rotate(142deg); }
-		20%  { -webkit-transform: rotate(56deg); }
-		30%  { -webkit-transform: rotate(122deg); }
-		40%  { -webkit-transform: rotate(61deg); }
-		50%  { -webkit-transform: rotate(110deg); }
-		60%  { -webkit-transform: rotate(76deg); }
-		70%  { -webkit-transform: rotate(105deg); }
-		80%  { -webkit-transform: rotate(82deg); }
-		90%  { -webkit-transform: rotate(95deg); }
-		100% { -webkit-transform: rotate(90deg); }
 	}
 
 	@media screen and (min-width: 1590px) {
@@ -179,8 +135,7 @@ img { -ms-interpolation-mode: bicubic; }
 	display: flex;
 	flex-direction: column;
 
-	width: 106%;
-	left: -3%;
+	width: 100%;
 	overflow: hidden;
 	position: relative;
 	background-color: rgb(17,17,17);
@@ -212,20 +167,11 @@ img { -ms-interpolation-mode: bicubic; }
 }
 
 #navbar  a:hover {
-	background-color: white;
-	color: black;
-}
-
-#navbar a.active {
-	background-color: rgb(255, 245, 0);
-	color: black;
+	background-color: transparent;
+	color: #19B7E0;
 }
 
 /* Navbar collapsed */
-#navbar a:not(.active) {
-	display: none;
-}
-
 #navbar a.icon {
 	text-align: center;
 	display: block;
@@ -382,7 +328,7 @@ Saved header images
 	left: -1.5vw;
 	z-index: 1;
 }
-.header img.robot {
+.header img.heroimage {
 	width: 80%;
 	max-width: 1200px;
 	float: right;

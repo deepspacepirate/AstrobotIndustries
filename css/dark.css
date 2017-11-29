@@ -1,52 +1,36 @@
 body {
-	background-color: rgba(22,24,24, 1);
 	color: #ddddd8;
-	font-family: Verdana;
+
+	background-color: black;
+	background-image: linear-gradient( rgba(23, 37, 55, .85), rgba(23, 37, 55, .85)), url(https://history.nasa.gov/alsj/a17/AS17-137-21018HR.jpg);
 	background-size: 100% auto;
-	background-repeat: repeat-y;
+	background-position: bottom;
+	background-repeat: no-repeat;
+	/*background-repeat: repeat-y;*/
 	/*background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/K9PMWUI/mushroom-effect-with-dust-particles-filling-screen-shot-in-studio_n1vgfkkme__F0002.png);*/
 	/*background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/K9PMWUI/atmospheric-dust-particles-floating-in-the-air-shot-in-studio_4jikwg1qx__F0007.png);*/
 	/*background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/Rp3ZIJe/videoblocks-slow-motion-of-dust-particles-flow-and-float-over-black-background-180fps-prores-footage_stjdpjzyb_thumbnail-full01.png);*/
-	/*background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/sun-effect-with-dust-particles_bysqd9z-b__F0000.png);*/
+	/*background-image: linear-gradient( rgba(17,13,19, .7), rgba(17,13,19, .7) ), url(../images/sun_particles.png);
+	background-repeat: no-repeat;*/
 	/*background-image: url(http://33.media.tumblr.com/8deca5058414d741af9c7b3674be440f/tumblr_nfr4mnmicU1rcye4mo1_500.gif);*/
-	/*background-image: linear-gradient( rgba(22,24,24, 1), rgba(22,24,24,1) );*/
-	/*background-image: url(https://i.ytimg.com/vi/HHm5QFXv9-E/maxresdefault.jpg);
-	/*background-image: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75) ), url(http://mediad.publicbroadcasting.net/p/wvpn/files/styles/x_large/public/201609/2048px-Night-sky-milky-way-galaxy-astrophotography_-_West_Virginia_-_ForestWander.jpg);*/
+	/*background-image: url(https://i.ytimg.com/vi/HHm5QFXv9-E/maxresdefault.jpg);*/
+	/*background-image: linear-gradient( rgba(17,13,19, .7), rgba(17,13,19, .7) ), url(http://mediad.publicbroadcasting.net/p/wvpn/files/styles/x_large/public/201609/2048px-Night-sky-milky-way-galaxy-astrophotography_-_West_Virginia_-_ForestWander.jpg);*/
 }
 
 ::selection {
-	color: white;
-	background-color: rgba(255, 171, 100, 1);
+	/*color: white;*/
+	/*background-color: rgba(255, 171, 100, 1);*/
 }
 
-a {color: #fca92d;}
-
-a:hover {background-color: rgba(255, 241, 77, .15);}
-
-#navbar {
-/*	border: solid #ddddd8;
-	border-width: 0 0 3px 0;*/
-	-webkit-box-shadow: 0 10px 15px -6px rgba(255, 255, 225, 0.2);
-		-moz-box-shadow: 0 10px 15px -6px rgba(255, 255, 225, 0.2);
-			 box-shadow: 0 10px 15px -6px rgba(255, 255, 225, 0.2);
+#bodycontent a {
+	color: rgb(180, 180, 180);
+	border-bottom: 3px solid #faed26;
 }
+#bodycontent a:hover {color: #faed26;}
 
-#navbar a {
-	color: #ddddd8;
-}
 
-#navbar  a:hover {
-	/*background-color: #f7b10e;*/
-}
-
-#navbar a.active {
-	background-color: #eeeeee;
-	/*color: #f7fcf9;*/
-	/*background-color: #f7fcf9 transparent;*/
-}
-
-/*About*/
-#bodycontent .question {
+/*About
+/*#bodycontent .question {
 	background-color: rgb(72,184,204);
 }
 #bodycontent .question:before {
@@ -54,7 +38,7 @@ a:hover {background-color: rgba(255, 241, 77, .15);}
 	border-right: .7em solid transparent;
 	border-bottom: .7em solid transparent;
 	border-left: .7em solid rgb(72,184,204);
-}
+}*/
 #bodycontent .answer {
 	border: 1px solid white;
 	background-color: transparent;
@@ -63,6 +47,7 @@ a:hover {background-color: rgba(255, 241, 77, .15);}
 	border-top: .7em solid white;
 	border-right: .7em solid white;
 	top: -.8em;
+	left: -3.5em;
 }
 
 /*tutoring*/
@@ -72,18 +57,15 @@ a:hover {background-color: rgba(255, 241, 77, .15);}
 }
 
 .subtopic h1 {
-	font-size: 8em;
+	color: #faed26;
 	display: auto;
 	width: auto;
-	color: white;
-	/*text-shadow: 0 0 10px #6dffe4;*/
-	background-color: /*#d1d0cc*/ transparent;
 }
 
-.subtopic p.emp {
+/*.subtopic p.emp {
 color: #f2b35c;
 }
-
+*/
 .subtopic ol li {
 	margin: 1em;
 	margin-left: -.7em;
@@ -120,7 +102,7 @@ input[type="checkbox"]:checked{
 }
 
 .grid-item .projectCard {
-	background-color: rgba(0,0,0,.0);
+	background-color: rgba(0,0,0,.20);
 	border: 1px solid #ddddd8;
 }
 
@@ -128,13 +110,13 @@ input[type="checkbox"]:checked{
 	margin:  1em 1em 0 1em;
 }
 
-.grid-item .projectCard h1 a {
-	color: #d6971f
+#bodycontent .grid-item .projectCard h1 a {
+	color: #cccccc;
+	letter-spacing: 1px;
 }
 
-.grid-item .projectCard h1 a:hover {
-	/*color: #f2bf48;*/
-	background-color: transparent;
+#bodycontent .grid-item .projectCard h1 a:hover {
+	color: #faed26;
 }
 
 .grid-item .projectCard h1  {
@@ -145,5 +127,7 @@ input[type="checkbox"]:checked{
 	background-color: rgba(0,0,0,.4);
 }
 .seemore:hover {
-	background-color: rgba(255,255,255,.1);
+	color: #faed26;
+	border: 1px solid #faed26;
+	background-color: rgba(255,255,255,.2);
 }

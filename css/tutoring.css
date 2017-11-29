@@ -25,10 +25,10 @@
 
 /* Text formatting */
 .subtopic h1 {
-	font-family: BowmanX;
+	font-family: BebasBX;
+	letter-spacing: 2px;
 	font-size: 4em;
-	color: black /*#243b6d*/;
-	background-color: #fff369;
+	color: #19B7E0;
 	padding: .2em;
 	text-transform: uppercase;
 	margin: 10px 0 .5em;
@@ -39,7 +39,7 @@
 	line-height: 1.8em;
 }
 p.emp {
-	color: #ea8e12;
+	color: #6FC8E0;
 	text-align: center;
 	font-family: HackX;
 	font-weight: bold;
@@ -136,8 +136,7 @@ tr:nth-of-type(odd) td:nth-of-type(1) {
 
 @media screen and (min-width: 780px) {
 	.subtopic h1 {
-		font-family: BowmanX;
-		font-size: 6.5em;
+		font-size: /*6.5em*/8em;
 		text-align: left;
 	}
 

@@ -1,5 +1,8 @@
-.grid-item a {color: #fea300;}
-.grid-item a:hover {background-color: transparent;}
+.grid-item a {color: rgb(85, 85, 85);}
+.grid-item a:hover {
+	color: #19B7E0;
+	background-color: transparent;
+}
 
 .grid::-webkit-scrollbar {
 	width: 0px;
@@ -38,7 +41,7 @@
 }
 
 .grid-item .projectCard .description {
-	/*margin: 1em;*/
+	margin: 1em;
 	overflow: auto;
 }
 
@@ -64,7 +67,9 @@
 
 /*Text formatting*/
 .grid-item .projectCard h1{
-	font-size: 2.4em;
+	font-family: BebasBX;
+	letter-spacing: .7px;
+	font-size: 3.7em;
 	margin-top: .2em;
 }
 

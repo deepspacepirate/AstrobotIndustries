@@ -7,25 +7,45 @@
 		 url('../fonts/Bowman.ttf') format('truetype');
 }
 
-body {
-	height: auto;
-	font-size: 10px;
-	margin: 0;
-	background-color: #FFFEFC;
-	font-family: Verdana;
+@font-face {
+	font-family: BebasRX;
+	src: url('../fonts/BebasNeueR.eot?') format('eot'),
+		 url('../fonts/BebasNeueR.woff') format('woff'),
+		 url('../fonts/BebasNeueR.ttf') format('truetype');
+}
+@font-face {
+	font-family: BebasBX;
+	src: url('../fonts/BebasNeueB.eot?') format('eot'),
+		 url('../fonts/BebasNeueB.woff') format('woff'),
+		 url('../fonts/BebasNeueB.ttf') format('truetype');
 }
 
-a {
-	color: rgba(50,190,205,1);
+@font-face {
+	font-family: SquareX;
+	src: url('../fonts/simply-square.eot?') format('eot'),
+		url('../fonts/simply-square.woff') format('woff'),
+		url('../fonts/simply-square.ttf') format('truetype');
+}
+
+body {
+	height: auto;
+	font-family: Verdana;
+	font-size: 10px;
+	margin: 0;
+	
+	background-color: #f3f3f3;	
+}
+
+#bodycontent a {
+	color: rgb(85, 85, 85);
 	text-decoration: none;
+	border-bottom: 3px solid #19B7E0;
 
 	-webkit-transition: background-color .3s;
 	transition: background-color .3s;
 }
 
-a:hover {
-	background-color: rgba(100,210,215,.2);
-}
+#bodycontent a:hover {color: #19B7E0;}
 
 ::selection {
 	color: black;
@@ -38,7 +58,7 @@ a:hover {
 	width: 100%;
 	position: fixed;
 	overflow: hidden;
-	background-color: #16181c;
+	background-color: #1D3048;
 
 	-webkit-box-shadow: 0 10px 15px -6px rgba(0, 0, 0, 0.2);
 		-moz-box-shadow: 0 10px 15px -6px rgba(0, 0, 0, 0.2);
@@ -57,10 +77,9 @@ a:hover {
 #navbar  a {
 	display: block;
 	
-	font-family: "BowmanX";
+	font-family: BowmanX;
 	font-size: 2.2em;
 	color: white;
-	background-color: #16181c;
 	text-decoration: none;
 	text-transform: uppercase;
 	
@@ -73,12 +92,22 @@ a:hover {
 }
 
 #navbar  a:hover {
-	color: /*#f7fcf9 white*/ #f7b10e;
+	background-color: transparent;
+	color: /*#f7b10e*/ #83D8EF;
 }
 
 #navbar a.active {
-	background-color: white;
-	color: black;
+	color: #19B7E0;
+}
+
+#navbar a.home {
+	font-family: SquareX;
+	letter-spacing: 2px;
+	font-size: 3.5em;
+	color: #faed26;
+	padding: .6em;
+	line-height: 1em;
+	text-align: left;
 }
 
 /* Navbar collapsed */
@@ -112,15 +141,15 @@ a:hover {
 	width: 5em;
 }
 
-@media screen and (min-width: 630px) {
+@media screen and (min-width: 760px) {
 	#navbar {
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
+
+		align-items: center;
 	}
 	#navbar a {
-		/*width: 10%;*/
-		/*padding: 1em; */
 		text-align: center;
 	}
 

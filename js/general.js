@@ -22,6 +22,7 @@ $(document).ready(function() {
 
 	screenResize();
 
+
 	// Activate your almonds
 	$('#navbar').children().each( function(){
 		var element = $(this);
@@ -118,19 +119,18 @@ function setCookie(cname, cvalue, exdays) {
 
 function navStick() {
 	if (page === 'index' ) {
-		var headerHeight = $('.header').offset().top + $('.header').outerHeight();
-		var indHeight = $('.ind').offset().top;
+		var headerHeight = $('.header').offset().top + $('.header').outerHeight(); //distance bottom of navbar is from top
 		var st = $(window).scrollTop();
 		
 		if ( !navStuck && headerHeight < st ) {
 			$('#navbar').css('position', 'fixed');
 			$('#navbar').css('top', '0');
-			$('#bodyContent').css('margin-top', '8em')
+			$('#bodyContent').css('margin-top', 'calc(2em + '+ $('#navbar').height() + 'px)');
 			navStuck = true;
 		}
 		else if ( navStuck && headerHeight > st ){
 			$('#navbar').css('position', 'relative');
-			$('#bodyContent').css('margin-top', '2em')
+			$('#bodyContent').css('margin-top', '2em');
 			navStuck = false;
 		}
 
@@ -148,7 +148,7 @@ function debounce(f, t) {
 function bringmenu() {
 	var st = window.pageYOffset || document.documentElement.scrollTop;  
 		if (st > lastScrollTop1 + 10) {
-			$('#navbar').css('top', '-6em');
+			$('#navbar').css('top', '-' + ( $('#navbar').height() + 20 )+'px');
 			$('#navbar').removeClass('hamExpand');
 		} 
 		else if (st < lastScrollTop1 -10) {

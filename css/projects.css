@@ -101,7 +101,7 @@ form input[type="checkbox"]{
 	transition: all .2s ease;
 }
 form input[type="checkbox"]:checked{
-	background-color: #f7b10e;
+	background-color: #faed26;
 	-webkit-box-shadow: none;
 	   -moz-box-shadow: none;
 			box-shadow: none;
@@ -151,8 +151,8 @@ form input[type="checkbox"]:hover{
 }
 .seemore:hover {
 	background-color: rgba(225, 225, 225, 1);
-	color: #ff8300;
-	border: 1px solid #ff8300;
+	color: #19B7E0;
+	border: 1px solid #19B7E0;
 }
 
 #project-0100 .slideshow {
