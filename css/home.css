@@ -72,54 +72,57 @@ img { -ms-interpolation-mode: bicubic; }
 	display: block;
 	font-family: SquareX;
 	text-transform: uppercase;
+	color: #faed26;
 
 	position: absolute;
-	left: 6vw;
+	left: 5vw;
 	top: 12vw;
 
 	z-index: 0;
 }
 
-.header .logo {color: #faed26;}
-.header .logo .ast{font-size: 7.4em;}
-.header .logo .ind{font-size: 4.8em;}
+.header .logo {}
+.header .logo .ast{font-size: 21vw;}
+.header .logo .ind{font-size: 14vw;}
 .header .heroimage {
 	background-color: rgb(101, 91, 75);
-	background-image: url(https://2.bp.blogspot.com/-ZoUTwmrlFLY/VJRiCZO2OrI/AAAAAAAAXbU/ycO5GkmhqQE/s1600/b017d8dc419f30e7952e91d90c12f430.jpg);
+	background-image: url(https://www.walldevil.com/wallpapers/h13/destiny-tower-game-wallpapers-galaxy-space.jpg);
+	/*background-image: url(https://2.bp.blogspot.com/-ZoUTwmrlFLY/VJRiCZO2OrI/AAAAAAAAXbU/ycO5GkmhqQE/s1600/b017d8dc419f30e7952e91d90c12f430.jpg);*/
+	background-position: 73% 0%;
 }
 
 @media screen and (min-aspect-ratio: 3/4) {
-	.header .logo{color: #faed26;}
-	.header .logo .ast{font-size: 13em;}
-	.header .logo .ind{font-size: 8.5em;}
+	.header .logo{
+		left: 8vw;
+		top: 12vw;
+	}
+	.header .logo .ast{font-size: 12vw;}
+	.header .logo .ind{font-size: 8vw;}
 	.header .heroimage {
 		background-color: rgb(149, 170, 193);;
-		background-image: url(http://www.dailydetroit.com/wp-content/uploads/2016/02/12307324_982229198501840_258900842496848226_o.jpg);
+		background-image: url(https://airbitz.co/go/wp-content/uploads/2016/04/milky_way_sky-1920x1200.jpg);
+		/*background-image: url(http://www.dailydetroit.com/wp-content/uploads/2016/02/12307324_982229198501840_258900842496848226_o.jpg);*/
 	}
 }
 
 @media screen and (min-aspect-ratio: 11/8) {
 	.header .logo{
 		position: absolute;
-		top: 12vw;
-		left: 5vw;
+		top: 10vw;
+		left: 9vw;
 
 		max-width: 1800px;
 
 		display: flex;
 		flex-direction: column;
 	}
+	.header .logo .ast{font-size: 9vw;}
+	.header .logo .ind{font-size: 6vw;}
 	.header .heroimage {
-		/*width: calc(1.846153846153846 * (100vh - 6em));*/
-		float: right;
-
 		background-position: center;
 		background-color: rgb(63, 85, 57);
-		/*background-image: url(https://www.walldevil.com/wallpapers/h13/destiny-tower-game-wallpapers-galaxy-space.jpg)*/
+		background-image: linear-gradient( rgba(23, 37, 55, .4), rgba(23, 37, 55, .4)), url(https://matthewmeagher.files.wordpress.com/2013/11/moon.jpg); 
 		/*background-image: url(http://i.imgur.com/ErNLemm.jpg); */
-		background-image: url(https://airbitz.co/go/wp-content/uploads/2016/04/milky_way_sky-1920x1200.jpg);
-		/*background-image: url(http://freakelitex.com/wp-content/uploads/2015/04/18m4om4npi8wpjpg.jpg); */
-		/*background-image: url(../images/astrobot.png);*/
 	}
 
 	@media screen and (min-width: 1590px) {
@@ -164,6 +167,11 @@ img { -ms-interpolation-mode: bicubic; }
 	padding: 1em 0em;
 
 	text-align: center;
+	display: none;
+	
+	position: relative;
+	float: none;
+	width: 100%;
 }
 
 #navbar  a:hover {
@@ -180,10 +188,7 @@ img { -ms-interpolation-mode: bicubic; }
 }
 
 #navbar.hamExpand a {
-	position: relative;
 	display: block;
-	float: none;
-	width: 100%;
 }
 
 @media screen and (min-width: 534px) {
@@ -284,76 +289,3 @@ st {
 		line-height: 3.3px;
 	}
 }
-/*
-.planet {
-	width: 20vw;
-	height: 20vw;
-
-	background-color: hotpink;
-	border-radius: 100%;
-}
-
-.planet img.ring {
-	opacity: 0;
-	border: 5px solid white;
-	border-radius: 100%;
-	width: calc(100% - 10px);
-	height: calc(100% - 10px);
-	margin: auto;
-}
-
-.planet:hover > .ring {
-	-webkit-animation: pulse 2s ease-out infinite;
-	opacity: 0;
-}
-
-
-@-webkit-keyframes pulsate {
-    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
-    50% {opacity: 1.0;}
-    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
-}*/
-
-
-/*
-Saved header images
-.header {
-	overflow: hidden;
-}
-.header img.logo{
-	width:50%;
-	max-width:800px;
-	position: absolute;
-	top: 6vw;
-	left: -1.5vw;
-	z-index: 1;
-}
-.header img.heroimage {
-	width: 80%;
-	max-width: 1200px;
-	float: right;
-	z-index: 0;
-}
-
-@media screen and (min-width: 1590px) {
-	.header img.logo{
-		top: 95px;
-	}
-}
-
-	font-family: Stockholm Mono;
-	font-family: Telegraphem;
-	font-family: "Teletype 1945-1985";
-	font-family: "TeXGyreCursor";
-	font-family: "USIS 1949";
-	font-family: "Bohemian typewriter";
-	font-family: Canard;
-	font-family: Carosello;
-	font-family: Decade;
-	font-family: Halogen Rough by Pixel Surplus;
-	font-family: Heavyweight;
-	font-family: Impact Label Reversed;
-	/*font-family: Microgramma D Extended Bold;
-	font-family: Molot Regular;
-*/
-

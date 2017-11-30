@@ -12,6 +12,7 @@ var lastScrollTop2 = 0;
 var timer0, timer1, timer2;
 
 var navStuck = false;
+var navOpen = false;
 
 $(document).ready(function() {
 	console.log('Well, aren\'t you nosy. Click on the $$$$$ checkbox twelve times.');
@@ -19,9 +20,6 @@ $(document).ready(function() {
 	// console.log(getCookie('daynight'));
 	// if (getCookie('daynight') == 'night' ) ldToggle();
 	$('.toggle').click(ldToggle);
-
-	screenResize();
-
 
 	// Activate your almonds
 	$('#navbar').children().each( function(){
@@ -35,8 +33,8 @@ $(document).ready(function() {
 	});
 
 	// Position body content from top
-	$('#bodyContent').css( 'margin-top', $('#navbar').outerHeight() + 20);
 	screenResize();
+	if (page != 'index') $('#bodyContent').css( 'margin-top', $('#navbar').outerHeight() + 20);
 
 	// Adjust with of body content
 	if (window.innerWidth > 650) {
@@ -132,10 +130,6 @@ function navStick() {
 			$('#navbar').css('position', 'relative');
 			$('#bodyContent').css('margin-top', '2em');
 			navStuck = false;
-		}
-
-		if ( indHeight < st ) {
-			$('.ind').addClass('swing');
 		}
 	}
 }
