@@ -119,11 +119,13 @@ body {
 	text-align: center;
 	float: right;
 	display: block;
-	padding: 1em 0em;
+	font-size: 3em;
+	line-height: 1em;
+	padding: .6em 0em;
 }
 #navbar a.icon:hover {
 	color: white;
-	background-color: black;
+	/*background-color: black;*/
 }
 
 #navbar.hamExpand a {
