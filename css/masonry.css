@@ -20,9 +20,9 @@
 	margin: 1.0em;
 	padding: 1.1em;
 	border: 1px solid;
-	-webkit-border-radius: 10px;
-	   -moz-border-radius: 10px;
-			border-radius: 10px;
+	-webkit-border-radius: 7px;
+	   -moz-border-radius: 7px;
+			border-radius: 7px;
 }
 
 .grid-item .projectCard:hover {

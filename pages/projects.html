@@ -1,4 +1,4 @@
-﻿<html>
+<html>
 
 <title>
 ASTROBOT!
@@ -28,27 +28,27 @@ ASTROBOT!
 		<a href="endeavors.html">Endeavors</a>
 		<a href="blog.html">Blog</a>
 		<a href="contact.html">Contact</a>
+		<div id="toggle">
+			<div class="front">
+				<img class="day" src="../images/sun1.svg" alt="go light" title="go light">
+			</div>
+			<div class="back">
+				<img class="night" src="../images/star1.svg" alt="go dark" title="go dark">
+			</div>
+		</div>
 		<a href="javascript:void(0);" class="icon" id="menuButton">&#8801;</a>
 	</div>
 
-	<div class="toggle">
-		<div class="front">
-			<img class="day" src="../images/sun1.svg" alt="go light" title="go light">
-		</div>
-		<div class="back">
-			<img class="night" src="../images/star1.svg" alt="go dark" title="go dark">
-		</div>
-	</div>
+	
 
 	<div id="bodyContent">
 		<div id="search">
-			<div class="searchbar">
-				<div class="searchbox">
-					Search
-					<div class="icon">&#9906;</div>
-				</div>
+			<div class="searchbox">
+				Search
+				<div class="icon">&#9906;</div>
 			</div>
-			<form >
+			
+			<form id="searchParams">
 				<div class="checkboxes tags">
 					<h1>Tags</h1>
 					<div class="col1">
@@ -59,10 +59,17 @@ ASTROBOT!
 					</div>
 					<div class="col2">
 						<input type="checkbox" name="science" value=0>Science<br>
-						<input type="checkbox" name="flight" value=0>Interactive<br>
+						<input type="checkbox" name="interactive" value=0>Interactive<br>
 						<input type="checkbox" name="artistic" value=0>Artistic<br>
 						<input type="checkbox" name="costumes" value=0>Costumes<br>
 					</div>
+				</div>
+
+				<div class="checkboxes competion">
+					<h1>Completion</h1>
+					<input type="checkbox" name="completed" value=0>Completed<br>
+					<input type="checkbox" name="inProgress" value=0>In Progress<br>
+					<input type="checkbox" name="planned" value=0>Planned<br>
 				</div>
 
 				<div class="checkboxes cost">
@@ -84,10 +91,14 @@ ASTROBOT!
 
 		<div class="grid">
 
-			<div id="project-0100" class="grid-item">
+			<div id="project-9999" class="grid-item">
 				<div class="projectCard">
 
-					<div class="slideshow"></div>
+					<div class="slideshow"
+						style="
+							background-image: url(http://www.cosmiclight.com/ofquasars/images/lightcone1.gif);
+						">
+					</div>
 
 					<div class="description">
 						<h1><a>The Future Project</a></h1>
@@ -108,10 +119,102 @@ ASTROBOT!
 				</div>
 			</div>
 
-			<div id="project-0011" class="grid-item">
+			<div id="project-9998" class="grid-item">
 				<div class="projectCard">
 
-					<div class="slideshow"></div>
+					<div class="slideshow"
+						style="
+							background-image: url(https://www.scmp.com/sites/default/files/2014/12/01/tanyong-submarine-c.jpg);
+						">
+					</div>
+
+					<div class="description">
+						<h1><a>Tangerine Submarine</a></h1>
+
+						<div class="stats">
+							<div class="status">
+								Planned
+							</div>
+
+							<div class="date">
+								?
+							</div>
+						</div>
+
+						<p>Some day.</p>
+
+					</div>
+				</div>
+			</div>
+
+			<div id="project-9997" class="grid-item">
+				<div class="projectCard">
+
+					<div class="slideshow"
+						style="
+							background-position: 35% 50%;
+							background-image: url(https://78.media.tumblr.com/43a4de15e2117649354b3e55868ca7aa/tumblr_ntiqo4Y5qd1uadx00o2_r1_500.gif);
+						"
+						script="
+
+						">
+					</div>
+
+					<div class="description">
+						<h1><a>Gannon Family Tesla Armor</a></h1>
+
+						<div class="stats">
+							<div class="status">
+								Planned
+							</div>
+
+							<div class="date">
+								?
+							</div>
+						</div>
+
+						<p>Arcade's kickass Enclave armor from Fallout: New Vegas!</p>
+
+					</div>
+				</div>
+			</div>
+
+			<div id="project-9997" class="grid-item">
+				<div class="projectCard">
+
+					<div class="slideshow"
+						style="
+							background-image: url(https://www.popsci.com/sites/popsci.com/files/styles/1000_1x_/public/images/2016/04/spacestationmediterranean.jpg?itok=MAOGU-9h);
+						">
+					</div>
+
+					<div class="description">
+						<h1><a>The World, All at Once</a></h1>
+
+						<div class="stats">
+							<div class="status">
+								Planned
+							</div>
+
+							<div class="date">
+								Sept 2020
+							</div>
+						</div>
+
+						<p>Did you know that ____ was happening at the same time as _____? A timeline of things that happened around the world, from the age of the dinosaurs to the present day.</p>
+
+					</div>
+				</div>
+			</div>
+
+			<div id="project-0012" class="grid-item">
+				<div class="projectCard">
+
+					<div class="slideshow"
+						style="
+							background-image: url(https://i.ytimg.com/vi/12y_7k5zqH4/maxresdefault.jpg);
+						">
+					</div>
 
 					<div class="description">
 						<h1><a>The Robo Room</a></h1>
@@ -132,10 +235,14 @@ ASTROBOT!
 				</div>
 			</div>	
 
-			<div id="project-0012" class="grid-item">
+			<div id="project-0011" class="grid-item">
 				<div class="projectCard">
 
-					<div class="slideshow"></div>
+					<div class="slideshow"
+						style="
+							background-image: url(http://www.pocproject.com/wp-content/uploads/2011/08/Wilder-Mann-series-Charles-Freger-2010-2.jpg);
+						">
+					</div>
 
 					<div class="description">
 						<h1><a>?</a></h1>
@@ -162,7 +269,11 @@ ASTROBOT!
 			<div id="project-0010" class="grid-item">
 				<div class="projectCard">
 
-					<div class="slideshow"></div>
+					<div class="slideshow"
+						style="
+							background-image: url(http://sherlockholmes.com/wp/wp-content/uploads/2015/08/tumblr_lzz3z74o9f1qegttf.jpg);
+						">
+					</div>
 
 					<div class="description">
 						<h1><a>The Deduction Device</a></h1>
@@ -187,7 +298,13 @@ ASTROBOT!
 			<div id="project-0009" class="grid-item">
 				<div class="projectCard">
 
-					<div class="slideshow"></div>
+					<div class="slideshow"
+						style="
+							background-size: 140% auto;
+							background-position: 50% 35%;
+							background-image: url(https://www.tinyme.com/blog/wp-content/uploads/10-illuminating-kids-lights/10-Illuminating-Kids-Lights-5.jpg);
+						">
+					</div>
 
 					<div class="description">
 						<h1><a>The Bird Machine</a></h1>
@@ -212,7 +329,11 @@ ASTROBOT!
 			<div id="project-0008" class="grid-item">
 				<div class="projectCard">
 
-					<div class="slideshow"></div>
+					<div class="slideshow"
+						style="
+							background-image: url(https://s-media-cache-ak0.pinimg.com/originals/5b/dc/9d/5bdc9d8ad7de93c8b8ff4415378cb3cb.jpg);
+						">
+					</div>
 
 					<div class="description">
 						<h1><a>Alien Geometries</a></h1>
@@ -236,7 +357,11 @@ ASTROBOT!
 			<div id="project-0007" class="grid-item">
 				<div class="projectCard">
 
-					<div class="slideshow"></div>
+					<div class="slideshow"
+						style="
+							background-image: url(https://ak6.picdn.net/shutterstock/videos/15238906/thumb/1.jpg);
+						">
+					</div>
 
 					<div class="description">
 						<h1><a>Cubic</a></h1>
@@ -260,7 +385,12 @@ ASTROBOT!
 			<div id="project-0006" class="grid-item">
 				<div class="projectCard">
 
-					<div class="slideshow"></div>
+					<div class="slideshow"
+						style="
+							background-image: url(https://lh3.googleusercontent.com/-0fDx54CbFJs/VIDdV5tVKVI/AAAAAAAABMI/3-TCIrKU4pUPnRTdwmZLK39WLlpmS0suwCK8B/s360/TinyAstronaut_Waving.png);
+							background-color: white;
+						">
+					</div>
 
 					<div class="description">
 						<h1><a>Tiny Astronaut</a></h1>
@@ -284,7 +414,11 @@ ASTROBOT!
 			<div id="project-0005" class="grid-item">
 				<div class="projectCard">
 
-					<div class="slideshow"></div>
+					<div class="slideshow"
+						style="
+							background-image: url(https://s-media-cache-ak0.pinimg.com/originals/d5/26/8b/d5268b2a768c8fa1c6339072fbd15cb8.jpg);
+						">
+					</div>
 
 					<div class="description">
 						<h1><a>Solar Flower Power</a></h1>
@@ -308,7 +442,11 @@ ASTROBOT!
 			<div id="project-0004" class="grid-item">
 				<div class="projectCard">
 
-					<div class="slideshow"></div>
+					<div class="slideshow"
+						style="
+							background-image: url(http://www.yotrioint.com/blog/wp-content/uploads/2014/03/london_2012_olympics_led_umbrellas_1.jpg);
+						">
+					</div>
 
 					<div class="description">
 						<h1><a>Electric Avenue</a></h1>
@@ -333,10 +471,14 @@ ASTROBOT!
 			<div id="project-0003" class="grid-item">
 				<div class="projectCard">
 
-					<div class="slideshow"></div>
+					<div class="slideshow"
+						style="
+							background-image: url(https://s-media-cache-ak0.pinimg.com/originals/68/bb/8a/68bb8a26a47e7eba3c0c7f6d27b0004f.jpg);
+							">
+					</div>
 
 					<div class="description">
-						<h1><a>Happy Dance</a></h1>
+						<h1><a>Boingo</a></h1>
 
 						<div class="stats">
 							<div class="status">
@@ -348,7 +490,7 @@ ASTROBOT!
 							</div>
 						</div>
 
-						<p>With elastic skin and 18" long strands of hair, this hairy behemoth has a lot of fun bobbing and bouncing and swaying.</p>
+						<p>With elastic skin and 18 inch long hair, this seven foot tall Abehemoth ripples happily as it bounces and sways.</p>
 
 					</div>
 				</div>
@@ -357,7 +499,12 @@ ASTROBOT!
 			<div id="project-0002" class="grid-item">
 				<div class="projectCard">
 
-					<div class="slideshow"></div>
+					<div class="slideshow"
+						style="
+							background-position: 20% 0;
+							background-image: url(https://flipermag.com/wp-content/uploads/2014/12/fhmvMVq.png);
+						">
+					</div>
 
 					<div class="description">
 						<h1><a>Enoch</a></h1>
@@ -381,7 +528,11 @@ ASTROBOT!
 			<div id="project-0001" class="grid-item">
 				<div class="projectCard">
 
-					<div class="slideshow"></div>
+					<div class="slideshow" 
+						style="
+							background-image: url(https://imaginationinternationalinc.com/media/featured-image/2017/01/30/iii-Catalog-10-28-160814.jpg);
+						">
+					</div>
 
 					<div class="description">
 						<h1><a>Fox Spirit</a></h1>

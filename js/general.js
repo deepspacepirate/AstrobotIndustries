@@ -13,22 +13,23 @@ var timer0, timer1, timer2;
 
 var navStuck = false;
 var navOpen = false;
+var ldToggleEnd = true;
+
+var navbarWidthLimit = 1103;
 
 $(document).ready(function() {
 	console.log('Well, aren\'t you nosy. Click on the $$$$$ checkbox twelve times.');
 	console.log(page);
 	// console.log(getCookie('daynight'));
 	// if (getCookie('daynight') == 'night' ) ldToggle();
-	$('.toggle').click(ldToggle);
+	$('#toggle').click(ldToggle);
 
 	// Activate your almonds
 	$('#navbar').children().each( function(){
 		var element = $(this);
 		var navTitle = element.text();
 		navTitle = navTitle.toLowerCase();
-		if (navTitle == page) {
-			element.addClass('active');
-		}
+		if (navTitle == page) element.addClass('active');
 		if ( navTitle === 'blog' || navTitle === 'endeavors') element.hide();
 	});
 
@@ -42,6 +43,11 @@ $(document).ready(function() {
 			clearTimeout(timer0);
 			timer0 = setTimeout(screenResize, 200);
 		};
+	}
+
+	window.onresize = function(){
+		clearTimeout(timer2);
+		timer2 = setTimeout(moveLDToggle, 200);
 	}
 
 	$('#menuButton').click(toggleHamStack);
@@ -67,25 +73,25 @@ function ldToggle() {
 		var newfront = $('.back')
 		var newback = $('.front')
 
-		newfront.addClass('front');
 		newfront.removeClass('back');
+		newfront.addClass('front');
 
 		newback.removeClass('front');
 		newback.addClass('back');
 
 		if(document.getElementById("darkCSS") == null) {
 			$('head').append('<link id="darkCSS" rel="stylesheet" type="text/css" href="' + rootpath + '/css/dark.css">');
-			newfront.css('background-color', '#243b6d')
-			newback.css('background-color', 'skyblue')
-			setCookie('daynight', 'night', .5)
-			console.log(getCookie('daynight'));
+			// newfront.css('background-color', '#243b6d')
+			// newback.css('background-color', 'skyblue')
+			// setCookie('daynight', 'night', .5)
+			// console.log(getCookie('daynight'));
 		}
 		else {
 			$('#darkCSS').remove();
-			newback.css('background-color', '#243b6d')
-			newfront.css('background-color', 'skyblue')
-			setCookie('daynight', 'day', .5)
-			console.log(getCookie('daynight'));
+			// newback.css('background-color', '#243b6d')
+			// newfront.css('background-color', 'skyblue')
+			// setCookie('daynight', 'day', .5)
+			// console.log(getCookie('daynight'));
 		}
 		if ( page === 'projects' || page === 'academics'){
 			changeNumCards();
@@ -154,6 +160,7 @@ function bringmenu() {
 
 // All the thins to do when screen is resized
 function screenResize() {
+	moveLDToggle();
 	scale($("#bodyContent"), 'width', '%', window.innerWidth, 650, 100, 900, 90, 2000, 70);
 	scale($("body"), 'font-size', 'px', window.innerWidth, 800, 9, 1200, 10, 2000, 12);
 
@@ -218,4 +225,15 @@ function changeNumCards() {
 		cardWidth = 100/numCards + '%';
 	}
 	card.css('width', cardWidth);
+}
+
+function moveLDToggle(){
+	if (ldToggleEnd == true && window.innerWidth > navbarWidthLimit) {
+		$('#toggle').insertBefore('.home');
+		ldToggleEnd = false;
+	}
+	else if (window.innerWidth <= navbarWidthLimit) {
+		$('#toggle').insertBefore('#navbar .icon');
+		ldToggleEnd = true;
+	}
 }

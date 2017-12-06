@@ -121,7 +121,7 @@ img { -ms-interpolation-mode: bicubic; }
 	.header .heroimage {
 		background-position: center;
 		background-color: rgb(63, 85, 57);
-		background-image: linear-gradient( rgba(23, 37, 55, .4), rgba(23, 37, 55, .4)), url(https://matthewmeagher.files.wordpress.com/2013/11/moon.jpg); 
+		background-image: linear-gradient( rgba(23, 37, 55, .1), rgba(23, 37, 55, .1)), url(https://themaindamie.files.wordpress.com/2013/03/moon_aus_4.jpg); 
 		/*background-image: url(http://i.imgur.com/ErNLemm.jpg); */
 	}
 

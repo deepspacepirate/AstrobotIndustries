@@ -15,12 +15,12 @@
 }
 #search.expand {background-color: rgba(160, 160, 160, .3)}
 
-#search.expand .searchbar {
+/*#search.expand .searchbar {
 	overflow: auto;
 	width: 100%
-}
+}*/
 
-.searchbox {
+#search .searchbox {
 	box-sizing: border-box;
 	width: 200px;
 	margin: 1em;
@@ -33,14 +33,10 @@
 	border: 1px solid;
 	border-radius: 5px;
 	background-color: white;
-}
-#search.expand .searchbox {
 	width: calc(100% - 2em - 2px);
-	/*height: 0;
-	border:0;
-	margin: 0;*/
 }
-.searchbox .icon {
+
+#search .searchbox .icon {
 	font-size: 1.5em;
 	width: 1em;
 	height: 1em;
@@ -53,30 +49,29 @@
 			transform: rotate(-45deg);
 }
 
-form {
-	/*position: absolute;*/
-	/*top: -100%;*/
-	/*display: none;*/
-}
-#search.expand form {
+#search #searchParams{
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
+
 	margin: 0 auto;
 	padding: 0 2em 2em 2em;
+
+	/*border: 1px solid;*/
 }
 
-form h1 {
+#search #searchParams h1 {
 	font-size: 1.5em;
 	padding: .3em .6em;
 	margin: 0;
 	background-color: rgba(10,10,10,.2);
 }
 
-form input {
+#search #searchParams input {
 	margin-left: 1.7em;
 }
 
-form input[type="checkbox"]{
+#search #searchParams input[type="checkbox"]{
 	cursor: pointer;
 	-webkit-appearance: none;
 			appearance: none;
@@ -87,7 +82,6 @@ form input[type="checkbox"]{
 
 	border-width: 0;
 	border-radius: 1px;
-	/*box-sizing: border-box;*/
 	background: white;
 
 	box-sizing: content-box ;
@@ -100,25 +94,24 @@ form input[type="checkbox"]{
 	
 	transition: all .2s ease;
 }
-form input[type="checkbox"]:checked{
+#search #searchParams input[type="checkbox"]:checked{
 	background-color: #faed26;
 	-webkit-box-shadow: none;
 	   -moz-box-shadow: none;
 			box-shadow: none;
 }
-form input[type="checkbox"]:hover{
+#search #searchParams input[type="checkbox"]:hover{
 	outline: 0 none;
 	box-shadow: none;
 }
 
-
-.checkboxes {
+#search #searchParams .checkboxes {
 	min-width: 110px;
 	flex-grow: 1;
 	padding: 1em;
 }
-.tags {flex-grow: 3;}
-.tags .col1, .tags .col2 {
+#search #searchParams .tags {flex-grow: 3;}
+#search #searchParams .tags .col1, .tags .col2, .tags .col3 {
 	display: inline-block;
 	width: 49%;
 	min-width: 130px;
@@ -129,7 +122,7 @@ form input[type="checkbox"]:hover{
 }
 
 @media screen and (min-width: 1506px) {
-	form {width: 70%;}
+	form {width: 80%;}
 }
 
 .seemore {
@@ -153,60 +146,4 @@ form input[type="checkbox"]:hover{
 	background-color: rgba(225, 225, 225, 1);
 	color: #19B7E0;
 	border: 1px solid #19B7E0;
-}
-
-#project-0100 .slideshow {
-	/*background-size: contain;*/
-	background-image: url(http://www.cosmiclight.com/ofquasars/images/lightcone1.gif);
-}
-
-#project-0012 .slideshow {
-	background-image: url(http://www.pocproject.com/wp-content/uploads/2011/08/Wilder-Mann-series-Charles-Freger-2010-2.jpg);
-}
-
-#project-0011 .slideshow {
-	background-image: url(https://i.ytimg.com/vi/12y_7k5zqH4/maxresdefault.jpg);
-}
-
-#project-0010 .slideshow {
-	background-image: url(http://sherlockholmes.com/wp/wp-content/uploads/2015/08/tumblr_lzz3z74o9f1qegttf.jpg);
-}
-
-#project-0009 .slideshow {
-	background-size: 140% auto;
-	background-position: 50% 35%;
-	background-image: url(https://www.tinyme.com/blog/wp-content/uploads/10-illuminating-kids-lights/10-Illuminating-Kids-Lights-5.jpg);
-}
-
-#project-0008 .slideshow {
-	background-image: url(https://s-media-cache-ak0.pinimg.com/originals/5b/dc/9d/5bdc9d8ad7de93c8b8ff4415378cb3cb.jpg);
-}
-
-#project-0007 .slideshow {
-	background-image: url(https://ak6.picdn.net/shutterstock/videos/15238906/thumb/1.jpg);
-}
-
-#project-0006 .slideshow {
-	background-image: url(https://lh3.googleusercontent.com/-0fDx54CbFJs/VIDdV5tVKVI/AAAAAAAABMI/3-TCIrKU4pUPnRTdwmZLK39WLlpmS0suwCK8B/s360/TinyAstronaut_Waving.png);
-	background-color: white;
-}
-
-#project-0005 .slideshow {
-	background-image: url(https://s-media-cache-ak0.pinimg.com/originals/d5/26/8b/d5268b2a768c8fa1c6339072fbd15cb8.jpg);
-}
-
-#project-0004 .slideshow {
-	background-image: url(http://www.yotrioint.com/blog/wp-content/uploads/2014/03/london_2012_olympics_led_umbrellas_1.jpg);
-}
-
-#project-0003 .slideshow {
-	background-image: url(https://s-media-cache-ak0.pinimg.com/originals/68/bb/8a/68bb8a26a47e7eba3c0c7f6d27b0004f.jpg);
-}
-
-#project-0002 .slideshow {
-	background-position: 20% 0;
-	background-image: url(https://flipermag.com/wp-content/uploads/2014/12/fhmvMVq.png);
-}
-#project-0001 .slideshow {
-	background-image: url(https://imaginationinternationalinc.com/media/featured-image/2017/01/30/iii-Catalog-10-28-160814.jpg);
 }
