@@ -1,8 +1,10 @@
 // Get page name, for activating almonds, directory navigation
 var path = window.location.pathname,
-	// file = path.match(/[^\/]+$/)[0],
-	page = path.match(/[^\/]+(?=\.html)/)[0] // match faster than split+pop https://jsperf.com/split-pop-vs-regex-match
-	rootpath = path.match(/^.+AstrobotIndustries\//)[0];
+// file = path.match(/[^\/]+$/)[0],
+parDir = path;
+page = path.match(/[^\/]+(?=\.html)/)[0] // match faster than split+pop https://jsperf.com/split-pop-vs-regex-match
+var rootpath = path.match(/^.+AstrobotIndustries\//)[0];
+console.log(page);
 
 // Current distance from top, for bringmenu()
 var lastScrollTop1 = 0;
@@ -15,20 +17,23 @@ var navStuck = false;
 var navOpen = false;
 var ldToggleEnd = true;
 
-var navbarWidthLimit = 1103;
+var navbarWidthLimit = 800;
+
+var lastNavLink; 
+
 
 $(document).ready(function() {
 	console.log('Well, aren\'t you nosy. Click on the $$$$$ checkbox twelve times.');
-	console.log(page);
 	// console.log(getCookie('daynight'));
 	// if (getCookie('daynight') == 'night' ) ldToggle();
 	$('#toggle').click(ldToggle);
 
 	// Activate your almonds
-	$('#navbar').children().each( function(){
+	$('#navbar').find('a').each( function(){
 		var element = $(this);
 		var navTitle = element.text();
 		navTitle = navTitle.toLowerCase();
+		if (navTitle === 'contact') lastNavLink = element;
 		if (navTitle == page) element.addClass('active');
 		if ( navTitle === 'blog' || navTitle === 'endeavors') element.hide();
 	});
@@ -41,17 +46,11 @@ $(document).ready(function() {
 	if (window.innerWidth > 650) {
 		window.onresize = function() {
 			clearTimeout(timer0);
-			timer0 = setTimeout(screenResize, 200);
+			timer0 = setTimeout(screenResize, 50);
 		};
 	}
 
-	window.onresize = function(){
-		clearTimeout(timer2);
-		timer2 = setTimeout(moveLDToggle, 200);
-	}
-
 	$('#menuButton').click(toggleHamStack);
-	// sticky( $('#chaticon') );
 
 	// Detect scroll, bring/hide navbar
 	$(window).scroll(function(){
@@ -62,7 +61,7 @@ $(document).ready(function() {
 	});
 
 	// Home sticky menu
-	$(window).scroll(navStick);
+	if (page === 'index' ) {$(window).scroll(navStick);}
 
 
 });
@@ -122,21 +121,19 @@ function setCookie(cname, cvalue, exdays) {
 }
 
 function navStick() {
-	if (page === 'index' ) {
-		var headerHeight = $('.header').offset().top + $('.header').outerHeight(); //distance bottom of navbar is from top
-		var st = $(window).scrollTop();
-		
-		if ( !navStuck && headerHeight < st ) {
-			$('#navbar').css('position', 'fixed');
-			$('#navbar').css('top', '0');
-			$('#bodyContent').css('margin-top', 'calc(2em + '+ $('#navbar').height() + 'px)');
-			navStuck = true;
-		}
-		else if ( navStuck && headerHeight > st ){
-			$('#navbar').css('position', 'relative');
-			$('#bodyContent').css('margin-top', '2em');
-			navStuck = false;
-		}
+	var headerHeight = $('.header').offset().top + $('.header').outerHeight(); //distance bottom of navbar is from top
+	var st = $(window).scrollTop();
+	
+	if ( !navStuck && headerHeight < st ) {
+		$('#navbar').css('position', 'fixed');
+		$('#navbar').css('top', '0');
+		$('#bodyContent').css('margin-top', 'calc(2em + '+ $('#navbar').height() + 'px)');
+		navStuck = true;
+	}
+	else if ( navStuck && headerHeight > st ){
+		$('#navbar').css('position', 'relative');
+		$('#bodyContent').css('margin-top', '2em');
+		navStuck = false;
 	}
 }
 
@@ -161,6 +158,7 @@ function bringmenu() {
 // All the thins to do when screen is resized
 function screenResize() {
 	moveLDToggle();
+	if (navStuck) $('#bodyContent').css('margin-top', 'calc(2em + '+ $('#navbar').height() + 'px)');
 	scale($("#bodyContent"), 'width', '%', window.innerWidth, 650, 100, 900, 90, 2000, 70);
 	scale($("body"), 'font-size', 'px', window.innerWidth, 800, 9, 1200, 10, 2000, 12);
 
@@ -204,11 +202,9 @@ function sticky(element) {
 	var position = element.offset().top;
 	if ( $(window).scrollTop() >= position) {
 		element.addClass('sticky');
-		console.log('stuck');
 	}
 	else {
 		element.removeClass('sticky');
-		console.log('unstuck');
 	}
 }
 
@@ -233,7 +229,7 @@ function moveLDToggle(){
 		ldToggleEnd = false;
 	}
 	else if (window.innerWidth <= navbarWidthLimit) {
-		$('#toggle').insertBefore('#navbar .icon');
+		$('#toggle').insertAfter(lastNavLink);
 		ldToggleEnd = true;
 	}
 }

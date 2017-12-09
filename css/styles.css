@@ -36,13 +36,30 @@ body {
 	background-color: #f3f3f3;	
 }
 
+/* body Content */
+#bodyContent {
+	display: flex;
+	flex-direction: column;
+	min-width: 320px;
+	position: relative;
+	margin: 2em auto;
+	z-index: 1;
+	overflow: auto;
+	
+}
+
+#bodyContent::-webkit-scrollbar {
+	width: 0px;
+	background: transparent;
+}
+
 #bodycontent a {
 	color: rgb(85, 85, 85);
 	text-decoration: none;
 	border-bottom: 3px solid #19B7E0;
 
 	-webkit-transition: background-color .3s;
-	transition: background-color .3s;
+			transition: background-color .3s;
 }
 
 #bodycontent a:hover {color: #19B7E0;}
@@ -66,12 +83,16 @@ body {
 
 	top: 0;
 	transition-timing-function: ease-out;
+	
 	-webkit-transition: top .4s;
-	transition: top .4s;
+			transition: top .4s;
 
 	z-index: 10;
 
-	display: block;
+	display: flex;
+	/*align-content: center;*/
+	flex-wrap: wrap;
+	align-items: center;
 }
 
 #navbar  a {
@@ -84,11 +105,10 @@ body {
 	text-transform: uppercase;
 	
 	line-height: .8em;
-	padding: 1em;
+	padding: 1em;	
 
 	float: left;
 	text-align: left;
-	min-width: 5em;
 }
 
 #navbar  a:hover {
@@ -117,15 +137,16 @@ body {
 
 #navbar a.icon {
 	text-align: center;
-	float: right;
+	/*float: right;*/
 	display: block;
 	font-size: 3em;
 	line-height: 1em;
 	padding: .6em 0em;
+	min-width: 0;
+	width: 3em;
 }
 #navbar a.icon:hover {
 	color: white;
-	/*background-color: black;*/
 }
 
 #navbar.hamExpand a {
@@ -136,15 +157,15 @@ body {
 	background-color: ;
 }
 
-#navbar.hamExpand a.home {
-	width: calc(100% - 5em);
+#navbar a.home {
+	width: calc(100% - 4.5em);
 }
 
 #navbar.hamExpand a.icon {
-	position: absolute;
+	/*position: absolute;
 	right: 0;
-	top: 0;
-	width: 5em;
+	top: 0;*/
+	width: 3em;
 }
 
 .sticky {
@@ -153,22 +174,7 @@ body {
 	top: 0;
 }
 
-/* body Content */
-#bodyContent {
-	display: flex;
-	flex-direction: column;
-	min-width: 320px;
-	position: relative;
-	margin: 2em auto;
-	z-index: 1;
-	overflow: auto;
-	
-}
 
-#bodyContent::-webkit-scrollbar {
-	width: 0px;
-	background: transparent;
-}
 
 #footer {
 	display: block;
@@ -246,7 +252,7 @@ body {
 			transform: rotateY(0);
 }
 
-@media screen and (min-width: 1103px) {
+@media screen and (min-width: 800px) {
 	#navbar {
 		display: flex;
 		flex-direction: row;
@@ -254,8 +260,10 @@ body {
 
 		align-items: center;
 	}
+
 	#navbar a {
 		text-align: center;
+		padding: 1em 0.6em;
 	}
 
 	#navbar a:not(.home) {
@@ -267,5 +275,15 @@ body {
 
 	#toggle {
 		display: block;
+	}
+
+	#navbar a.home {
+		width: auto;
+	}
+}
+
+@media screen and (min-width: 1000px){
+	#navbar a {
+		padding: 1em;
 	}
 }

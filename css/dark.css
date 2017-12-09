@@ -127,3 +127,7 @@ input[type="checkbox"]:checked{
 	border: 1px solid #faed26;
 	background-color: rgba(255,255,255,.2);
 }
+
+#gallery img:hover{
+	opacity: 0.5;
+}

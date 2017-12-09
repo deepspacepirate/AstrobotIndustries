@@ -29,16 +29,16 @@
 	letter-spacing: 2px;
 	font-size: 4em;
 	color: #19B7E0;
-	padding: .2em;
+	padding: .2em 0em;
 	text-transform: uppercase;
-	margin: 10px 0 .5em;
+	margin: 10px 0 .2em;
 }
 
 .subtopic p {
 	font-size: 1.6em;
 	line-height: 1.8em;
 }
-p.emp {
+.subtopic p.emp {
 	color: #6FC8E0;
 	text-align: center;
 	font-family: HackX;
@@ -47,48 +47,6 @@ p.emp {
 	font-size: 1.8em;
 	margin: 2em 0px;
 }		
-
-
-/* Button */
-#contactButton {
-	z-index: 5;
-
-	position: fixed;
-	bottom: 0;
-	right: 0;
-	margin: 15px;
-
-	height: 65px;
-	width: 65px;
-	border-radius: 100%;
-	border: none;
-	background-color: #f7b10e;
-
-	float: right;
-	
-	font-size: 28px;
-	color: rgba(255, 255, 255, .85);
-	font-family: HackX;
-	text-decoration: none;
-
-	-webkit-box-shadow: 0 7px 10px -6px rgba(0, 0, 0, 0.3);
-		-moz-box-shadow: 0 7px 10px -6px rgba(0, 0, 0, 0.3);
-			box-shadow: 0 7px 10px -6px rgba(0, 0, 0, 0.3);
-
-	cursor: pointer;
-
-	-webkit-transition: background-color .2s;
-	transition: background-color .2s;
-
-	-webkit-transition: opacity .1s;
-	transition: opacity .1s;
-}
-
-#contactButton:hover{
-	background-color: white;
-	color: #ff8300;
-	border: 1px solid #ff8300;
-}
 
 /* Numbered list */
 ol {
@@ -157,12 +115,6 @@ tr:nth-of-type(odd) td:nth-of-type(1) {
 
 	th, td {
 		padding: 1em;
-	}
-
-	form {
-		width: 40%;
-		overflow: hidden;
-		float: right;
 	}
 }
 
