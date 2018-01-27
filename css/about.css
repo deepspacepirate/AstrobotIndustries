@@ -42,10 +42,6 @@
 	line-height: 1.5em;
 }
 
-#bodycontent emp {
-	color: #faed26;
-}
-
 /*Chatbox*/
 #bodycontent .chat {
 	opacity: 0;
@@ -68,23 +64,22 @@
 	right: 2em;
 	clear: right;
 	border-top-right-radius: 0;
-	background-color: /*rgba(0, 210, 255, 1)*/ #62D6EC;
+	background-color: #5ecded;
 	color: rgba(37, 37, 42, 1);
 }
 #bodycontent .answer {
-	/*font-family: courier;*/
+	font-family: HackX;
 	float: left;
 	position: relative;
 	left: 2em;
 	clear: left;
-	background-color: #16181c;
-	color: rgb(250, 250, 255);
-	border: 1px solid #16181c;
 
-	/*border: 1px solid #F7882F;*/
+	background-color: rgb(220, 220, 225);
+	color: #16181c;
+	border: none;
 }
 #bodycontent .answer.a1 {
-	clear:none;
+	clear: none;
 	border-top-left-radius: 0;
 }
 
@@ -95,10 +90,10 @@
 	right: -3.3em;
 	top: -.7em;
 
-	border-top: .7em solid #62D6EC;
+	border-top: .7em solid #5ecded;
 	border-right: .7em solid transparent;
 	border-bottom: .7em solid transparent;
-	border-left: .7em solid #62D6EC;
+	border-left: .7em solid #5ecded;
 
 	height: 0;
 	width: 0;
@@ -107,11 +102,11 @@
 	content: ' ';
 	position: relative;
 	float: left;
-	left: -3.5em;
-	top: -.8em;
+	left: -3.3em;
+	top: -.7em;
 
-	border-top: .7em solid #16181c;
-	border-right: .7em solid #16181c;
+	border-top: .7em solid rgb(220, 220, 225);
+	border-right: .7em solid rgb(220, 220, 225);
 	border-bottom: .7em solid transparent;
 	border-left: .7em solid transparent;
 

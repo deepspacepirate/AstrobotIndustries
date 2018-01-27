@@ -40,85 +40,87 @@ ASTROBOT!
 	</div>
 
 	<div id="bodyContent">
-		<div class="formcontainer">
-			<form action="/beam-to-the-moon" method="post">
-				<select id="subjectDropdown" name="subject" class="slInput">
-					<option value=0 selected>Subject</option>
-					<option value=2>Tutoring</option>
-					<option value=3>Science Demonstrations</option>
-					<option value=4>Costume Commissions</option>
-					<option value=5>Just Saying Hi!</option>
-					<option value=1>Other</option>
-				</select>
+		<div id="bodyContent-inner">
+			<div class="formcontainer">
+				<form action="/beam-to-the-moon" method="post">
+					<select id="subjectDropdown" name="subject" class="slInput">
+						<option value=0 selected>Subject</option>
+						<option value=2>Tutoring</option>
+						<option value=3>Science Demonstrations</option>
+						<option value=4>Costume Commissions</option>
+						<option value=5>Just Saying Hi!</option>
+						<option value=1>Other</option>
+					</select>
 
-				<select id="tutorDropdown" name="tutoringSubject" class="slInput">
-					<option value=0 selected>Tutoring Subject</option>
-					<option value=2>Chemistry</option>
-					<option value=3>Math</option>
-					<option value=4>Physics</option>
-					<option value=5>CompSci</option>
-					<option value=6>Test prep</option>
-					<option value=1>Other</option>
-				</select>
+					<select id="tutorDropdown" name="tutoringSubject" class="slInput">
+						<option value=0 selected>Tutoring Subject</option>
+						<option value=2>Chemistry</option>
+						<option value=3>Math</option>
+						<option value=4>Physics</option>
+						<option value=5>CompSci</option>
+						<option value=6>Test prep</option>
+						<option value=1>Other</option>
+					</select>
 
-				<select id="chemDropdown" name="chemSubject" class="slInput tutorSubjSpecify">
-					<option value=1>General</option>
-					<option value=2>Organic</option>
-				</select>
+					<select id="chemDropdown" name="chemSubject" class="slInput tutorSubjSpecify">
+						<option value=1>General</option>
+						<option value=2>Organic</option>
+					</select>
 
-				<select id="mathDropdown" name="mathSubject" class="slInput tutorSubjSpecify">
-					<option value=1>Algebra</option>
-					<option value=2>Geometry/trigonometry</option>
-					<option value=3>Precalculus</option>
-					<option value=4>Calculus</option>
-				</select>
+					<select id="mathDropdown" name="mathSubject" class="slInput tutorSubjSpecify">
+						<option value=1>Algebra</option>
+						<option value=2>Geometry/trigonometry</option>
+						<option value=3>Precalculus</option>
+						<option value=4>Calculus</option>
+					</select>
 
-				<select id="physicsDropdown" name="physicsSubject" class="slInput tutorSubjSpecify">
-					<option value=1>Mechanics</option>
-					<option value=2>Electromagnetism</option>
-				</select>
+					<select id="physicsDropdown" name="physicsSubject" class="slInput tutorSubjSpecify">
+						<option value=1>Mechanics</option>
+						<option value=2>Electromagnetism</option>
+					</select>
 
-				<select id="csDropdown" name="csSubject" class="slInput tutorSubjSpecify">
-					<option value=1>C/C++</option>
-					<option value=2>Java</option>
-					<option value=3>Web development</option>
-				</select>
+					<select id="csDropdown" name="csSubject" class="slInput tutorSubjSpecify">
+						<option value=1>C/C++</option>
+						<option value=2>Java</option>
+						<option value=3>Web development</option>
+					</select>
 
-				<select id="tpDropdown" name="tpSubject" class="slInput tutorSubjSpecify">
-					<option value=1>SAT</option>
-					<option value=2>ACT</option>
-					<option value=3>GRE</option>
-					<option value=4>Other</option>
-				</select>
+					<select id="tpDropdown" name="tpSubject" class="slInput tutorSubjSpecify">
+						<option value=1>SAT</option>
+						<option value=2>ACT</option>
+						<option value=3>GRE</option>
+						<option value=4>Other</option>
+					</select>
 
-				<textarea 
-					id="message" 
-					name="userMessage" 
-					onfocusin="if (this.innerHTML == 'Ask me a question or just say hello!') this.innerHTML='' " 
-					onfocusout="if (this.innerHTML == '') this.innerHTML='Ask me a question or just say hello!' "
-				>Ask me a question or just say hello!</textarea>
+					<textarea 
+						id="message" 
+						name="userMessage" 
+						onfocusin="if (this.innerHTML == 'Ask me a question or just say hello!') this.innerHTML='' " 
+						onfocusout="if (this.innerHTML == '') this.innerHTML='Ask me a question or just say hello!' "
+					>Ask me a question or just say hello!</textarea>
 
-				<div class="nameEmail">
-					<input type="text" 
-						id="name" 
-						class="slInput" 
-						name="userName" 
-						value="Name" 
-						onfocusin="if (this.value == 'Name') this.value = '' "
-						onfocusout="if (this.value == '') this.value = 'Name' "
-					>
-					<input type="text"
-						id="email"  
-						class="slInput" 
-						name="userEmail" 
-						value="Email" 
-						onfocusin="if (this.value == 'Email') this.value = '' "
-						onfocusout="if (this.value == '') this.value = 'Email' "
-					>	
-				</div>
+					<div class="nameEmail">
+						<input type="text" 
+							id="name" 
+							class="slInput" 
+							name="userName" 
+							value="Name" 
+							onfocusin="if (this.value == 'Name') this.value = '' "
+							onfocusout="if (this.value == '') this.value = 'Name' "
+						>
+						<input type="text"
+							id="email"  
+							class="slInput" 
+							name="userEmail" 
+							value="Email" 
+							onfocusin="if (this.value == 'Email') this.value = '' "
+							onfocusout="if (this.value == '') this.value = 'Email' "
+						>	
+					</div>
 
-				<button type="submit">Send</button>
-			</form>
+					<button type="submit">Send</button>
+				</form>
+			</div>
 		</div>
 	</div>
 		

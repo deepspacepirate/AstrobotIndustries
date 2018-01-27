@@ -1,32 +1,113 @@
 /** {border: 1px solid red;}*/
 
-#bodyContent {
-
+#bodyContent-inner {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
-img#main-img{
-	width: 100%;
+#gallery {
+	width: 100vw;
+	height: 40vw;
+	max-height: 600px;
+
+	overflow: hidden;
+	background-color: black;
+
+	-webkit-transition: height 0.4s ease-out;
+			transition: height 0.4s ease-out;
+
+	z-index: 100;
+}
+
+@media screen and (max-height: 680px) {
+	#gallery {
+		max-height: calc(100vh - 105px);
+	}
+}
+
+
+#gallery #close {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 14px;
+	margin: 1vh;
+	border: 1px solid white;
+
+	width: 4vw;
+	height: 4vw;
+	max-width: 50px;
+	max-height: 50px;
+
+	border-radius: 50%;
+
+	background-color : rgba(0,0,0, .6);
+	-webkit-transition: background-color 0.2s ease-out;
+			transition: background-color 0.2s ease-out;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#gallery #close:hover {
+	background-color: rgba(255, 255, 255, .3);
+}
+
+#gallery #close img{
+	width: 4vw;
+	height: 4vw;
+	max-width: 30px;
+	max-height: 30px;
+
+	object-fit: contain;
+}
+
+#gallery .images{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 100vw;
+	min-height: 600px;
+}
+
+#gallery .images img{
+	width: 100vw;
+	max-width: 100vw;
 }
 
 #words {
 	margin: 1em;
+	max-width: 1300px;
 }
 
 h1 {
 	font-family: BebasBX;
 	letter-spacing: 2px;
-	font-size: 4em;
-	color: #19B7E0;
+	font-size: 6em;
+	color: white;
+	color: #5ecded;
 	padding: .2em 0;
 	text-transform: uppercase;
 	margin: 10px 0 .2em;
 }
 
 h2 {
-	font-size: 2em;
+	color: rgb(180,180,180);
+	font-size: 3.2em;
 	padding: .2em 0;
 	text-transform: uppercase;
-	margin: 2em 0 .5em;
+	margin: 1em 0 .5em;
+}
+
+h3 {
+	color: rgb(130,130,130);
+	font-size: 1.8em;
+	padding: .3em 0 .1em;
+	font-style: italic;
+	font-weight: bold;
 }
 
 p {
@@ -34,41 +115,68 @@ p {
 	line-height: 1.8em;
 }
 
-#gallery {
+#gallery-tiles {
+	max-width: 100vw;
+	height: auto;
+	margin-right: auto;
+	margin-left: auto;
+
 	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
+	flex-wrap: nowrap;
+	justify-content: left;
+
+	overflow-x: scroll;
+	overflow-y: hidden;
+
+
 }
 
-#gallery img.images{
-	margin: .2em;
-	background-color: darkgray;
+#gallery-tiles::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+	background-color: rgba(255,255,255,.04);
+}
+
+#gallery-tiles::-webkit-scrollbar {
+	height: 8px;
+	background-color: rgba(75,75,75,0);
+}
+
+#gallery-tiles::-webkit-scrollbar-thumb {
+	background-color: #19B7E0;
+}
+
+#gallery-tiles a {
+	border:none;
+	margin: 1px;
+}
+
+#gallery-tiles a:hover{
+	opacity: 0.6;
+	-webkit-transition: opacity 0.4s ease;
+			transition: opacity 0.4s ease;
+}
+
+#gallery-tiles a.selected{
+	opacity: 0.6;
+}
+
+#gallery-tiles img{
 	object-fit: cover;
 
-	min-width: 100px;
-	max-width: 300px;
-	width: 48vw;
+	min-width: 50px;
+	max-width: 70px;
+	width: 16vw;
 
-	min-height: 100px;
-	max-height: 300px;
-	height: 48vw;
-	overflow: hidden;
+	min-height: 50px;
+	max-height: 70px;
+	height: 16vw;
 }
 
-#gallery img:hover{
-	opacity: 0.6;
-	-webkit-transition: opacity 0.2s ease;
-			transition: opacity 0.2s ease;
-}
-
-#gallery img.images.zoom{
-	max-width: 10000%;
-	max-height: 1000%;
-	width: 100%;
-
-	-webkit-transition: opacity .8s ease;
-			transition: opacity .8s ease;
-	opacity: 1;
+@media screen and (min-height: 770px){
+	#gallery-tiles img{
+		max-width: 100px;
+		max-height: 100px;
+	}
 }
 
 @media screen and (min-width: 770px){
@@ -85,52 +193,3 @@ p {
 	}
 	
 }
-/*
-#gallery img#img00.images{
-	background-color: red;
-}
-
-#gallery img#img01.images{
-	background-color: orange;
-}
-
-#gallery img#img02.images{
-	background-color: yellow;
-}
-
-#gallery img#img03.images{
-	background-color: green;
-}
-
-#gallery img#img04.images{
-	background-color: blue;
-}
-
-#gallery img#img05.images{
-	background-color: indigo;
-}
-
-#gallery img#img06.images{
-	background-color: violet;
-}
-
-#gallery img#img07.images{
-	background-color: brown;
-}
-
-#gallery img#img08.images{
-	background-color: cyan;
-}
-
-#gallery img#img09.images{
-	background-color: magenta;
-}
-
-#gallery img#img10.images{
-	background-color: yellow;
-}
-
-#gallery img#img11.images{
-	background-color: black;
-}
-*/

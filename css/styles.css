@@ -32,6 +32,8 @@ body {
 	font-family: Verdana;
 	font-size: 10px;
 	margin: 0;
+
+	overflow-x: hidden;
 	
 	background-color: #f3f3f3;	
 }
@@ -53,10 +55,20 @@ body {
 	background: transparent;
 }
 
+#bodyContent-inner {
+	min-width: 320px;
+	margin-right: auto;
+	margin-left: auto;
+	overflow: hidden;
+}
+
 #bodycontent a {
 	color: rgb(85, 85, 85);
 	text-decoration: none;
-	border-bottom: 3px solid #19B7E0;
+	
+	border-color: #19B7E0;
+	border-bottom-style: solid;
+	border-bottom-color: 3px;
 
 	-webkit-transition: background-color .3s;
 			transition: background-color .3s;
@@ -123,7 +135,7 @@ body {
 #navbar a.home {
 	font-family: SquareX;
 	letter-spacing: 2px;
-	font-size: 3em;
+	font-size: 2.1em;
 	color: #faed26;
 	padding: .6em;
 	line-height: 1em;
@@ -143,7 +155,7 @@ body {
 	line-height: 1em;
 	padding: .6em 0em;
 	min-width: 0;
-	width: 3em;
+	width: 2.3em;
 }
 #navbar a.icon:hover {
 	color: white;
@@ -162,10 +174,7 @@ body {
 }
 
 #navbar.hamExpand a.icon {
-	/*position: absolute;
-	right: 0;
-	top: 0;*/
-	width: 3em;
+	width: 2.3em;
 }
 
 .sticky {
@@ -250,6 +259,12 @@ body {
 #toggle:hover .back{
 	-webkit-transform: rotateY(0);
 			transform: rotateY(0);
+}
+
+@media screen and (max-width: 410) {
+	#navbar a.home {
+		font-size: 3em;
+	}
 }
 
 @media screen and (min-width: 800px) {

@@ -1,8 +1,8 @@
 // Get page name, for activating almonds, directory navigation
-var path = window.location.pathname,
+var path = window.location.pathname;
 // file = path.match(/[^\/]+$/)[0],
-parDir = path;
-page = path.match(/[^\/]+(?=\.html)/)[0] // match faster than split+pop https://jsperf.com/split-pop-vs-regex-match
+var parDir = path;
+var page = path.match(/[^\/]+(?=\.html)/)[0] // match faster than split+pop https://jsperf.com/split-pop-vs-regex-match
 var rootpath = path.match(/^.+AstrobotIndustries\//)[0];
 console.log(page);
 
@@ -11,7 +11,7 @@ var lastScrollTop1 = 0;
 var lastScrollTop2 = 0;
 
 // For scroll timeout
-var timer0, timer1, timer2;
+var timer, timer0, timer1, timer2;
 
 var navStuck = false;
 var navOpen = false;
@@ -55,7 +55,7 @@ $(document).ready(function() {
 	// Detect scroll, bring/hide navbar
 	$(window).scroll(function(){
 		if (page != 'index'){
-			if ( timer1 ) clearTimeout(timer1);
+			clearTimeout(timer1);
 			timer1 = setTimeout( bringmenu, 50 );
 		}
 	});
@@ -80,17 +80,11 @@ function ldToggle() {
 
 		if(document.getElementById("darkCSS") == null) {
 			$('head').append('<link id="darkCSS" rel="stylesheet" type="text/css" href="' + rootpath + '/css/dark.css">');
-			// newfront.css('background-color', '#243b6d')
-			// newback.css('background-color', 'skyblue')
 			// setCookie('daynight', 'night', .5)
-			// console.log(getCookie('daynight'));
 		}
 		else {
 			$('#darkCSS').remove();
-			// newback.css('background-color', '#243b6d')
-			// newfront.css('background-color', 'skyblue')
 			// setCookie('daynight', 'day', .5)
-			// console.log(getCookie('daynight'));
 		}
 		if ( page === 'projects' || page === 'academics'){
 			changeNumCards();
@@ -137,18 +131,18 @@ function navStick() {
 	}
 }
 
-function debounce(f, t) {
-	clearTimeout(timer);
-	timer = setTimeout(f, t);
+function debounce(t, timervar, f) {
+	if (timervar) clearTimeout(timervar);
+	timervar = setTimeout(f, t);
 }
 
 function bringmenu() {
 	var st = window.pageYOffset || document.documentElement.scrollTop;  
-		if (st > lastScrollTop1 + 10) {
+		if (st > lastScrollTop1 + 5) {
 			$('#navbar').css('top', '-' + ( $('#navbar').height() + 20 )+'px');
 			$('#navbar').removeClass('hamExpand');
 		} 
-		else if (st < lastScrollTop1 -10) {
+		else if (st < lastScrollTop1 - 5) {
 			$('#navbar').css('top', 0);
 		}
 	lastScrollTop1 = st;
@@ -159,7 +153,7 @@ function bringmenu() {
 function screenResize() {
 	moveLDToggle();
 	if (navStuck) $('#bodyContent').css('margin-top', 'calc(2em + '+ $('#navbar').height() + 'px)');
-	scale($("#bodyContent"), 'width', '%', window.innerWidth, 650, 100, 900, 90, 2000, 70);
+	scale($("#bodyContent-inner"), 'width', '%', window.innerWidth, 650, 100, 900, 90, 2000, 70);
 	scale($("body"), 'font-size', 'px', window.innerWidth, 800, 9, 1200, 10, 2000, 12);
 
 	if ( page === 'about' ){
@@ -208,9 +202,9 @@ function sticky(element) {
 	}
 }
 
-// Find number of cards per row
+// Find number of cards per row on pages with masonry
 function changeNumCards() {
-	var bodyWidth = $("#bodyContent").width();
+	var bodyWidth = $("#bodyContent-inner").width();
 	var card = $(".grid-item");
 
 	var numCards;
@@ -232,4 +226,8 @@ function moveLDToggle(){
 		$('#toggle').insertAfter(lastNavLink);
 		ldToggleEnd = true;
 	}
+}
+
+function consoleTest(message){
+	console.log(message);
 }

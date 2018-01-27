@@ -11,7 +11,7 @@
 
 @media screen and (min-width: 680px) {
 	
-	#bodyContent{
+	#bodyContent-inner{
 		height: 80vh;
 		display: flex;
 		justify-content: space-around;

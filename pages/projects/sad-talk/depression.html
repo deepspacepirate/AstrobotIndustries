@@ -1,0 +1,185 @@
+<html>
+
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<title>
+		Really heavy small talk
+	</title>
+
+<script>
+
+	var captionElement; var defaultCaption;
+
+	var captions = [
+		"I spend every waking moment contemplating my worthlessness as a person. Suicide seems like a viable alternative.",
+		"I am a failure in life. Please lambaste me.",
+		"I'm depressed. There is no future for me.",
+		"Please kill me so that I do not have to overcome the insurmountable apathy impeding my ability to make that decision myself.",
+		"Help me. I've lost control of my life.",
+		"I spend all day playing video games and surfing the internet instead of looking for a job because it's an effective way to distract myself from my perpetual feelings of lack of self worth and desire to die.",
+		"I want to die, but the prerequisite to death is inflicting harm upon myself and that leads to further pain.",
+		"Such a Herculean effort is required to do anything, that finding the energy to even get out of bed to face a new day is a momentous achievement.",
+		"I could tell you a lie, but really I've just been idling about and waiting for death to see me to a swift and timely demise.",
+		"My crippling indecision prevents me from formulating and following through with any sort of cohesive plan for my future.",
+		"I am trapped in a vicious cycle of self pity and self loathing prompted by feeling unentitled to such negative emotions.",
+		"I am incapable of appreciating beauty and talent  because I have an overwhelming compulsion to compare myself to others, and all of my experiences are thusly tainted by a sense of inadequacy.",
+		"I live with a constant and paralyzing fear of inadvertently making a decision with permanent and life altering consequences. The existential terror of a life not well lived permeates my every thought.",
+		"I take life day by day. Every night, I hope I won't wake up the next morning to face the drear and desolation of life. It's always disappointing when I wake up and realize I have lived another day and must live yet another.",
+		"I avoid confronting real life and its responsibilities because therein lies infinite opportunites for failure.",
+	];
+
+	window.onload = function() {
+		captionElement = document.getElementById("caption");
+		captionElement.innerHTML = "(click anywhere or press any key)";
+	};
+
+	function randomize() {
+		var chosen = Math.floor(Math.random() * captions.length);
+		captionElement.innerHTML = captions[chosen];
+	}
+
+	window.onkeydown = randomize;
+	window.onmousedown = randomize;
+
+</script>
+
+<style> 
+	@font-face {
+		font-family: SwissaPiccola-Regular;
+		src: url(swissapiccola-regular.ttf);
+	}
+		
+	@font-face {
+		font-family: Mountain Retreat; 
+		src: url(mountain_retreat.ttf);
+		}
+
+	@font-face {
+		font-family: Telegraphem; 
+		src: url(telegraphem.ttf);
+	}
+
+	::selection {
+		background: gray;
+	}
+
+	body {
+		background-color: black;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+
+		font-size: 10px;
+		max-width: 320px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.text {
+		font-family: SwissaPiccola-Regular;
+		font-size: 1.4em; 
+		color: dimgray;
+		margin: .6em 0px;
+	}
+
+	#title {
+		color: darkgray;
+		font-weight: normal; 
+		font-size: 5.5em; 
+		font-family: Mountain Retreat;
+		margin: -0.2em 0 .1em;
+	}
+
+	#caption {
+		color: lightgray;
+		font-size: .8em;
+		font-family: Telegraphem;
+		line-height: 1.6em;
+	}
+
+	a {
+		color: skyblue;
+		text-decoration: none;
+	}
+
+	table {
+		width: 100%;
+	}
+
+	td {
+		height: 195px;
+		padding: 1em;
+		
+		text-align: center;
+		background-color: black;
+		border-radius: 10px;
+	}
+
+	@media screen and (min-width: 470px) and (min-height: 700px){
+		body{
+			max-width: 450px;
+			font-size: 14px;
+		}
+	}
+
+	@media screen and (min-width: 615px) and (min-height: 870px){
+		body {
+			max-width: 560px;
+		}
+
+		#title {
+			font-size: 7.5em; 
+		}
+
+		#caption {
+			font-size: 1.4em;
+		}
+
+		table {
+			margin: 1.9em 0px;
+		}
+
+		td {
+			height: 400px;
+			width: 70%;
+		}
+	}
+		
+	</style>
+</head>
+	
+
+<body class="vsc-initialized">
+
+	<div class="text">
+		Answers to the question,
+	</div> 
+	
+	
+	<div id="title">
+		"How are you doing?"
+	</div> 
+	
+	
+	<div class="text">
+		how to be a fount of uncomfortable truths
+	</div>   
+	
+
+	<table><tbody><tr><td>
+		<div id="caption"></div>
+	</td></tr></tbody></table>
+
+
+	<div class="text">
+		these facts are best said cheerfully and matter of factly.
+	</div>
+
+<!--     <div class="text" style="color: white; font-size: .9em; position: fixed; bottom: 0; right: 1em;">
+		<a href="https://suicidepreventionlifeline.org">national suicide prevention line</a> | <a href="https://suicidepreventionlifeline.org/chat/">chat</a>
+	</div> -->
+	
+</body></html>
