@@ -110,6 +110,10 @@ input[type="checkbox"]:checked{
 	background-color: #faed26;
 }
 
+#gallery-tiles::-webkit-scrollbar {
+	height: 6px;
+}
+
 #bodycontent #bodycontent-inner #words h1{
 	color: #6FC8E0;
 }
