@@ -5,17 +5,19 @@ $(document).ready(function() {
 	firstImage = $('.img_link').first();
 	lastImage = $('.img_link').last();
 	selectedImage = firstImage;
-	targetImage = $(selectedImage.attr('href')).children();
+	targetImage = $(selectedImage.attr('href'));
+	select(selectedImage);
 
 	// remove x for image gallery
 	$('#gallery > #close').css('visibility', 'hidden');
 	$('#gallery > #close').click(closeGallery);
 
 	// select gallery images
-	$('#gallery-tiles > a').click( function() {
+	$('#gallery-tiles > a').click( function(e) {
+		e.preventDefault();
 		select($(this));
 		openGallery();
-
+		return false;
 	});
 
 	$('#gallery > .images').click( function() {
@@ -64,7 +66,14 @@ function select(imageClicked) {
 
 	selectedImage = imageClicked;
 	targetImage = $(selectedImage.attr('href'));
-	window.location = path + selectedImage.attr('href');
+
+	$('html, body').animate({
+		scrollTop: $('#gallery').offset().top
+	}, 500);
+
+	$('.images').css('display', 'none');
+	targetImage.css('display', 'flex');
+
 	$('.img_link').removeClass('selected');
 	selectedImage.addClass('selected');
 }
@@ -107,7 +116,8 @@ function closeGallery() {
 }
 
 function reScroll() {
-	window.location.href = path + selectedImage.attr('href');
+	$('#gallery').animate({scrollTop: targetImage[0].offset}, 1);
+
 
 	if (window.innerWidth * 0.3 > 600) galHeight = 600;
 	else galHeight = window.innerWidth * 0.3;
