@@ -126,13 +126,13 @@ body {
 	width: 100%;
 	
 	font-family: BowmanX;
-	font-size: 2.1em;
+	font-size: 1.7em;
 	color: white;
 	text-decoration: none;
 	text-transform: uppercase;
 	
 	line-height: .8em;
-	padding: 1em;	
+	padding: .8em;	
 
 }
 
@@ -148,11 +148,11 @@ body {
 #navbar a.home {
 	font-family: SquareX;
 	letter-spacing: 2px;
-	font-size: 2.1em;
+	font-size: 1.7em;
 	color: var(--yellow);
 
 	padding: .6em 1em;
-	line-height: 2em;
+	line-height: 1.7em;
 }
 
 /* Navbar collapsed */
@@ -168,7 +168,7 @@ body {
 	right: 0;
 	
 	text-align: center;
-	font-size: 3em;
+	font-size: 2.2em;
 	line-height: 1em;
 	padding: .6em 0em;
 	min-width: 0;
@@ -202,8 +202,8 @@ body {
 
 #navbar #toggle {
 	display: none;
-	width: 4em;
-	height: 4em;
+	width: 3.5em;
+	height: 3.5em;
 }
 
 #navbar.hamExpand #toggle {
@@ -219,8 +219,8 @@ body {
 	    -moz-border-radius: 100%;
 			border-radius: 100%;
 
-	width: 4em;
-	height: 4em;
+	width: 3.5em;
+	height: 3.5em;
 
 	-webkit-backface-visibility: hidden;
 			backface-visibility: hidden;
@@ -238,19 +238,19 @@ body {
 }
 
 #toggle img.day {
-	width: 3.5em;
+	width: 2.84em;
 	height: auto;
 	position: relative;
-	top: .27em;
-	left: .3em;
+	top: .22em;
+	left: .24em;
 }
 
 #toggle img.night{
-	width: 3em;
+	width: 2.43em;
 	height: auto;
 	position: relative;
-	top: .45em;
-	left: .56em;
+	top: .36em;
+	left: .45em;
 }
 
 #toggle:hover .front {
@@ -269,7 +269,7 @@ body {
 	}
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 700px) {
 	#navbar {
 		display: flex;
 		flex-direction: row;

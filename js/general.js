@@ -1,3 +1,7 @@
+// dependencies:
+// 	Ben Alman's debounce	http://benalman.com/code/projects/jquery-throttle-debounce/jquery.ba-throttle-debounce.js
+// 	jQuery
+
 // Get page name, for activating almonds, directory navigation
 var path = window.location.pathname;
 // file = path.match(/[^\/]+$/)[0],
@@ -14,13 +18,11 @@ var navStuck = false;
 var navOpen = false;
 var ldToggleEnd = true;
 
-var navbarWidthLimit = 800;
+var navbarWidthLimit = 700;
 
 var lastNavLink; 
 
-
 $(document).ready(function() {
-	console.log('Well, aren\'t you nosy. Click on the $200+ checkbox twelve times.');
 	// console.log(getCookie('daynight'));
 	// if (getCookie('daynight') == 'night' ) ldToggle();
 	$('#toggle').click(ldToggle);
@@ -32,7 +34,7 @@ $(document).ready(function() {
 		navTitle = navTitle.toLowerCase();
 		if (navTitle === 'contact') lastNavLink = element;
 		if (navTitle == page) element.addClass('active');
-		if ( navTitle === 'blog' || navTitle === 'endeavors') element.hide();
+		if (navTitle === 'blog' || navTitle === 'endeavors') element.hide();
 	});
 
 	// Position body content from top
@@ -40,20 +42,19 @@ $(document).ready(function() {
 	if (page != 'index') $('#bodyContent').css( 'margin-top', $('#navbar').outerHeight() + 20);
 
 	// Adjust with of body content
-	if (window.innerWidth > 650) window.onresize = debounce(screenResize, 50);
+	window.onresize = $.debounce(50, screenResize);
 
 	// Detect scroll, bring/hide navbar
-	$(window).scroll(function(){if (page != 'index') debounce(bringmenu, 50);});
+	$(window).scroll($.debounce(150, function(){
+		if (page != 'index')  bringmenu();
+	}));
 	$('#menuButton').click(toggleHamStack);
 	$('#bodyContent').click( function() {
 		if ($('#navbar').hasClass('hamExpand')) toggleHamStack();
 	});
 
-
 	// Home sticky menu
 	if (page === 'index' ) {$(window).scroll(navStick);}
-
-
 });
 
 function ldToggle() {

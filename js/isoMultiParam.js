@@ -1,4 +1,7 @@
 // https://codepen.io/desandro/pen/btFfG?editors=1010
+// dependencies: 
+// 		isoMasonry.js
+
 var filters = {};
 
 $(document).ready(function() {

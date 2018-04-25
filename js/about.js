@@ -1,7 +1,8 @@
 $(document).ready(function() {
-
-	showChats();
-	$(window).on('scroll', showChats);
+	$(window).on({
+		load: showChats,
+		scroll: showChats
+	});
 
 });
 

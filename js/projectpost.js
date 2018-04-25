@@ -42,15 +42,14 @@ $(document).ready(function() {
 	});
 
 	// fix gallery on resize
-	window.onresize = function() {
-		clearTimeout(timer2);
-		timer2 = setTimeout(function() {
-			if (galOpened) {
-				select(selectedImage);
-				openGallery();
-			}
-		}, 200);
-	};
+	window.onresize = $.debounce(200, function() {
+		if (galOpened) {
+			select(selectedImage);
+			openGallery();
+		}
+		console.log('bam');
+	});
+
 });
 
 

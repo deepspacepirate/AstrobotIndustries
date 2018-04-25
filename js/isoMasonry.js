@@ -16,23 +16,8 @@ $(document).ready(function() {
 	});
 
 	window.onload = function(){ $grid.isotope(); }
+	window.onresize = $.debounce(50, changeNumCards);
 });
-
-
-// debounce so filtering doesn't happen every millisecond
-function debounce( fn, threshold ) {
-	var timeout;
-	threshold = threshold || 200;
-	return function debounced() {
-		clearTimeout( timeout );
-		var args = arguments;
-		var _this = this;
-		function delayed() {
-			fn.apply( _this, args );
-		}
-		timeout = setTimeout( delayed, threshold );
-	};
-}
 
 // Find number of cards per row on pages with masonry
 function changeNumCards() {

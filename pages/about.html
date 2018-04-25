@@ -12,6 +12,7 @@ ASTROBOT!
 	<link rel="stylesheet" href="../css/contactform.css">
 
 	<script src="../js/jquery-3.2.1.min.js"></script>
+	<script src="http://benalman.com/code/projects/jquery-throttle-debounce/jquery.ba-throttle-debounce.js"></script>
 	<script src="../js/general.js"></script>
 	<script src="../js/about.js"></script>
 </head>
@@ -99,12 +100,11 @@ ASTROBOT!
 				<div class="formcontainer">
 
 					<a href="contact.html">
-						<form action="/beam-to-the-moon" method="post">
+						<form>
 							<textarea 
 								id="message" 
 								name="userMessage" 
-								onfocusin="if (this.innerHTML == 'Send me a message?') this.innerHTML='' " 
-								onfocusout="if (this.innerHTML == '') this.innerHTML='Send me a message?' "
+								placeholder="Send me a message?"
 							>Send me a message?</textarea>
 						</form>
 					</a>
