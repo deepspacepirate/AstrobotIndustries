@@ -10,9 +10,6 @@ console.log(page);
 var lastScrollTop1 = 0;
 var lastScrollTop2 = 0;
 
-// For scroll timeout
-var timer, timer0, timer1, timer2;
-
 var navStuck = false;
 var navOpen = false;
 var ldToggleEnd = true;
@@ -23,7 +20,7 @@ var lastNavLink;
 
 
 $(document).ready(function() {
-	console.log('Well, aren\'t you nosy. Click on the $$$$$ checkbox twelve times.');
+	console.log('Well, aren\'t you nosy. Click on the $200+ checkbox twelve times.');
 	// console.log(getCookie('daynight'));
 	// if (getCookie('daynight') == 'night' ) ldToggle();
 	$('#toggle').click(ldToggle);
@@ -43,22 +40,10 @@ $(document).ready(function() {
 	if (page != 'index') $('#bodyContent').css( 'margin-top', $('#navbar').outerHeight() + 20);
 
 	// Adjust with of body content
-	if (window.innerWidth > 650) {
-		// window.onresize = function() {
-		// 	clearTimeout(timer0);
-		// 	timer0 = setTimeout(screenResize, 50);
-		// };
-		window.onresize = debounce(screenResize, 50);
-	}
+	if (window.innerWidth > 650) window.onresize = debounce(screenResize, 50);
 
 	// Detect scroll, bring/hide navbar
-	$(window).scroll(function(){
-		if (page != 'index'){
-			// debounce(bringmenu, 50, timer1);
-			clearTimeout(timer1);
-			timer1 = setTimeout( bringmenu, 50 );
-		}
-	});
+	$(window).scroll(function(){if (page != 'index') debounce(bringmenu, 50);});
 	$('#menuButton').click(toggleHamStack);
 	$('#bodyContent').click( function() {
 		if ($('#navbar').hasClass('hamExpand')) toggleHamStack();

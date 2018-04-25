@@ -95,8 +95,7 @@ ASTROBOT!
 					<textarea 
 						id="message" 
 						name="userMessage" 
-						onfocusin="if (this.innerHTML == 'Ask me a question or just say hello!') this.innerHTML='' " 
-						onfocusout="if (this.innerHTML == '') this.innerHTML='Ask me a question or just say hello!' "
+						placeholder="Ask me a question or just say hello!" 
 					>Ask me a question or just say hello!</textarea>
 
 					<div class="nameEmail">
@@ -105,16 +104,14 @@ ASTROBOT!
 							class="slInput" 
 							name="userName" 
 							value="Name" 
-							onfocusin="if (this.value == 'Name') this.value = '' "
-							onfocusout="if (this.value == '') this.value = 'Name' "
+							placeholder="Name" 
 						>
 						<input type="text"
 							id="email"  
 							class="slInput" 
 							name="userEmail" 
-							value="Email" 
-							onfocusin="if (this.value == 'Email') this.value = '' "
-							onfocusout="if (this.value == '') this.value = 'Email' "
+							value="Email"
+							placeholder="Email" 
 						>	
 					</div>
 

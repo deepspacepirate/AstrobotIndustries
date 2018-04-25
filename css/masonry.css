@@ -11,7 +11,7 @@
 
 #bodyContent .bodyContent-inner .grid-item {
 	float: none;
-	min-width: 1;
+	/*min-width: 1;*/
 	overflow: hidden;
 }
 
@@ -97,10 +97,10 @@
 	margin: .4em 0 0;
 }
 
-@media screen and (min-width: 755px) {
+@media screen and (min-width: 595px) {
 	#bodyContent .bodyContent-inner .grid-item {
 		float: left;
-		min-width: 300;
+		min-width: 290;
 	}
 	#bodyContent .bodyContent-inner .grid-item .projectCard {
 		padding: 1.5em;

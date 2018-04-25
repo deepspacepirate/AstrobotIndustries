@@ -1,4 +1,4 @@
-// quick search regex
+// https://codepen.io/desandro/pen/mCdbD
 var qsRegex;
 var buttonFilter;
 var $grid;
@@ -41,7 +41,9 @@ function changeNumCards() {
 
 	var numCards;
 	var cardWidth;
-	if (bodyWidth <= 750) cardWidth = '100%';
+	if (bodyWidth <= 595) { // keep this limit equal to min-width in masonry.css
+		cardWidth = '100%';
+	}
 	else {
 		numCards =  Math.floor(bodyWidth/ parseInt(card.css('min-width')) ) ;
 		cardWidth = 100/numCards + '%';

@@ -14,6 +14,7 @@ ASTROBOT!
 	<script src="../js/jquery-3.2.1.min.js"></script>
 	<script src="../js/isotope.pkgd.min.js"></script>
 	<script src="../js/isoMasonry.js"></script>
+	<script src="../js/isoMultiParam.js"></script>
 	<script src="../js/isoSearch.js"></script>
 	<script src="../js/general.js"></script>
 	<script src="../js/projects.js"></script>
@@ -50,49 +51,53 @@ ASTROBOT!
 				<!-- <div class="icon">&#9906;</div> -->
 
 				<div id="searchParams" class="button-group">					
-					<div id="tags-sg" class="selector-group">
+					<div class="selector-group" data-group="tags" id="tags-sg">
 						<h1>Tags</h1>
 						<div id="tags" class="button-group">
-							<button class="button" data-filter=".software">Software</button>
-							<button class="button" data-filter=".wetware">Wetware</button>
-							<button class="button" data-filter=".electrical">Electrical</button>
-							<button class="button" data-filter=".mechanical">Mechanical</button>
-							<button class="button" data-filter=".science">Science</button>
-							<button class="button" data-filter=".interactive">Interactive</button>
-							<button class="button" data-filter=".artistic">Artistic</button>
-							<button class="button" data-filter=".costumes">Costumes</button>
+							<label id="software">		<input type="checkbox" class="button" data-filter=".software">Software</label>
+							<label id="wetware">		<input type="checkbox" class="button" data-filter=".wetware">Wetware</label>
+							<label id="electrical">		<input type="checkbox" class="button" data-filter=".electrical">Electrical</label>
+							<label id="mechanical">		<input type="checkbox" class="button" data-filter=".mechanical">Mechanical</label>
+							<label id="science">		<input type="checkbox" class="button" data-filter=".science">Science</label>
+							<label id="interactive">	<input type="checkbox" class="button" data-filter=".interactive">Interactive</label>
+							<label id="artistic">		<input type="checkbox" class="button" data-filter=".artistic">Artistic</label>
+							<label id="costumes">		<input type="checkbox" class="button" data-filter=".costumes">Costumes</label>
 						</div>
 					</div>
 
-					<div id="completion-sg" class="selector-group">
+					<div class="selector-group" data-group="completion" id="completion-sg">
 						<h1>Completion</h1>
 						<div id="completion" class="button-group">
-							<button class="button" data-filter=".completed">Completed</button>
-							<button class="button" data-filter=".inProgress">In Progress</button>
-							<button class="button" data-filter=".planned">Planned</button>
+							<label id="completed">		<input type="checkbox" class="button" data-filter=".completed">Completed</label>
+							<label id="inProgress">		<input type="checkbox" class="button" data-filter=".inProgress">In Progress</label>
+							<label id="planned">		<input type="checkbox" class="button" data-filter=".planned">Planned</label>
 						</div>
 					</div>
 
-					<div id="cost-sg" class="selector-group">
+					<div class="selector-group" data-group="cost" id="cost-sg">
 						<h1>Cost</h1>
 						<div id="cost" class="button-group">
-							<button class="button" data-filter=".lowcost">$</button>
-							<button class="button" data-filter=".medcost">$$</button>
-							<button class="button" data-filter=".highcost">$$$</button>
-							<button class="button" data-filter=".vhighcost">$$$$</button>
+							<label id="lowcost">		<input type="checkbox" class="button" data-filter=".lowcost">$0+</label>
+							<label id="medcost">		<input type="checkbox" class="button" data-filter=".medcost">$50+</label>
+							<label id="highcost">		<input type="checkbox" class="button" data-filter=".highcost">$100+</label>
+							<label id="vhighcost">		<input type="checkbox" class="button" data-filter=".vhighcost">$200+</label>
 						</div>
 					</div>
 
-					<div id="complexity-sg" class="selector-group">
+					<div class="selector-group" data-group="complexity" id="complexity-sg">
 						<h1>Complexity</h1>
 						<div id="complexity" class="button-group">
-							<button class="button" data-filter=".simple">Simple</button>
-							<button class="button" data-filter=".intermediate">Intermediate</button>
-							<button class="button" data-filter=".complex">Complex</button>
+							<label id="simple">			<input type="checkbox" class="button" data-filter=".simple">Simple</label>
+							<label id="intermediate">	<input type="checkbox" class="button" data-filter=".intermediate">Intermediate</label>
+							<label id="complex">		<input type="checkbox" class="button" data-filter=".complex">Complex</label>
 						</div>
 					</div>
 
-					<button id="reset" class="button is-checked" data-filter="*">Reset</button>
+					<div class="selector-group" data-group="reset" id="reset-sg">
+						<div class="button-group">
+							<label id="reset">				<input type="checkbox" class="button all" data-filter="">Reset</label>
+						</div>
+					</div>
 
 					<!-- <button class="button" data-filter=".metal:not(.transition)">metal but not transition</button> -->
 				</div>
@@ -592,7 +597,7 @@ ASTROBOT!
 					</div>
 				</div>
 
-				<div id="project-0003" class="grid-item artistic costumes completed highcost intermediate">
+				<div id="project-0003" class="grid-item artistic costumes completed medcost intermediate">
 					<div class="projectCard">
 
 						<div class="slideshow"
@@ -654,7 +659,7 @@ ASTROBOT!
 
 						<div class="slideshow" 
 							style="
-								background-image: url(https://scontent.cdninstagram.com/t/s320x320/19533664_2077288325831635_7962887938222587904_n.jpg);
+								background-image: url(https://media1.tenor.com/images/f472454536fea982cae64bd8c63b07f8/tenor.gif);
 							">
 						</div>
 

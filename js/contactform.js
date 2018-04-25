@@ -5,7 +5,7 @@ $(document).ready(function() {
 		else {
 			$('#tutorDropdown').hide();
 			$('.tutorSubjSpecify').each( function() {
-					$(this).hide();
+				$(this).hide();
 			});
 		}
 	});
