@@ -1,0 +1,53 @@
+#bodyContent .banner{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	height: 35vh;
+	width: 100%;
+	margin: 4em 0 4em;
+
+	background-color: black;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: 50% 50%;
+	background-image: 
+		linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), 
+		var(--img)
+	;
+}
+
+#bodyContent .banner h1 {
+	font-family: 'Do Hyeon', sans-serif;
+	color: white;
+	text-shadow: 5px white;
+	text-transform: uppercase;
+	font-weight: normal;
+	font-size: 4em;
+	
+	padding: .2em 0em;
+	margin: 10px 0 .2em;
+	text-align: center;
+}
+
+@media screen and (min-width: 780px) {
+	#bodyContent .banner h1 {
+		font-size: 6em;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	#bodyContent .banner h1 {
+		font-size: 8em;
+	}
+}
+/*
+@media screen and (aspect-ratio: 8/5) {
+	#bodyContent .banner{
+		background-image: 
+			linear-gradient(to right, black 2%, rgba(0, 0, 0, .5) 15%, rgba(0, 0, 0, .5) 85%, black 98%), 
+			var(--img)
+		;
+	}
+}*/

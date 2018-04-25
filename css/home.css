@@ -215,6 +215,9 @@ img { -ms-interpolation-mode: bicubic; }
 
 /* body Content */
 #bodyContent {
+	display: flex;
+	justify-content: center;
+	
 	position: relative;
 	margin: 2em auto;
 
@@ -225,14 +228,8 @@ img { -ms-interpolation-mode: bicubic; }
 	overflow: hidden;
 
 	font-family: "Arial";
-	/*background-color: white;*/
 	
 	z-index: 1;
-}
-
-#bodyContent-inner {
-	margin-left: auto;
-	margin-right: auto;	
 }
 
 .terminal {

@@ -12,7 +12,9 @@ ASTROBOT!
 	<link rel="stylesheet" href="../css/projects.css">
 
 	<script src="../js/jquery-3.2.1.min.js"></script>
-	<script src="../js/masonry.pkgd.min.js"></script>
+	<script src="../js/isotope.pkgd.min.js"></script>
+	<script src="../js/isoMasonry.js"></script>
+	<script src="../js/isoSearch.js"></script>
 	<script src="../js/general.js"></script>
 	<script src="../js/projects.js"></script>
 
@@ -42,56 +44,64 @@ ASTROBOT!
 	
 
 	<div id="bodyContent">
-		<div id="bodyContent-inner">
+		<div class="bodyContent-inner">
 			<div id="search">
-				<div class="searchbox">
-					Search
-					<div class="icon">&#9906;</div>
-				</div>
-				
-				<form id="searchParams">
-					<div class="checkboxes tags">
+				<input type="text" id="quicksearch" class="searchbox" placeholder="Search" />
+				<!-- <div class="icon">&#9906;</div> -->
+
+				<div id="searchParams" class="button-group">					
+					<div id="tags-sg" class="selector-group">
 						<h1>Tags</h1>
-						<div class="col1">
-							<input type="checkbox" name="software" value=0>Software<br>
-							<input type="checkbox" name="wetware" value=0>Wetware<br>
-							<input type="checkbox" name="hardware" value=0>Electrical<br>
-							<input type="checkbox" name="mechanical" value=0>Mechanical<br>
-						</div>
-						<div class="col2">
-							<input type="checkbox" name="science" value=0>Science<br>
-							<input type="checkbox" name="interactive" value=0>Interactive<br>
-							<input type="checkbox" name="artistic" value=0>Artistic<br>
-							<input type="checkbox" name="costumes" value=0>Costumes<br>
+						<div id="tags" class="button-group">
+							<button class="button" data-filter=".software">Software</button>
+							<button class="button" data-filter=".wetware">Wetware</button>
+							<button class="button" data-filter=".electrical">Electrical</button>
+							<button class="button" data-filter=".mechanical">Mechanical</button>
+							<button class="button" data-filter=".science">Science</button>
+							<button class="button" data-filter=".interactive">Interactive</button>
+							<button class="button" data-filter=".artistic">Artistic</button>
+							<button class="button" data-filter=".costumes">Costumes</button>
 						</div>
 					</div>
 
-					<div class="checkboxes competion">
+					<div id="completion-sg" class="selector-group">
 						<h1>Completion</h1>
-						<input type="checkbox" name="completed" value=0>Completed<br>
-						<input type="checkbox" name="inProgress" value=0>In Progress<br>
-						<input type="checkbox" name="planned" value=0>Planned<br>
+						<div id="completion" class="button-group">
+							<button class="button" data-filter=".completed">Completed</button>
+							<button class="button" data-filter=".inProgress">In Progress</button>
+							<button class="button" data-filter=".planned">Planned</button>
+						</div>
 					</div>
 
-					<div class="checkboxes cost">
+					<div id="cost-sg" class="selector-group">
 						<h1>Cost</h1>
-						<input type="checkbox" name="verylow" value=0>$<br>
-						<input type="checkbox" name="low" value=0>$$<br>
-						<input type="checkbox" name="medium" value=0>$$$<br>
-						<input type="checkbox" name="high" value=0>$$$$<br>
+						<div id="cost" class="button-group">
+							<button class="button" data-filter=".lowcost">$</button>
+							<button class="button" data-filter=".medcost">$$</button>
+							<button class="button" data-filter=".highcost">$$$</button>
+							<button class="button" data-filter=".vhighcost">$$$$</button>
+						</div>
 					</div>
 
-					<div class="checkboxes complexity">
+					<div id="complexity-sg" class="selector-group">
 						<h1>Complexity</h1>
-						<input type="checkbox" name="simple" value=0>Simple<br>
-						<input type="checkbox" name="intermediate" value=0>Intermediate<br>
-						<input type="checkbox" name="complex" value=0>Complex<br>
+						<div id="complexity" class="button-group">
+							<button class="button" data-filter=".simple">Simple</button>
+							<button class="button" data-filter=".intermediate">Intermediate</button>
+							<button class="button" data-filter=".complex">Complex</button>
+						</div>
 					</div>
-				</form>
+
+					<button id="reset" class="button is-checked" data-filter="*">Reset</button>
+
+					<!-- <button class="button" data-filter=".metal:not(.transition)">metal but not transition</button> -->
+				</div>
+
 			</div>
 
 			<div class="grid">
 
+				<!-- Template card -->
 				<div id="project-10000" class="grid-item">
 					<div class="projectCard">
 
@@ -119,6 +129,7 @@ ASTROBOT!
 						</div>
 					</div>
 				</div>
+				<!-- end template card -->
 
 				<div id="project-9999" class="grid-item">
 					<div class="projectCard">
@@ -148,7 +159,7 @@ ASTROBOT!
 					</div>
 				</div>
 
-				<div id="project-0000" class="grid-item">
+				<div id="project-0000" class="grid-item electrical mechanical planned vhighcost complex">
 					<div class="projectCard">
 
 						<div class="slideshow"
@@ -176,7 +187,7 @@ ASTROBOT!
 					</div>
 				</div>
 
-				<div id="project-0000" class="grid-item">
+				<div id="project-0000" class="grid-item electrical mechanical costumes planned vhighcost complex">
 					<div class="projectCard">
 
 						<div class="slideshow"
@@ -208,7 +219,7 @@ ASTROBOT!
 					</div>
 				</div>
 
-				<div id="project-0000" class="grid-item">
+				<div id="project-0000" class="grid-item software interactive planned lowcost intermediate">
 					<div class="projectCard">
 
 						<div class="slideshow"
@@ -236,7 +247,7 @@ ASTROBOT!
 					</div>
 				</div>
 
-				<div id="project-0000" class="grid-item">
+				<div id="project-0000" class="grid-item software electrical mechanical interactive planned vhighcost complex">
 					<div class="projectCard">
 
 						<div class="slideshow"
@@ -264,7 +275,7 @@ ASTROBOT!
 					</div>
 				</div>	
 
-				<div id="project-0000" class="grid-item">
+				<div id="project-0000" class="grid-item artistic costumes planned highcost intermediate">
 					<div class="projectCard">
 
 						<div class="slideshow"
@@ -295,7 +306,7 @@ ASTROBOT!
 
 					
 
-				<div id="project-0000" class="grid-item">
+				<div id="project-0000" class="grid-item software interactive planned lowcost complex">
 					<div class="projectCard">
 
 						<div class="slideshow"
@@ -355,7 +366,7 @@ ASTROBOT!
 				</div>
 
 
-				<div id="project-0000" class="grid-item">
+				<div id="project-0000" class="grid-item artistic planned medcost intermediate">
 					<div class="projectCard">
 
 						<div class="slideshow"
@@ -383,7 +394,7 @@ ASTROBOT!
 					</div>
 				</div>
 
-				<div id="project-0000" class="grid-item">
+				<div id="project-0000" class="grid-item artistic costumes planned medcost simple">
 					<div class="projectCard">
 
 						<div class="slideshow"
@@ -411,7 +422,7 @@ ASTROBOT!
 					</div>
 				</div>
 
-				<div id="project-0000" class="grid-item">
+				<div id="project-0000" class="grid-item electrical costumes planned highcost intermediate">
 					<div class="projectCard">
 
 						<div class="slideshow"
@@ -439,7 +450,7 @@ ASTROBOT!
 					</div>
 				</div>
 
-				<div id="project-0000" class="grid-item">
+				<div id="project-0000" class="grid-item electrical costumes planned highcost complex">
 					<div class="projectCard">
 
 						<div class="slideshow"
@@ -468,7 +479,7 @@ ASTROBOT!
 					</div>
 				</div>
 
-				<div id="project-0005" class="grid-item">
+				<div id="project-0005" class="grid-item electrical artistic costumes planned medcost intermediate">
 					<div class="projectCard">
 
 						<div class="slideshow"
@@ -496,7 +507,7 @@ ASTROBOT!
 					</div>
 				</div>
 
-				<div id="project-0004" class="grid-item">
+				<div id="project-0004" class="grid-item electrical artistic medcost intermediate inProgress">
 					<div class="projectCard">
 
 						<div class="slideshow"
@@ -525,7 +536,63 @@ ASTROBOT!
 					</div>
 				</div>
 
-				<div id="project-0003" class="grid-item">
+				<div id="project-10000" class="grid-item software planned lowcost intermediate">
+					<div class="projectCard">
+
+						<div class="slideshow"
+							style="
+								background-image: url(https://i.pinimg.com/originals/eb/d4/be/ebd4be7c6bd37e45eab05fe582dd6172.jpg);
+							">
+						</div>
+
+						<div class="description">
+							<h1><a>DateLine</a></h1>
+
+							<div class="stats">
+								<div class="status">
+									Planned
+								</div>
+
+								<div class="date">
+									November 2018
+								</div>
+							</div>
+
+							<p>Text me for a date, any date in history!</p>
+
+						</div>
+					</div>
+				</div>
+
+				<div id="project-10000" class="grid-item science inProgress medcost simple">
+					<div class="projectCard">
+
+						<div class="slideshow"
+							style="
+								background-image: url(http://physicsopenlab.org/wp-content/uploads/2017/05/particleMist.jpg);
+							">
+						</div>
+
+						<div class="description">
+							<h1><a>Cloud Chamber</a></h1>
+
+							<div class="stats">
+								<div class="status">
+									In progress
+								</div>
+
+								<div class="date">
+									May 2018
+								</div>
+							</div>
+
+							<p>This particle detector lets you see subatomic particles and ionizing radiation as they pass through our atmosphere.</p>
+
+						</div>
+					</div>
+				</div>
+
+				<div id="project-0003" class="grid-item artistic costumes completed highcost intermediate">
 					<div class="projectCard">
 
 						<div class="slideshow"
@@ -553,7 +620,7 @@ ASTROBOT!
 					</div>
 				</div>
 
-				<div id="project-0002" class="grid-item">
+				<div id="project-0002" class="grid-item costumes completed medcost intermediate">
 					<div class="projectCard">
 
 						<div class="slideshow"
@@ -582,7 +649,7 @@ ASTROBOT!
 						</div>
 					</div>
 				</div>
-				<div id="project-0001" class="grid-item">
+				<div id="project-0001" class="grid-item costumes artistic completed lowcost simple">
 					<div class="projectCard">
 
 						<div class="slideshow" 
@@ -610,7 +677,7 @@ ASTROBOT!
 					</div>
 				</div>
 
-				<div id="project-0000" class="grid-item">
+				<div id="project-0000" class="grid-item software interactive completed lowcost simple">
 					<div class="projectCard">
 
 						<div class="slideshow" 

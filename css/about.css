@@ -90,10 +90,13 @@
 	right: -3.3em;
 	top: -.7em;
 
-	border-top: .7em solid #5ecded;
-	border-right: .7em solid transparent;
-	border-bottom: .7em solid transparent;
-	border-left: .7em solid #5ecded;
+	--triangle-fill: .7em solid #5ecded;
+	--triangle-empty: .7em solid transparent;
+
+	border-top: var(--triangle-fill);
+	border-right: var(--triangle-empty);
+	border-bottom: var(--triangle-empty);
+	border-left: var(--triangle-fill);
 
 	height: 0;
 	width: 0;
@@ -105,10 +108,13 @@
 	left: -3.3em;
 	top: -.7em;
 
-	border-top: .7em solid rgb(220, 220, 225);
-	border-right: .7em solid rgb(220, 220, 225);
-	border-bottom: .7em solid transparent;
-	border-left: .7em solid transparent;
+	--triangle-fill: .7em solid rgb(220, 220, 225);
+	--triangle-empty: .7em solid transparent;
+
+	border-top: var(--triangle-fill);
+	border-right: var(--triangle-fill);
+	border-bottom: var(--triangle-empty);
+	border-left: var(--triangle-empty);
 
 	height: 0;
 	width: 0;

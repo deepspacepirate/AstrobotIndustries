@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	
+	// create links for each project
 	$('.grid-item').each(function() {
 		var link = $(this).find('h1 > a');
 		var idNum = $(this).attr('id').match(/\-.+/)[0].replace('-', '');
@@ -8,11 +9,11 @@ $(document).ready(function() {
 		link.attr('href', rootpath + 'pages/projects/' + title + '/' + title + '.html');
 	});
 
-	$('.searchbox').click(toggleSearchParams());
+	$('.searchbox').click(toggleSearchParams);
 
 });
 
 function toggleSearchParams() {
 	console.log('entered');
-	$('#search').addClass('expand');
+	$('#searchParams').addClass('expand');
 }

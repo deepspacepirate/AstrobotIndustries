@@ -1,4 +1,5 @@
-var firstImage, lastImage, selectedImage, targetImage;
+var firstImage, lastImage, 
+	selectedImage, targetImage; // img object, #id object
 var galOpened = false;
 
 $(document).ready(function() {
@@ -6,46 +7,37 @@ $(document).ready(function() {
 	lastImage = $('.img_link').last();
 	selectedImage = firstImage;
 	targetImage = $(selectedImage.attr('href'));
-	select(selectedImage);
+	targetImage.css('display','block');
 
 	// remove x for image gallery
-	$('#gallery > #close').css('visibility', 'hidden');
-	$('#gallery > #close').click(closeGallery);
+	$('#close').click(closeGallery);
 
-	// select gallery images
-	$('#gallery-tiles > a').click( function(e) {
-		e.preventDefault();
+	// select gallery images on click
+	$('#thumbs > a').click( function(e) {
 		select($(this));
-		openGallery();
-		return false;
+		if (!galOpened) openGallery();
+		e.preventDefault();
 	});
 
-	$('#gallery > .images').click( function() {
-		if (!galOpened) {
-			select(selectedImage);
-			openGallery();
-		}
-	});
-
-	// horizontal scrolling of gallery tiles
-	$('#gallery-tiles').mousewheel(function(event, delta) {
+	// horizontal scrolling of gallery thumbs
+	$('#thumbs').mousewheel(function(event, delta) {
 		this.scrollLeft -= (delta * 60);
 		this.scrollRight -= (delta * 60);
 		event.preventDefault();
 	});
 
-	// navigate gallery tiles (h scroll) with v scroll
+	// navigate gallery thumbs with arrow keys
 	$(document).keydown(function(e) {
 		if (galOpened) {
 			if (e.which == 37 && !selectedImage.is(firstImage)){
-				$('#gallery-tiles').animate({scrollLeft: '-=' + $('#gallery-tiles').height()}, 200); ;
+				$('#thumbs').animate({scrollLeft: '-=' + $('#thumbs').height()}, 200); ;
 				select(selectedImage.prev());
 			}
 			if (e.which == 39 && !selectedImage.is(lastImage)) {
 				select(selectedImage.next());
-				$('#gallery-tiles').animate({scrollLeft: '+=' + $('#gallery-tiles').height()}, 200); ;
+				$('#thumbs').animate({scrollLeft: '+=' + $('#thumbs').height()}, 200); ;
 			}
-			if (e.which == 27 && galOpened) closeGallery();
+			if (e.which == 27) closeGallery(); // esc key
 		}
 	});
 
@@ -53,8 +45,10 @@ $(document).ready(function() {
 	window.onresize = function() {
 		clearTimeout(timer2);
 		timer2 = setTimeout(function() {
-			if (galOpened) select(selectedImage);
-			else reScroll();
+			if (galOpened) {
+				select(selectedImage);
+				openGallery();
+			}
 		}, 200);
 	};
 });
@@ -62,70 +56,39 @@ $(document).ready(function() {
 
 // select image
 function select(imageClicked) {
-	$('#navbar').css('top', '-' + ( $('#navbar').height() + 20 ) +'px');
-
-	selectedImage = imageClicked;
-	targetImage = $(selectedImage.attr('href'));
-
+	// scroll to gallery
 	$('html, body').animate({
 		scrollTop: $('#gallery').offset().top
-	}, 500);
+	}, 300);
 
-	$('.images').css('display', 'none');
-	targetImage.css('display', 'flex');
+	if (imageClicked !== selectedImage) {
+		selectedImage.removeClass('selected');
+		targetImage.css('display', 'none');
 
-	$('.img_link').removeClass('selected');
-	selectedImage.addClass('selected');
+		selectedImage = imageClicked;
+		targetImage = $(selectedImage.attr('href'));
+
+		targetImage.css('display', 'block');
+		selectedImage.addClass('selected');
+	}
+
+	$('#navbar').css('top', '-' + ( $('#navbar').height() + 20 ) +'px'); // hide navbar
 }
 
-// opens gallery
 function openGallery() {
-	if (!galOpened) {
-		galOpened = true;
+	galOpened = true;
+	$('#gallery').addClass('opened');
+	var galleryHeight = 'calc(100vh - 7px - ' + $('#thumbs').height() + 'px';
 
-		$('#gallery > #close').css('visibility', 'visible');
-
-		$('#gallery').css('max-height', '100vh');
-		$('#gallery').css('height', 'calc(100vh - 7px - ' + $('#gallery-tiles').height() + 'px)');
-	
-		$('#gallery > .images').css('height', 'calc(100vh - 7px - ' + $('#gallery-tiles').height() + 'px)');
-
-		$('#gallery > .images > img').css('width', 'auto');
-		$('#gallery > .images > img').css('max-height', 'calc(100vh - 7px - ' + $('#gallery-tiles').height() + 'px)');
-	}
+	$('#photo').css('height', galleryHeight);
+	$('.images').css('max-height', galleryHeight);
 }
 
-// closes gallery
 function closeGallery() {
-	if (galOpened) {
-		galOpened = false;
-		$('.img_link').removeClass('selected');
+	galOpened = false;
+	$('#gallery').removeClass('opened');
+	$('.img_link').removeClass('selected');
 
-		$('#gallery > #close').css('visibility', 'hidden');
-
-		$('#gallery').css('height', '40vw');
-		$('#gallery').css('max-height', '600px');
-
-		$('#gallery > .images').css('height', 'auto');
-
-		$('#gallery > .images > img').css('width', '100vw');
-		$('#gallery > .images > img').css('max-height', '1000vh');
-
-		reScroll();
-	}
-}
-
-function reScroll() {
-	$('#gallery').animate({scrollTop: targetImage[0].offset}, 1);
-
-
-	if (window.innerWidth * 0.3 > 600) galHeight = 600;
-	else galHeight = window.innerWidth * 0.3;
-
-	var imgHeight = targetImage[0].offsetTop + targetImage.height()/2 - galHeight/2 - 15;
-	
-	$('#gallery').animate({
-		scrollTop: imgHeight
-	}, 500);
-	
+	$('#photo').css('height', '40vw');
+	$('.images').css('max-height', '1000vh');
 }

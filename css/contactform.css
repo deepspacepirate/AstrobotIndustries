@@ -1,4 +1,8 @@
 /* Form */
+:root{
+	--form-box-color: #FFFEFC;
+}
+
 form {
 	display: -webkit-flex;
     display: flex;
@@ -10,13 +14,13 @@ form {
 }
 
 #subjectDropdown {
-	background-color: #FFFEFC;
+	background-color: var(--form-box-color);
 	width: 100%;
 }
 #tutorDropdown, .tutorSubjSpecify {
-	background-color: #FFFEFC;
-	width: 90%;
-	margin-left: 10%;
+	background-color: var(--form-box-color);
+	width: calc(95% - 5px);
+	margin-left: calc(5% + 5px);
 	display: none;
 }
 
@@ -28,7 +32,7 @@ form {
 }
 
  #message, .slInput {
-	background-color: #FFFEFC;
+	background-color: var(--form-box-color);
 	border: 1px solid black;
 	border-radius: 5px;
 	padding: 10px;
@@ -40,14 +44,15 @@ form {
 
 #message {
 	height: 10em;
+	min-height: 10em;
 	width: 100%;
 	margin-top: 10px;
+	resize: vertical;
 }
 
 .slInput{
 	line-height: 1.4em;
 }
-
 
 form button {
 	background-color: #83D8EF;
@@ -65,12 +70,12 @@ form button {
 	cursor: pointer;
 
 	-webkit-transition: background-color .2s;
-	transition: background-color .2s;
+			transition: background-color .2s;
 }
 
 form button:hover{
-	content: '>';
+	--outline-color: #19B7E0;
 	background-color: #f7fcff;
-	color: #19B7E0;
-	border: 1px solid #19B7E0;
+	color: var(--outline-color);
+	border: 1px solid var(--outline-color);
 }

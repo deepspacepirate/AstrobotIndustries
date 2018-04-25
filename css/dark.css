@@ -1,28 +1,27 @@
 body {
-	color: #ddddd8;
+	color: var(--dim-white);
+	background-color: #101519;
 
+/*	
 	background-color: black;
 	background-image: linear-gradient( rgba(23, 37, 55, .85), rgba(23, 37, 55, .85)), url(https://history.nasa.gov/alsj/a17/AS17-137-21018HR.jpg);
 	background-size: 100% auto;
 	background-position: bottom;
 	background-repeat: no-repeat;
+*/
 }
 
 
 #bodycontent a {
 	color: rgb(180, 180, 180);
-	border-bottom-color: #faed26;
+	border-bottom-color: var(--yellow);
 }
-#bodycontent a:hover {color: #faed26;}
+#bodycontent a:hover {color: var(--yellow);}
 
 
 /*About************************************************************/
-#bodycontent .answer {
-	border: 1px solid white;
-	color: white;
-	background-color: transparent;
-}
-#bodycontent .a1:before {
+
+#bodycontent .bodyContent-inner .a1:before {
 	border-top: .7em solid white;
 	border-right: .7em solid white;
 	top: -.8em;
@@ -30,36 +29,31 @@ body {
 }
 
 /*tutoring********************************************************/
-.subtopic:not(:first-of-type) {
-	border: dashed #faed26;
-	border-width: 2px 0px 0px 0px;
+#bodyContent .bodyContent-inner .grid-item .projectCard h1{
+	color: var(--dim-white);
 }
 
-.subtopic h1 {
-	color: #6FC8E0
-}
-
-.subtopic ol li {
+#bodycontent .bodyContent-inner ol li {
 	margin: 1em;
 	margin-left: -.7em;
 }
 
 @media screen and (max-width: 780px) {
-	.wrapperR {
+	#bodycontent .bodyContent-inner .wrapperR {
 		padding: 5em 0 1em;
 		margin-bottom: 2em; 
 	}
 }
-.wrapperR {
+#bodycontent .bodyContent-inner .wrapperR {
 	border: 2px solid rgba(255, 255, 255, .2);
 }
 
-.wrapperR table tr:nth-of-type(odd) td:nth-of-type(1) {
+#bodycontent .bodyContent-inner .wrapperR table tr:nth-of-type(odd) td:nth-of-type(1) {
 	background: rgba(255, 255, 255, .1);
 }
 
 /*projects********************************************************/
-#search input[type="checkbox"] {
+#bodyContent .bodyContent-inner #search input[type="checkbox"] {
 	
 }
 input[type="checkbox"]:checked{
@@ -68,38 +62,38 @@ input[type="checkbox"]:checked{
 			box-shadow: none;
 }
 
-.grid: {
+#bodyContent .bodyContent-inner .grid: {
 	overflow: auto;
 }
 
-.grid-item .projectCard {
+#bodyContent .bodyContent-inner .grid-item .projectCard {
 	background-color: rgba(0,0,0,.20);
 	border: 1px solid #ddddd8;
 }
 
-.grid-item .projectCard .slideshow {
+#bodyContent .bodyContent-inner .grid-item .projectCard .slideshow {
 	margin:  1em 1em 0 1em;
 }
 
-#bodycontent .grid-item .projectCard h1 a {
+#bodycontent .bodyContent-inner .grid-item .projectCard h1 a {
 	color: #cccccc;
 	letter-spacing: 1px;
 }
 
-#bodycontent .grid-item .projectCard h1 a:hover {
-	color: #faed26;
+#bodycontent .bodyContent-inner .grid-item .projectCard h1 a:hover {
+	color: var(--yellow);
 }
 
-.grid-item .projectCard h1  {
+.bodyContent-inner .grid-item .projectCard h1  {
 }
 
-.seemore {
+.bodyContent-inner .grid-item .projectCard .seemore {
 	color: rgb(80,80,80);
 	background-color: rgba(0,0,0,.4);
 }
-.seemore:hover {
-	color: #faed26;
-	border: 1px solid #faed26;
+.bodyContent-inner .grid-item .projectCard .seemore:hover {
+	color: var(--yellow);
+	border: 1px solid var(--yellow);
 	background-color: rgba(255,255,255,.2);
 }
 
@@ -107,13 +101,13 @@ input[type="checkbox"]:checked{
 /*project post*******************************************/
 
 #bodycontent #gallery-tiles::-webkit-scrollbar-thumb {
-	background-color: #faed26;
+	background-color: var(--yellow);
 }
 
-#gallery-tiles::-webkit-scrollbar {
+#bodycontent #gallery-tiles::-webkit-scrollbar {
 	height: 6px;
 }
 
-#bodycontent #bodycontent-inner #words h1{
+#bodyContent .bodycontent-inner #words h1{
 	color: #6FC8E0;
 }

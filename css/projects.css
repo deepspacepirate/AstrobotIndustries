@@ -1,8 +1,4 @@
-.slideshow{
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-}
+
 
 #search {
 	/*border: 1px solid blue;*/
@@ -13,12 +9,8 @@
 	background-color:transparent;
 	overflow: hidden;
 }
-#search.expand {background-color: rgba(160, 160, 160, .3)}
 
-/*#search.expand .searchbar {
-	overflow: auto;
-	width: 100%
-}*/
+#search{background-color: rgba(160, 160, 160, .3)}
 
 #search .searchbox {
 	box-sizing: border-box;
@@ -50,79 +42,67 @@
 }
 
 #search #searchParams{
-	display: flex;
+	display: none;
 	flex-wrap: wrap;
-	justify-content: center;
 
-	margin: 0 auto;
-	padding: 0 2em 2em 2em;
-
-	/*border: 1px solid;*/
-}
-
-#search #searchParams h1 {
-	font-size: 1.5em;
-	padding: .3em .6em;
 	margin: 0;
-	background-color: rgba(10,10,10,.2);
+	padding: 0 .1em .1em .1em;
 }
+#search #searchParams.expand{display: flex;}
 
-#search #searchParams input {
-	margin-left: 1.7em;
-}
-
-#search #searchParams input[type="checkbox"]{
-	cursor: pointer;
-	-webkit-appearance: none;
-			appearance: none;
-	
-	position: relative;
-	top: .7em;
-	right: .6em;
-
-	border-width: 0;
-	border-radius: 1px;
-	background: white;
-
-	box-sizing: content-box ;
-	width: 1.5em;
-	height: 1.5em;
-
-	-webkit-box-shadow: inset 0 0 3px 1px rgba(0, 0, 0, .35);
-	   -moz-box-shadow: inset 0 0 3px 1px rgba(0, 0, 0, .35);
-			box-shadow: inset 0 0 3px 1px rgba(0, 0, 0, .35);
-	
-	transition: all .2s ease;
-}
-#search #searchParams input[type="checkbox"]:checked{
-	background-color: #faed26;
-	-webkit-box-shadow: none;
-	   -moz-box-shadow: none;
-			box-shadow: none;
-}
-#search #searchParams input[type="checkbox"]:hover{
-	outline: 0 none;
-	box-shadow: none;
-}
-
-#search #searchParams .checkboxes {
+#search #searchParams .selector-group{
+	padding: 1em;
 	min-width: 110px;
 	flex-grow: 1;
-	padding: 1em;
 }
-#search #searchParams .tags {flex-grow: 3;}
-#search #searchParams .tags .col1, .tags .col2, .tags .col3 {
-	display: inline-block;
-	width: 49%;
-	min-width: 130px;
+#search #searchParams #tags-sg{
+	flex-grow: 2;
+	/*background-color: red;*/
+	min-width: 250px;
 }
 
-@media screen and (min-width: 630px) {
-	form {padding: 0}
+
+#search #searchParams .selector-group h1 {
+	font-size: 1.5em;
+	padding: .3em .6em;
+	background-color: rgba(10,10,10,.2);
+	margin: 0 0 .5em;
 }
 
-@media screen and (min-width: 1506px) {
-	form {width: 80%;}
+#search #searchParams .selector-group .button-group {
+	flex-wrap: wrap;
+	display: flex;
+	/*max-width: 300px;*/
+	flex-direction: column;
+	justify-content: left;
+
+	height: 170px;
+}
+
+#search #searchParams .selector-group .button-group button{
+	background-color: rgba(255, 255, 255, .5);
+	border: none;
+	padding: .9em;
+	margin: .1em;	
+}
+
+#search #searchParams .selector-group .button-group button:hover{
+	background-color: rgba(255, 255, 255, .9);
+}
+
+#search #searchParams .selector-group .button-group button.is-checked{
+	background-color: #e6ed74;
+}
+
+#search #searchParams button#reset {
+	background-color: rgba(255, 255, 255, .5);
+	border: none;
+	padding: .75em;
+	margin: .2em;	
+}
+
+#search #searchParams button#reset:hover{
+	background-color: rgba(255, 255, 255, .9);
 }
 
 .seemore {

@@ -1,69 +1,80 @@
 /** {border: 1px solid red;}*/
-#bodycontent #words a {
+
+#bodyContent #bodyContent-inner a {
 	border-bottom-width: 1px;
 }
 
-#bodycontent #words {
-	margin: 1em;
+#bodyContent #bodyContent-inner #contents{
+	font-family: 'Rajdhani', cursive;
+	font-size: 3em;
+	margin: -.1em 0 2em;
+	margin-left: auto;
+	margin-right: auto;
+	border-bottom: solid 2px var(--medium-electric-blue);
 }
 
-#bodycontent #words #contents{
-	font-size: 2em;
-	margin: 2em 0 4em;
+#bodyContent #bodyContent-inner #contents {
+	display: flex;
+	justify-content: center;
+	padding-bottom: 1.5em;
+	width: 100%;
 }
 
-#bodycontent #words #contents a{
+#bodyContent #bodyContent-inner #contents .section {
+	padding: 0.8em;
+}
+
+#bodyContent #bodyContent-inner #contents .section a{
 	text-transform: uppercase;
-	margin: .5em;
+	border: none;
 }
 
-h1 {
-	font-family: BebasBX;
-	letter-spacing: 2px;
+#bodyContent #bodyContent-inner h1 {
+	font-family: 'Do Hyeon', sans-serif;
+	font-weight: normal;
+	color: var(--medium-electric-blue);
 	font-size: 4em;
-	color: #19B7E0;
-	padding: .2em 0;
 	text-transform: uppercase;
-	margin: 10px 0 .2em;
+	
+	padding: .2em 0;
+	margin: .2em 0 .2em;
+	text-align: center;
 }
 
-h2 {
+#bodyContent #bodyContent-inner h2 {
+	font-family: 'Rajdhani', cursive;
+	font-size: 3em;
+	text-transform: uppercase;
+	margin: 1em 0 -.5em;
+}
+
+#bodyContent #bodyContent-inner h3 {
+	font-family: 'Rajdhani', cursive;
 	font-size: 2em;
-	padding: .2em 0;
-	text-transform: uppercase;
-	margin: 2em 0 .5em;
-}
-
-h3 {
-	font-size: 1.6em;
-	padding: .2em 0em;
-	margin: 2em 0 .5em 2em;
+	margin: 1.8em 1.6em -.2em;
 	font-style: italic;
 }
 
-p {
+#bodyContent #bodyContent-inner p {
 	font-size: 1.6em;
 	line-height: 1.8em;
 }
 
-ul {
+#bodyContent #bodyContent-inner ul {
 	list-style: none;
+	margin-left: 2em;
 }
 
 @media screen and (min-width: 770px){
-	#words {
-		margin: 0;
-	}
-	h1 {
+	#bodyContent #bodyContent-inner h1 {
 		font-size: 8em;
-		text-align: left;
 	}
 
-	h3 {
-		font-size: 16px;
+	#bodyContent #bodyContent-inner h3 {
+		font-size: 2.3em
 	}
 
-	p {
+	#bodyContent #bodyContent-inner p {
 		font-size: 16px;
 	}
 	

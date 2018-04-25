@@ -44,21 +44,26 @@ $(document).ready(function() {
 
 	// Adjust with of body content
 	if (window.innerWidth > 650) {
-		window.onresize = function() {
-			clearTimeout(timer0);
-			timer0 = setTimeout(screenResize, 50);
-		};
+		// window.onresize = function() {
+		// 	clearTimeout(timer0);
+		// 	timer0 = setTimeout(screenResize, 50);
+		// };
+		window.onresize = debounce(screenResize, 50);
 	}
-
-	$('#menuButton').click(toggleHamStack);
 
 	// Detect scroll, bring/hide navbar
 	$(window).scroll(function(){
 		if (page != 'index'){
+			// debounce(bringmenu, 50, timer1);
 			clearTimeout(timer1);
 			timer1 = setTimeout( bringmenu, 50 );
 		}
 	});
+	$('#menuButton').click(toggleHamStack);
+	$('#bodyContent').click( function() {
+		if ($('#navbar').hasClass('hamExpand')) toggleHamStack();
+	});
+
 
 	// Home sticky menu
 	if (page === 'index' ) {$(window).scroll(navStick);}
@@ -85,10 +90,6 @@ function ldToggle() {
 		else {
 			$('#darkCSS').remove();
 			// setCookie('daynight', 'day', .5)
-		}
-		if ( page === 'projects' || page === 'academics'){
-			changeNumCards();
-			if (window.innerWidth > 650) { $('.grid').masonry({itemSelector: '.grid-item'}); }
 		}
 }
 
@@ -131,11 +132,6 @@ function navStick() {
 	}
 }
 
-function debounce(t, timervar, f) {
-	if (timervar) clearTimeout(timervar);
-	timervar = setTimeout(f, t);
-}
-
 function bringmenu() {
 	var st = window.pageYOffset || document.documentElement.scrollTop;  
 		if (st > lastScrollTop1 + 5) {
@@ -153,17 +149,14 @@ function bringmenu() {
 function screenResize() {
 	moveLDToggle();
 	if (navStuck) $('#bodyContent').css('margin-top', 'calc(2em + '+ $('#navbar').height() + 'px)');
-	scale($("#bodyContent-inner"), 'width', '%', window.innerWidth, 650, 100, 900, 90, 2000, 70);
-	scale($("body"), 'font-size', 'px', window.innerWidth, 800, 9, 1200, 10, 2000, 12);
 
-	if ( page === 'about' ){
-		scale($(".img-circle"), 'width', 'em', window.innerWidth, 500, 7, 1200, 8.5, 2000, 12);
-	}
+	scale($(".bodyContent-inner"), 'width', '%', window.innerWidth, 650, 95, 900, 90, 2000, 70);
+	scale($("body"), 'font-size', 'px', window.innerWidth, 800, 10, 1000, 10.5, 2000, 11);
 
-	if ( page === 'projects' || page === 'academics'){
-		changeNumCards();
-		if (window.innerWidth > 650) { $('.grid').masonry({itemSelector: '.grid-item'}); }
-	}
+	if ( page === 'about' ) scale($(".img-circle"), 'width', 'em', window.innerWidth, 500, 7, 1200, 8.5, 2000, 12);
+	if ( page === 'projects' || page === 'academics') changeNumCards();
+	
+	console.log('screen resized');
 }
 
 // Scale property of element to another element (x). Set points as (x1, y1), (x2, y2), (x3, y3)
@@ -202,32 +195,16 @@ function sticky(element) {
 	}
 }
 
-// Find number of cards per row on pages with masonry
-function changeNumCards() {
-	var bodyWidth = $("#bodyContent-inner").width();
-	var card = $(".grid-item");
-
-	var numCards;
-	var cardWidth;
-	if (bodyWidth <= 750) cardWidth = '100%';
-	else {
-		numCards =  Math.floor(bodyWidth/ parseInt(card.css('min-width')) ) ;
-		cardWidth = 100/numCards + '%';
-	}
-	card.css('width', cardWidth);
-}
-
 function moveLDToggle(){
 	if (ldToggleEnd == true && window.innerWidth > navbarWidthLimit) {
 		$('#toggle').insertBefore('.home');
 		ldToggleEnd = false;
+		console.log('moved to start');
 	}
-	else if (window.innerWidth <= navbarWidthLimit) {
+	else if (ldToggleEnd == false && window.innerWidth <= navbarWidthLimit) {
 		$('#toggle').insertAfter(lastNavLink);
 		ldToggleEnd = true;
-	}
-}
+		console.log('moved to end');
 
-function consoleTest(message){
-	console.log(message);
+	}
 }
