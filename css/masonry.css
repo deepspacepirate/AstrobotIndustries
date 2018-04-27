@@ -1,3 +1,16 @@
+@font-face {
+	font-family: BebasRX;
+	src: url('../fonts/BebasNeueR.eot?') format('eot'),
+		 url('../fonts/BebasNeueR.woff') format('woff'),
+		 url('../fonts/BebasNeueR.ttf') format('truetype');
+}
+@font-face { 
+	font-family: BebasBX;
+	src: url('../fonts/BebasNeueB.eot?') format('eot'),
+		 url('../fonts/BebasNeueB.woff') format('woff'),
+		 url('../fonts/BebasNeueB.ttf') format('truetype');
+}
+
 #bodyContent .bodyContent-inner .grid-item a {color: var(--medium-gray);}
 #bodyContent .bodyContent-inner .grid-item a:hover {
 	color: var(--medium-electric-blue);

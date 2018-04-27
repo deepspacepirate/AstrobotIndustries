@@ -2,27 +2,7 @@
 
 /** {border: 1px solid red;}*/
 
-@font-face {
-	font-family: BowmanX;
-	src: url('../fonts/Bowman.eot?') format('eot'),
-		 url('../fonts/Bowman.woff') format('woff'),
-		 url('../fonts/Bowman.ttf') format('truetype');
-}
-
-@font-face {
-	font-family: BebasRX;
-	src: url('../fonts/BebasNeueR.eot?') format('eot'),
-		 url('../fonts/BebasNeueR.woff') format('woff'),
-		 url('../fonts/BebasNeueR.ttf') format('truetype');
-}
-@font-face {
-	font-family: BebasBX;
-	src: url('../fonts/BebasNeueB.eot?') format('eot'),
-		 url('../fonts/BebasNeueB.woff') format('woff'),
-		 url('../fonts/BebasNeueB.ttf') format('truetype');
-}
-
-@font-face {
+@font-face { /* for navbar */
 	font-family: SquareX;
 	src: url('../fonts/simply-square.eot?') format('eot'),
 		url('../fonts/simply-square.woff') format('woff'),
@@ -32,7 +12,7 @@
 :root{
 	--yellow: #faed26;
 
-	--electric-blue: #6FC8E0;
+	--electric-blue: #68d1ed;
 	--medium-electric-blue: #19B7E0;
 	--pale-blue: #83D8EF;
 	--dark-blue: #1D3048;
@@ -125,7 +105,8 @@ body {
 	display: block;
 	width: 100%;
 	
-	font-family: BowmanX;
+	font-family: 'Rajdhani', cursive;
+
 	font-size: 1.7em;
 	color: white;
 	text-decoration: none;
@@ -142,7 +123,7 @@ body {
 }
 
 #navbar a.active {
-	color: var(--medium-electric-blue)
+	color: var(--electric-blue)
 }
 
 #navbar a.home {

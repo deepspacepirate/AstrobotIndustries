@@ -1,3 +1,5 @@
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
 @font-face {
 	font-family: HackX;
 	src: url('../fonts/Hack-Regular.eot?') format('eot'),
@@ -5,136 +7,162 @@
 		url('../onts/Hack-Regular.ttf') format('truetype');
 }
 
-#bodycontent {
-	font-family: "HackX";
-	font-size: 10px;
-	overflow: auto;
-	background-color: ;
-	width: 100%
+:root{
+	--chat-bg-color: rgb(220, 220, 225);
+	--chat-border-color: rgb(220, 220, 225);
+
+	--chatQ-bg-color: rgba(135, 208, 229, 1);
+	--chatQ-border-color: rgba(135, 208, 229, 1);
 }
 
-.break {
-	clear: both;
+#bodycontent {overflow-y: visible;}
+#bodycontent .bodycontent-inner{
+	display: flex;
+	justify-content: center;
+	overflow: visible;
 }
 
-.wrapper {
-	overflow: auto;
-	margin: 0 auto;
+#bodycontent .bodycontent-inner .wrapper {
+	overflow: visible; /*to let div still have height with only floated elements within*/ 
 	width: 90%;
 	max-width: 900px;
+	align-items: top;
 }
 
-#bodycontent h1 {
+#bodycontent .bodycontent-inner .wrapper .break {clear: both;}
+
+#bodycontent .bodycontent-inner h1 {
 	font-size: 2.4em;
 	line-height: 1em;
 	font-weight: normal;
 	text-decoration: none;
 }
 
-#bodycontent h2 {
-	font-size: 1.5em;
+#bodycontent .bodycontent-inner h2 {
+	font-size: 1.4em;
 	line-height: 1.4em;
 	width: 100%;
 }
 
-#bodycontent p {
+#bodycontent .bodycontent-inner p {
 	font-size: 1.3em;
 	line-height: 1.5em;
 }
 
-/*Chatbox*/
-#bodycontent .chat {
+/* Style chatbox */
+#bodycontent .bodycontent-inner .chat {
 	opacity: 0;
-	transition: opacity 0.7s ease;
-}
-#bodycontent .appear {
-	opacity: 1;
-}
+	transition: 
+			border-color .7s ease,
+			opacity 0.7s ease;
 
-#bodycontent .question, #bodycontent .answer {
+
 	padding: .7em 2em;
 	margin: .4em 0;
 	border-radius: 1em;
 	overflow: visible;
 	max-width: 60%;
 }
-#bodycontent .question {
+#bodycontent .bodycontent-inner .chat.appear {opacity: 1;}
+
+/* Style question */
+#bodycontent .bodycontent-inner .question {
+	font-family: "HackX";
 	float: right;
 	position: relative;
 	right: 2em;
 	clear: right;
 	border-top-right-radius: 0;
-	background-color: #5ecded;
+	background-color: var(--chatQ-bg-color);
 	color: rgba(37, 37, 42, 1);
 }
-#bodycontent .answer {
-	font-family: HackX;
+#bodycontent .bodycontent-inner .question:before {
+	content: ' ';
+	position: relative;
+	float: right;
+	right: -3.4em;
+	top: -.7em;
+
+	--triangle-fill: .7em solid var(--chatQ-border-color);
+	--triangle-empty: .7em solid transparent;
+
+	border-top: 	var(--triangle-fill);
+	border-right: 	var(--triangle-empty);
+	border-bottom: 	var(--triangle-empty);
+	border-left: 	var(--triangle-fill);
+
+	height: 0;
+	width: 0;
+}
+
+/* Style answer*/
+#bodycontent .bodycontent-inner .answer {
+	font-family: 'Roboto Mono', monospace;
+
 	float: left;
 	position: relative;
 	left: 2em;
 	clear: left;
 
-	background-color: rgb(220, 220, 225);
-	color: #16181c;
-	border: none;
+	background-color: var(--chat-bg-color);
+	border: 1px solid var(--chat-border-color);
+
 }
-#bodycontent .answer.a1 {
-	clear: none;
+#bodycontent .bodycontent-inner .answer.a1 {
 	border-top-left-radius: 0;
 }
-
-#bodycontent .question:before {
-	content: ' ';
-	position: relative;
-	float: right;
-	right: -3.3em;
-	top: -.7em;
-
-	--triangle-fill: .7em solid #5ecded;
-	--triangle-empty: .7em solid transparent;
-
-	border-top: var(--triangle-fill);
-	border-right: var(--triangle-empty);
-	border-bottom: var(--triangle-empty);
-	border-left: var(--triangle-fill);
-
-	height: 0;
-	width: 0;
-}
-#bodycontent .a1:before {
+#bodycontent .bodycontent-inner .answer.a1:before {
 	content: ' ';
 	position: relative;
 	float: left;
-	left: -3.3em;
-	top: -.7em;
+	left: -3.5em;
+	top: -.8em;
 
-	--triangle-fill: .7em solid rgb(220, 220, 225);
+	--triangle-fill: .7em solid var(--chat-border-color);
 	--triangle-empty: .7em solid transparent;
 
-	border-top: var(--triangle-fill);
-	border-right: var(--triangle-fill);
-	border-bottom: var(--triangle-empty);
-	border-left: var(--triangle-empty);
+	border-top:		var(--triangle-fill);
+	border-right: 	var(--triangle-fill);
+	border-bottom: 	var(--triangle-empty);
+	border-left: 	var(--triangle-empty);
 
 	height: 0;
 	width: 0;
+
+	-webkit-transition: border-color .7s ease;
 }
 
-.img-circle {
-	display: none;
+.buttonCard {
+	height: 8vw;
+	width: 8vw;
+	position: relative;
 	border-radius: 50%;
-	width: 11em;
-	height: auto;
+	-webkit-transition: background-color .7s ease;
+}
 
-	border: 5px solid #fff369;
-	margin: 1em;
+.buttonCard img {
+	position: absolute;
+	width: 8vw;
+	height: 8vw;
+}
 
-	float: left;
-	position: relative;
+/* Style rotating circles */
 
-	-webkit-transition: left .7s; /* Safari */
-    transition: left .7s;
+.buttonCard img:not(.img-circle) {
+	opacity: 0;
+	-webkit-transition: opacity 2s;
+}
 
+
+
+/* Style chat circle icon */
+.buttonCard img.img-circle {
+	border-radius: 50%;
+	-webkit-transition: -webkit-transform 0.5s ease;
+
+	-webkit-box-shadow: 1px 1px 6px rgba(0,0,0, .25);
+	   -moz-box-shadow: 1px 1px 6px rgba(0,0,0, .25);
+			box-shadow: 1px 1px 6px rgba(0,0,0, .25);
 }
 
 .formcontainer {
@@ -145,26 +173,22 @@
 
 @media screen and (min-width: 720px){
 
-	.img-circle {
+	.buttonCard {
 		display: block;
 	}
-	#bodycontent h1 {
+	#bodycontent .bodycontent-inner h1 {
 		font-size: 4em;
 	}
-	#bodycontent h2 {
-		font-size: 1.5em;
-	}
-
-	#bodycontent p {
+	#bodycontent .bodycontent-inner p {
 		font-size: 1.5em;
 		line-height: 1.6em;
 	}
-	#bodycontent .question, #bodycontent .answer {
+	#bodycontent .bodycontent-inner .question, #bodycontent .bodycontent-inner .answer {
 		max-width: 50%;
 	}
 
-	#bodycontent .question, .answer {
-		margin: 1em 2em;
+	#bodycontent .bodycontent-inner .chat {
+		margin: .7em 2em;
 	}
 }
 

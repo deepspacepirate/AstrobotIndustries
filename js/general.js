@@ -19,6 +19,7 @@ var navOpen = false;
 var ldToggleEnd = true;
 
 var navbarWidthLimit = 700;
+var dark = false;
 
 var lastNavLink; 
 
@@ -43,6 +44,8 @@ $(document).ready(function() {
 
 	// Adjust with of body content
 	window.onresize = $.debounce(50, screenResize);
+
+	// $(window).scroll( function(){ sticky('#chaticon'); });
 
 	// Detect scroll, bring/hide navbar
 	$(window).scroll($.debounce(150, function(){
@@ -71,10 +74,12 @@ function ldToggle() {
 
 		if(document.getElementById("darkCSS") == null) {
 			$('head').append('<link id="darkCSS" rel="stylesheet" type="text/css" href="' + rootpath + '/css/dark.css">');
+			dark = true;
 			// setCookie('daynight', 'night', .5)
 		}
 		else {
 			$('#darkCSS').remove();
+			dark = false;
 			// setCookie('daynight', 'day', .5)
 		}
 }
@@ -139,7 +144,6 @@ function screenResize() {
 	scale($(".bodyContent-inner"), 'width', '%', window.innerWidth, 650, 95, 900, 90, 2000, 70);
 	scale($("body"), 'font-size', 'px', window.innerWidth, 800, 10, 1000, 10.5, 2000, 11);
 
-	if ( page === 'about' ) scale($(".img-circle"), 'width', 'em', window.innerWidth, 500, 7, 1200, 8.5, 2000, 12);
 	if ( page === 'projects' || page === 'academics') changeNumCards();
 	
 	console.log('screen resized');
@@ -172,13 +176,13 @@ function toggleHamStack() {
 
 // Stick things to top when scrolled to
 function sticky(element) {
-	var position = element.offset().top;
-	if ( $(window).scrollTop() >= position) {
-		element.addClass('sticky');
+	var $el = $(element);
+	var position = $el.offset().top;
+	if ( $(window).scrollTop() + 11 >= position) {
+		$el.addClass('sticky');
+		console.log('stuck');
 	}
-	else {
-		element.removeClass('sticky');
-	}
+	else $el.removeClass('sticky');
 }
 
 function moveLDToggle(){
