@@ -63,8 +63,6 @@ $(document).ready(function() {
 });
 
 function ldToggle() {
-	screenResize();
-
 	var newfront = $('.back')
 	var newback = $('.front')
 
@@ -85,6 +83,7 @@ function ldToggle() {
 		setCookie('theme', 'light', 3);
 	}
 	console.log(getCookie('theme'));
+	screenResize();
 }
 
 function getCookie(cname) {
@@ -197,12 +196,11 @@ function moveLDToggle(){
 	if (ldToggleEnd == true && window.innerWidth > navbarWidthLimit) {
 		$('#toggle').insertBefore('.home');
 		ldToggleEnd = false;
-		console.log('moved to start');
+		// console.log('moved to start');
 	}
 	else if (ldToggleEnd == false && window.innerWidth <= navbarWidthLimit) {
 		$('#toggle').insertAfter(lastNavLink);
 		ldToggleEnd = true;
-		console.log('moved to end');
-
+		// console.log('moved to end');
 	}
 }
