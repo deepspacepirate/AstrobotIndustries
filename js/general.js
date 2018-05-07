@@ -19,12 +19,14 @@ var navOpen = false;
 var ldToggleEnd = true;
 
 var navbarWidthLimit = 700;
-var dark = false;
 
 var lastNavLink; 
 
 $(document).ready(function() {
-	if(getCookie('theme') == 'dark') ldToggle();
+	if(getCookie('theme') === 'dark') {
+		ldToggle();
+		console.log("change to dark");
+	}
 
 	// Activate your almonds
 	$('#navbar').find('a').each( function(){
@@ -74,13 +76,11 @@ function ldToggle() {
 
 	if(document.getElementById("darkCSS") == null) {
 		$('head').append('<link id="darkCSS" rel="stylesheet" type="text/css" href="' + rootpath + '/css/dark.css">');
-		dark = true;
 		eraseCookie('theme');
 		setCookie('theme', 'dark', 3);
 	}
 	else {
 		$('#darkCSS').remove();
-		dark = false;
 		eraseCookie('theme');
 		setCookie('theme', 'light', 3);
 	}
