@@ -11,8 +11,11 @@
 		 url('../fonts/BebasNeueB.ttf') format('truetype');
 }
 
-#bodyContent .bodyContent-inner .grid-item a {color: var(--medium-gray);}
-#bodyContent .bodyContent-inner .grid-item a:hover {
+#bodyContent .bodyContent-inner .grid .grid-item h1 a {
+	color: var(--medium-gray);
+	border-bottom: 3px solid var(--medium-electric-blue);
+}
+#bodyContent .bodyContent-inner .grid-item h1 a:hover {
 	color: var(--medium-electric-blue);
 	background-color: transparent;
 }
@@ -92,6 +95,10 @@
 	letter-spacing: .7px;
 	font-size: 3.7em;
 	margin-top: .2em;
+}
+
+#bodyContent .bodyContent-inner .grid-item .projectCard h1 a{
+	line-height: 1.2em;
 }
 
 #bodyContent .bodyContent-inner .grid-item .projectCard h2 {

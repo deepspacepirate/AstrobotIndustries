@@ -31,40 +31,36 @@ body {
 
 /*About************************************************************/
 
-#bodycontent .bodyContent-inner .question{
+#bodycontent .bodycontent-inner .bodycontent-inner2{
+	--scroll-border: 1px solid rgba(255,255,255,0.5);
+}
+
+#bodycontent .bodyContent-inner .bodyContent-inner2 .wrapper .chatUnit.question{
 	--chatQ-bg-color: rgba(250, 237, 38, .9);
 	--chatQ-border-color: rgba(250, 237, 38, .9);
 	/*color: #d8dbd2;*/
 }
 
-#bodycontent .bodyContent-inner .answer{
+#bodycontent .bodyContent-inner .bodyContent-inner2 .wrapper .chatUnit.answer{
 	--chat-bg-color: transparent;
 	--chat-border-color: rgba(255, 255, 255, .3);
 	color: rgba(255, 255, 255, 0.7);
+	letter-spacing: .03em;
 }
 
 
-#bodycontent .bodyContent-inner .answer.glow{
+#bodycontent .bodyContent-inner .bodyContent-inner2 .wrapper .chatUnit.answer .chat.glow{
 	--chat-border-color: rgba(135, 208, 229, 1);
+	color: #c2e9f0;
 }
 
-.buttonCard:hover > img.img-circle{
-	transform: scale(.7);
-}
+#bodycontent .bodyContent-inner .bodyContent-inner2 .wrapper .chatUnit.answer .chat.glow a{color: #c2e9f0;}
 
-.buttonCard:hover > img:not(.img-circle) {opacity: 1;}
-
-.buttonCard:hover > img.ring1 {
-	-webkit-animation: rotationCW 48s infinite linear;
-}
-
-.buttonCard:hover > img.ring2 {
-	-webkit-animation: rotationCCW 12s infinite linear;
-}
-
-.buttonCard:hover > img.ring3 {
-	-webkit-animation: rotationCCW 60s infinite linear;
-}
+#bodycontent #iconHolder-main:hover > img.chaticon{transform: scale(.7);}
+#bodycontent #iconHolder-main:hover > img.ring {opacity: 1;}
+#bodycontent #iconHolder-main:hover > img.ring1 {-webkit-animation: rotationCW 48s infinite linear;}
+#bodycontent #iconHolder-main:hover > img.ring2 {-webkit-animation: rotationCCW 12s infinite linear;}
+#bodycontent #iconHolder-main:hover > img.ring3 {-webkit-animation: rotationCCW 60s infinite linear;}
 
 @-webkit-keyframes rotationCW {
 	from {-webkit-transform: rotate(0deg);}
@@ -125,8 +121,9 @@ input[type="checkbox"]:checked{
 }
 
 #bodycontent .bodyContent-inner .grid-item .projectCard h1 a {
-	color: #cccccc;
+	color: rgba(255, 255, 255, 0.5);
 	letter-spacing: 1px;
+	border-bottom: 3px solid var(--yellow);
 }
 
 #bodycontent .bodyContent-inner .grid-item .projectCard h1 a:hover {

@@ -1,11 +1,17 @@
 $(document).ready(function() {
-	// create links for each project
-	$('.grid-item').each(function() {
-		var link = $(this).find('h1 > a');
-		var idNum = $(this).attr('id').match(/\-.+/)[0].replace('-', '');
-		var title = link.text().toLowerCase().replace(/ /g, '-').replace(/[<>:"\/\\\\\|?\*]/g, 'x');
-		// link.attr('href', rootpath + "pages/projects/" + idNum + '-' + title + '.html');
-		link.attr('href', rootpath + 'pages/projects/' + title + '/' + title + '.html');
+	
+	$('.grid-item').each(function() { // create links for each project
+		var status = $(this).find('.status').html();
+		status = status.replace(/\s+/g, '');
+
+		if (status === "Completed"){
+			var link = $(this).find('h1 > a');
+			var title = link.text().toLowerCase().replace(/ /g, '-').replace(/[<>:"\/\\\\\|?\*]/g, 'x'); // replace spaces with '-' , replace special chars with 'x'
+
+			// var idNum = $(this).attr('id').match(/\-.+/)[0].replace('-', '');
+			// link.attr('href', rootpath + "pages/projects/" + idNum + '-' + title + '.html');
+			link.attr('href', rootpath + 'pages/projects/' + title + '/' + title + '.html');
+		}
 	});
 
 	$('.searchbox').click(function(){$('#searchParams').addClass('expand');});

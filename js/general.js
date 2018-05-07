@@ -24,9 +24,6 @@ var dark = false;
 var lastNavLink; 
 
 $(document).ready(function() {
-	// console.log(getCookie('daynight'));
-	// if (getCookie('daynight') == 'night' ) ldToggle();
-	$('#toggle').click(ldToggle);
 
 	// Activate your almonds
 	$('#navbar').find('a').each( function(){
@@ -45,8 +42,6 @@ $(document).ready(function() {
 	// Adjust with of body content
 	window.onresize = $.debounce(50, screenResize);
 
-	// $(window).scroll( function(){ sticky('#chaticon'); });
-
 	// Detect scroll, bring/hide navbar
 	$(window).scroll($.debounce(150, function(){
 		if (page != 'index')  bringmenu();
@@ -58,52 +53,58 @@ $(document).ready(function() {
 
 	// Home sticky menu
 	if (page === 'index' ) {$(window).scroll(navStick);}
+
+	// theme management
+	$('#toggle').click(ldToggle);
+
 });
 
 function ldToggle() {
-		screenResize();
+	screenResize();
 
-		var newfront = $('.back')
-		var newback = $('.front')
+	var newfront = $('.back')
+	var newback = $('.front')
 
-		newfront.removeClass('back');
-		newfront.addClass('front');
+	newfront.removeClass('back');
+	newfront.addClass('front');
 
-		newback.removeClass('front');
-		newback.addClass('back');
+	newback.removeClass('front');
+	newback.addClass('back');
 
-		if(document.getElementById("darkCSS") == null) {
-			$('head').append('<link id="darkCSS" rel="stylesheet" type="text/css" href="' + rootpath + '/css/dark.css">');
-			dark = true;
-			// setCookie('daynight', 'night', .5)
-		}
-		else {
-			$('#darkCSS').remove();
-			dark = false;
-			// setCookie('daynight', 'day', .5)
-		}
+	if(document.getElementById("darkCSS") == null) {
+		$('head').append('<link id="darkCSS" rel="stylesheet" type="text/css" href="' + rootpath + '/css/dark.css">');
+		dark = true;
+		setCookie('theme', 'dark', 3);
+	}
+	else {
+		$('#darkCSS').remove();
+		dark = false;
+		setCookie('theme', 'light', 3);
+	}
+	console.log(getCookie('theme'));
 }
 
 function getCookie(cname) {
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for(var i = 0; i <ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
+	var name = cname + "=";
+	var decodedCookie = decodeURIComponent(document.cookie);
+	var ca = decodedCookie.split(';');
+	for(var i = 0; i <ca.length; i++) {
+		var c = ca[i];
+		while (c.charAt(0) == ' ') {
+			c = c.substring(1);
+		}
+		if (c.indexOf(name) == 0) {
+			return c.substring(name.length, c.length);
+		}
+	}
+	return "";
 }
+
 function setCookie(cname, cvalue, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    var expires = "expires="+ d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+	var d = new Date();
+	d.setTime(d.getTime() + (exdays*24*60*60*1000));
+	var expires = "expires="+ d.toUTCString();
+	document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
 function navStick() {

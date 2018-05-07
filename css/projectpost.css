@@ -196,8 +196,18 @@ h3 {
 }
 
 p {
-	font-size: 1.6em;
+	font-size: 1.5em;
 	line-height: 1.8em;
+}
+
+.dialogue p{
+	margin-left: 3em;
+}
+.dialogue p::first-letter{
+	font-size: 1.1em;
+	font-weight: bold;
+	font-style: italic;
+	padding-right: 0.8em;
 }
 
 ol li {
