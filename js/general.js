@@ -24,6 +24,7 @@ var dark = false;
 var lastNavLink; 
 
 $(document).ready(function() {
+	if(getCookie('theme') == 'dark') ldToggle();
 
 	// Activate your almonds
 	$('#navbar').find('a').each( function(){
