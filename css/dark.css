@@ -4,7 +4,7 @@
 
 body { 
 	color: var(--dim-white);
-	background-color: #101519;
+	background-color: #2a3138;
 
 /*	
 	background-color: black;
@@ -99,12 +99,12 @@ body {
 
 /*projects********************************************************/
 
-#bodyContent .bodyContent-inner .grid{
-	overflow: auto;
-}
+#search {background-color: rgba(255, 255, 255, 0.1);}
+
+#bodyContent .bodyContent-inner .grid{overflow: auto;}
 
 #bodyContent .bodyContent-inner .grid .grid-item .projectCard {
-	background-color: rgba(0,0,0,.20);
+	background-color: rgba(0,0,0,.15);
 	border: 1px solid #ddddd8;
 }
 

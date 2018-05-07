@@ -1,15 +1,13 @@
 #search {
-	/*border: 1px solid blue;*/
+	border-radius: 5px;
 	max-width: 910px;
 	width: 100%;
 	margin: 0 auto 2em;
 	font-size: 1.4em;
 	line-height: 2.3em;
-	background-color:transparent;
+	background-color: rgba(50,50,50, .1);
 	overflow: hidden;
 }
-
-#search{background-color: rgba(160, 160, 160, .3)}
 
 #search .searchbox {
 	box-sizing: border-box;
