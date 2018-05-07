@@ -42,7 +42,8 @@ $(document).ready(function() {
 
 	// Position body content from top
 	screenResize();
-	if (page != 'index') $('#bodyContent').css( 'margin-top', $('#navbar').outerHeight() + 20);
+	if (page != 'index') $('#bodyContent').css( 'margin-top', 'calc(' + $('#navbar').outerHeight() + 'px + var(--bodyContent-margin)');
+	console.log($('#navbar').outerHeight());
 
 	// Adjust with of body content
 	window.onresize = $.debounce(50, screenResize);
@@ -97,10 +98,7 @@ function getCookie(cname) {
 	return "";
 }
 
-function eraseCookie(cname) {
-	setCookie(cname, '', -1);
-}
-
+function eraseCookie(cname) {setCookie(cname, '', -1);}
 function setCookie(cname, cvalue, exdays) {
 	var d = new Date();
 	d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -113,14 +111,11 @@ function navStick() {
 	var st = $(window).scrollTop();
 	
 	if ( !navStuck && headerHeight < st ) {
-		$('#navbar').css('position', 'fixed');
-		$('#navbar').css('top', '0');
-		$('#bodyContent').css('margin-top', 'calc(2em + '+ $('#navbar').height() + 'px)');
+		// $('#bodyContent').css('margin-top', 'calc(var(--bodyContent-margin) + '+ $('#navbar').height() + 'px)');
 		navStuck = true;
 	}
 	else if ( navStuck && headerHeight > st ){
-		$('#navbar').css('position', 'relative');
-		$('#bodyContent').css('margin-top', '2em');
+		// $('#bodyContent').css('margin-top', 'var(--bodyContent-margin)');
 		navStuck = false;
 	}
 }
@@ -141,13 +136,12 @@ function bringmenu() {
 // All the thins to do when screen is resized
 function screenResize() {
 	moveLDToggle();
-	if (navStuck) $('#bodyContent').css('margin-top', 'calc(2em + '+ $('#navbar').height() + 'px)');
+	// if (navStuck) $('#bodyContent').css('margin-top', 'calc(var(--bodyContent-margin) + '+ $('#navbar').height() + 'px)');
 
 	scale($(".bodyContent-inner"), 'width', '%', window.innerWidth, 650, 95, 900, 90, 2000, 70);
 	scale($("body"), 'font-size', 'px', window.innerWidth, 800, 10, 1000, 10.5, 2000, 11);
 
 	if ( page === 'projects' || page === 'academics') changeNumCards();
-	
 	// console.log('screen resized');
 }
 
@@ -167,8 +161,7 @@ function scale(element, property, unit, x, x1, y1, x2, y2, x3, y3){
 
 // Given two points (x1, y1), (x2, y2), and x-input, returns y-output
 function Y(x1, y1, x2, y2, x) { 
-	var y = (y2-y1)/(x2-x1) * (x - x1) + y1 ;
-	return y;
+	return (y2-y1)/(x2-x1) * (x - x1) + y1 ;
 }
 
 // Open/close collapsed navbar

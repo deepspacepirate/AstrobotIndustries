@@ -216,7 +216,7 @@
 }
 .formcontainer form{
 	margin: 0;
-	padding-top: 1em;
+	padding-top: .5em;
 }
 .formcontainer form textarea#message{
 	margin: 0;
@@ -228,7 +228,7 @@
 
 	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit h1 {font-size: 3em;}
 	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit h2 {font-size: 1.3em;}
-	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit p {font-size: 1.2em; line-height: 1.6em;}
+	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit p {font-size: 1.3em; line-height: 1.6em;}
 }
 
 @media screen and (min-width: 720px){
@@ -241,7 +241,7 @@
 		max-width: calc(70% - var(--icon-dims) - 2em);
 	}
 
-	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit.question .chat {font-size: 1em;}
+	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit p {font-size: 1.4em; line-height: 1.6em;}
 	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit.question .chat:before {right: -2.7em; top: -1.5em;}
 	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit.answer   .chat:before {left:  -2.8em; top: -1.6em;}
 
