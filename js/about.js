@@ -5,7 +5,6 @@ $(document).ready(function() {
 		load: showChats,
 		load: $.debounce(100, resizeInner),
 		resize: $.debounce(100, resizeInner)
-			
 	});
 
 	$('.bodyContent-inner2').on({
@@ -44,6 +43,5 @@ function showChats(){
 
 function resizeInner() {
 	var wrHeight = $('.bodyContent-inner').innerHeight() - $('.formcontainer').outerHeight();
-	// $('.wrapper').css('height', wrHeight + 'px');
 	$('.bodyContent-inner2').css('height', wrHeight + 'px');
 }

@@ -37,7 +37,7 @@
 
 
 #bodycontent .bodycontent-inner .bodycontent-inner2::-webkit-scrollbar-track {
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
 	background-color: rgba(255,255,255,.07);
 }
 
@@ -56,7 +56,7 @@
 	margin-right: auto;
 }
 
-#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit{width: 100%; overflow: hidden; --icon-dims: 40px;}
+#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit{width: 100%; overflow: hidden; --icon-dims: 44px; --icon-padding: 1em;}
 #bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit.big {--icon-dims: 130px;}
 
 #bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit h1 {
@@ -75,7 +75,7 @@
 }
 
 #bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit p {
-	font-size: 1.1em;
+	font-size: 1.15em;
 	line-height: 1.5em;
 	margin: 0;
 }
@@ -126,14 +126,15 @@
 	float: right;
 	display: block;
 	position: relative;
-	right: calc(var(--icon-dims) + 1.2em);
+	right: calc(var(--icon-dims) + var(--icon-padding));
 }
 
 #bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit.question .chat:before {
 	content: ' ';
 	float: right;
 	position: relative;
-	right: .1em;
+	right: -2.4em;
+	top: -0.9em;
 
 	--triangle-fill: .6em solid var(--chatQ-border-color);
 	--triangle-empty: .6em solid transparent;
@@ -156,7 +157,7 @@
 	display: block;
 	clear: both;
 	position: relative;
-	left: calc(var(--icon-dims) + 1.2em);
+	left: calc(var(--icon-dims) + var(--icon-padding));
 
 	background-color: var(--chat-bg-color);
 	border: 1px solid var(--chat-border-color);
@@ -168,7 +169,7 @@
 	position: relative;
 	float: left;
 	right: 0;
-	left: -3em;
+	left: -2.4em;
 	top: -1em;
 
 	--triangle-fill: .6em solid var(--chat-border-color);
@@ -222,20 +223,18 @@
 }
 
 @media screen and (min-width: 465px){
-	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit {--icon-dims: 65px;}
+	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit {--icon-dims: 50px; --icon-padding: 1.2em;}
 	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit .chat {max-width: 60%;}
 
-	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit h1 {font-size: 4em;}
-	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit h2 {font-size: 1.4em;}
-	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit p {font-size: 1.3em; line-height: 1.6em;}
+	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit h1 {font-size: 3em;}
+	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit h2 {font-size: 1.3em;}
+	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit p {font-size: 1.2em; line-height: 1.6em;}
 }
 
 @media screen and (min-width: 720px){
-
-	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit .iconHolder {--icon-dims: 65px;}
-
 	#bodycontent .bodycontent-inner .wrapper{width: 70%;}
 
+	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit {--icon-dims: 55px; --icon-padding: 1.1em;}
 	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit .chat {
 		margin: .5em 0;
 		padding: 1.5em;
@@ -243,14 +242,8 @@
 	}
 
 	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit.question .chat {font-size: 1em;}
-	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit.question .chat:before {
-		right: -2.9em;
-		top: -1.5em;
-	}
-	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit.answer .chat:before {
-		left: -3em;
-		top: -1.6em;
-	}
+	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit.question .chat:before {right: -2.7em; top: -1.5em;}
+	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit.answer   .chat:before {left:  -2.8em; top: -1.6em;}
 
 	.formcontainer form{padding: 1em 1em 0 1em;}
 }
