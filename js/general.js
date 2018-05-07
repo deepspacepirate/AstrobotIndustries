@@ -23,10 +23,6 @@ var navbarWidthLimit = 700;
 var lastNavLink; 
 
 $(document).ready(function() {
-	if(getCookie('theme') === 'dark') {
-		ldToggle();
-		console.log("change to dark");
-	}
 
 	// Activate your almonds
 	$('#navbar').find('a').each( function(){
@@ -37,6 +33,10 @@ $(document).ready(function() {
 		if (navTitle == page) element.addClass('active');
 		if (navTitle === 'blog' || navTitle === 'endeavors') element.hide();
 	});
+
+	// Theme management
+	$('#toggle').click(ldToggle);
+	if(getCookie('theme') === 'dark') ldToggle();
 
 	// Position body content from top
 	screenResize();
@@ -56,10 +56,6 @@ $(document).ready(function() {
 
 	// Home sticky menu
 	if (page === 'index' ) {$(window).scroll(navStick);}
-
-	// theme management
-	$('#toggle').click(ldToggle);
-
 });
 
 function ldToggle() {
@@ -82,7 +78,6 @@ function ldToggle() {
 		eraseCookie('theme');
 		setCookie('theme', 'light', 3);
 	}
-	console.log(getCookie('theme'));
 	screenResize();
 }
 
@@ -153,7 +148,7 @@ function screenResize() {
 
 	if ( page === 'projects' || page === 'academics') changeNumCards();
 	
-	console.log('screen resized');
+	// console.log('screen resized');
 }
 
 // Scale property of element to another element (x). Set points as (x1, y1), (x2, y2), (x3, y3)
@@ -187,7 +182,7 @@ function sticky(element) {
 	var position = $el.offset().top;
 	if ( $(window).scrollTop() + 11 >= position) {
 		$el.addClass('sticky');
-		console.log('stuck');
+		// console.log('stuck');
 	}
 	else $el.removeClass('sticky');
 }
