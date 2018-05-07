@@ -22,26 +22,26 @@ body {
 
 }
 
-#bodycontent a {
+#bodyContent a {
 	color: rgb(180, 180, 180);
 	border-bottom-color: var(--yellow);
 }
-#bodycontent a:hover {color: var(--yellow);}
+#bodyContent a:hover {color: var(--yellow);}
 
 
 /*About************************************************************/
 
-#bodycontent .bodycontent-inner .bodycontent-inner2{
+#bodyContent .bodycontent-inner .bodycontent-inner2{
 	--scroll-border: 1px solid rgba(255,255,255,0.5);
 }
 
-#bodycontent .bodyContent-inner .bodyContent-inner2 .wrapper .chatUnit.question{
+#bodyContent .bodyContent-inner .bodyContent-inner2 .wrapper .chatUnit.question{
 	--chatQ-bg-color: rgba(250, 237, 38, .9);
 	--chatQ-border-color: rgba(250, 237, 38, .9);
 	/*color: #d8dbd2;*/
 }
 
-#bodycontent .bodyContent-inner .bodyContent-inner2 .wrapper .chatUnit.answer{
+#bodyContent .bodyContent-inner .bodyContent-inner2 .wrapper .chatUnit.answer{
 	--chat-bg-color: transparent;
 	--chat-border-color: rgba(255, 255, 255, .3);
 	color: rgba(255, 255, 255, 0.7);
@@ -49,18 +49,18 @@ body {
 }
 
 
-#bodycontent .bodyContent-inner .bodyContent-inner2 .wrapper .chatUnit.answer .chat.glow{
+#bodyContent .bodyContent-inner .bodyContent-inner2 .wrapper .chatUnit.answer .chat.glow{
 	--chat-border-color: rgba(135, 208, 229, 1);
 	color: #c2e9f0;
 }
 
-#bodycontent .bodyContent-inner .bodyContent-inner2 .wrapper .chatUnit.answer .chat.glow a{color: #c2e9f0;}
+#bodyContent .bodyContent-inner .bodyContent-inner2 .wrapper .chatUnit.answer .chat.glow a{color: #c2e9f0;}
 
-#bodycontent #iconHolder-main:hover > img.chaticon{transform: scale(.7);}
-#bodycontent #iconHolder-main:hover > img.ring {opacity: 1;}
-#bodycontent #iconHolder-main:hover > img.ring1 {-webkit-animation: rotationCW 48s infinite linear;}
-#bodycontent #iconHolder-main:hover > img.ring2 {-webkit-animation: rotationCCW 12s infinite linear;}
-#bodycontent #iconHolder-main:hover > img.ring3 {-webkit-animation: rotationCCW 60s infinite linear;}
+#bodyContent #iconHolder-main:hover > img.chaticon{transform: scale(.7);}
+#bodyContent #iconHolder-main:hover > img.ring {opacity: 1;}
+#bodyContent #iconHolder-main:hover > img.ring1 {-webkit-animation: rotationCW 48s infinite linear;}
+#bodyContent #iconHolder-main:hover > img.ring2 {-webkit-animation: rotationCCW 12s infinite linear;}
+#bodyContent #iconHolder-main:hover > img.ring3 {-webkit-animation: rotationCCW 60s infinite linear;}
 
 @-webkit-keyframes rotationCW {
 	from {-webkit-transform: rotate(0deg);}
@@ -78,66 +78,53 @@ body {
 	color: var(--dim-white);
 }
 
-#bodycontent .bodyContent-inner ol li {
+#bodyContent .bodyContent-inner ol li {
 	margin: 1em;
 	margin-left: -.7em;
 }
 
 @media screen and (max-width: 780px) {
-	#bodycontent .bodyContent-inner .wrapperR {
+	#bodyContent .bodyContent-inner .wrapperR {
 		padding: 5em 0 1em;
 		margin-bottom: 2em; 
 	}
 }
-#bodycontent .bodyContent-inner .wrapperR {
+#bodyContent .bodyContent-inner .wrapperR {
 	border: 2px solid rgba(255, 255, 255, .2);
 }
 
-#bodycontent .bodyContent-inner .wrapperR table tr:nth-of-type(odd) td:nth-of-type(1) {
+#bodyContent .bodyContent-inner .wrapperR table tr:nth-of-type(odd) td:nth-of-type(1) {
 	background: rgba(255, 255, 255, .1);
 }
 
 /*projects********************************************************/
-#bodyContent .bodyContent-inner #search input[type="checkbox"] {
-	
-}
-input[type="checkbox"]:checked{
-	-webkit-box-shadow: none;
-	   -moz-box-shadow: none;
-			box-shadow: none;
-}
 
-#bodyContent .bodyContent-inner .grid: {
+#bodyContent .bodyContent-inner .grid{
 	overflow: auto;
 }
 
-#bodyContent .bodyContent-inner .grid-item .projectCard {
+#bodyContent .bodyContent-inner .grid .grid-item .projectCard {
 	background-color: rgba(0,0,0,.20);
 	border: 1px solid #ddddd8;
 }
 
-#bodyContent .bodyContent-inner .grid-item .projectCard .slideshow {
+#bodyContent .bodyContent-inner .grid .grid-item .projectCard .slideshow {
 	margin:  1em 1em 0 1em;
 }
 
-#bodycontent .bodyContent-inner .grid-item .projectCard h1 a {
-	color: rgba(255, 255, 255, 0.5);
-	letter-spacing: 1px;
+#bodyContent .bodyContent-inner .grid .grid-item .projectCard h1 a {
+	color: rgb(150, 150, 150);
+	letter-spacing: 1.4px;
 	border-bottom: 3px solid var(--yellow);
 }
 
-#bodycontent .bodyContent-inner .grid-item .projectCard h1 a:hover {
-	color: var(--yellow);
-}
+#bodyContent .bodyContent-inner .grid .grid-item .projectCard h1 a:hover {color: var(--yellow);}
 
-.bodyContent-inner .grid-item .projectCard h1  {
-}
-
-.bodyContent-inner .grid-item .projectCard .seemore {
+#bodyContent .bodyContent-inner .grid .grid-item .projectCard .seemore {
 	color: rgb(80,80,80);
 	background-color: rgba(0,0,0,.4);
 }
-.bodyContent-inner .grid-item .projectCard .seemore:hover {
+#bodyContent .bodyContent-inner .grid .grid-item .projectCard .seemore:hover {
 	color: var(--yellow);
 	border: 1px solid var(--yellow);
 	background-color: rgba(255,255,255,.2);
@@ -146,14 +133,6 @@ input[type="checkbox"]:checked{
 
 /*project post*******************************************/
 
-#bodycontent #gallery-tiles::-webkit-scrollbar-thumb {
-	background-color: var(--yellow);
-}
-
-#bodycontent #gallery-tiles::-webkit-scrollbar {
-	height: 6px;
-}
-
-#bodyContent .bodycontent-inner #words h1{
-	color: #6FC8E0;
-}
+#bodyContent #gallery-tiles::-webkit-scrollbar {height: 6px;}
+#bodyContent #gallery-tiles::-webkit-scrollbar-thumb {background-color: var(--yellow);}
+#bodyContent .bodycontent-inner #words h1{color: #6FC8E0;}
