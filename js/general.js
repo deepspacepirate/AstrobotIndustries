@@ -37,6 +37,8 @@ $(document).ready(function() {
 	// Theme management
 	$('#toggle').click(ldToggle);
 	if(getCookie('theme') === 'dark') ldToggle();
+	
+
 
 	// Position body content from top
 	screenResize();
@@ -70,12 +72,10 @@ function ldToggle() {
 
 	if(document.getElementById("darkCSS") == null) {
 		$('head').append('<link id="darkCSS" rel="stylesheet" type="text/css" href="' + rootpath + '/css/dark.css">');
-		eraseCookie('theme');
 		setCookie('theme', 'dark', 3);
 	}
 	else {
 		$('#darkCSS').remove();
-		eraseCookie('theme');
 		setCookie('theme', 'light', 3);
 	}
 	screenResize();

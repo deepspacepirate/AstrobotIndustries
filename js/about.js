@@ -13,9 +13,7 @@ $(document).ready(function() {
 	});
 
 	$("#iconHolder-main").click( function() {
-		if 		(dark && !permGlow) {permGlow = true;  $('.answer > .chat').addClass('glow');}
-		else if (dark && permGlow) 	{permGlow = false; $('.answer > .chat').removeClass('glow');}
-		console.log(permGlow);
+		if (getCookie('theme') === 'dark') $('.answer > .chat').toggleClass('glow');
 	});
 
 });
