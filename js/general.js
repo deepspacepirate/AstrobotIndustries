@@ -74,11 +74,13 @@ function ldToggle() {
 	if(document.getElementById("darkCSS") == null) {
 		$('head').append('<link id="darkCSS" rel="stylesheet" type="text/css" href="' + rootpath + '/css/dark.css">');
 		dark = true;
+		eraseCookie('theme');
 		setCookie('theme', 'dark', 3);
 	}
 	else {
 		$('#darkCSS').remove();
 		dark = false;
+		eraseCookie('theme');
 		setCookie('theme', 'light', 3);
 	}
 	console.log(getCookie('theme'));
@@ -98,6 +100,10 @@ function getCookie(cname) {
 		}
 	}
 	return "";
+}
+
+function eraseCookie(cname) {
+	setCookie(cname, '', -1);
 }
 
 function setCookie(cname, cvalue, exdays) {
