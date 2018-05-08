@@ -129,6 +129,7 @@ body {
 
 #navbar a.active {color: var(--electric-blue)}
 #navbar a:hover  {color: var(--pale-blue);}
+#navbar a.home:hover  {color: white;}
 
 #navbar a.icon {
 	display: block;
