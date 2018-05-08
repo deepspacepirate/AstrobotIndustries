@@ -1,0 +1,43 @@
+body {
+	background-color: black;
+	color: rgb(255, 255, 255, 0.8);
+	font-family: Courier;
+	max-width: 1500px;
+	padding: 20px;
+	margin-left: auto;
+	margin-right: auto; }
+
+::selection {
+	color: rgb(150, 150, 150);
+	background-color: rgba(255, 0, 0, .3); }
+
+.moon{
+	color: rgb(255, 255, 255, 0.4);
+	text-align: center; 
+	overflow: hidden; }
+.moon.big{
+	font-size: calc(.8vw);
+	line-height: .22em;
+	display: block; }
+.moon.small{
+	display: none;
+	font-size: calc(1.6vw);
+	line-height: .2em; }
+
+a.location{text-decoration: none;}
+a.location::selection {color: yellow;}
+a.location.at {color: cyan;}
+a.location.open{color: fuchsia;}
+a.location.closed{color: red;}
+.moon a.location{animation: blinker 1s linear infinite;}
+
+
+
+@keyframes blinker{
+	50% {color: rgb(55, 55, 55);} }
+
+@media screen and (min-width: 1000px){
+	.moon.big{display: block;}
+	.moon.small{display: none;} 
+}
+@media screen and (min-width: 1825px){.moon.big{font-size: 14.6px;}}

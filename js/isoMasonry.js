@@ -15,6 +15,10 @@ $(document).ready(function() {
 		}
 	});
 
+	// $(window).on({
+	// 	load: function(){ $grid.isotope() },
+	// 	resize: $.debounce(50, changeNumCards)
+	// });
 	window.onload = function(){ $grid.isotope(); }
 	window.onresize = $.debounce(50, changeNumCards);
 });
