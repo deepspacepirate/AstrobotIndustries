@@ -5,22 +5,18 @@
 // Get page name, for activating almonds, directory navigation
 var path = window.location.pathname;
 // file = path.match(/[^\/]+$/)[0],
-var parDir = path;
 var page = path.match(/[^\/]+(?=\.html)/)[0] // match faster than split+pop https://jsperf.com/split-pop-vs-regex-match
 var rootpath = path.match(/^.+AstrobotIndustries\//)[0];
+console.log(rootpath);
 console.log(page);
 
 // Current distance from top, for bringmenu()
 var lastScrollTop1 = 0;
-var lastScrollTop2 = 0;
-
-var navStuck = false;
-var navOpen = false;
 var ldToggleEnd = true;
-
 var navbarWidthLimit = 700;
+var lastNavLink;
 
-var lastNavLink; 
+window.jQuery || document.write('<script src=\"' + rootpath + 'js/jquery-3.2.1.min.js\"><\/script>');
 
 $(document).ready(function() {
 
@@ -29,36 +25,33 @@ $(document).ready(function() {
 		var element = $(this);
 		var navTitle = element.text();
 		navTitle = navTitle.toLowerCase();
-		if (navTitle === 'contact') lastNavLink = element;
 		if (navTitle == page) element.addClass('active');
+		if (navTitle === 'contact') lastNavLink = element;
 		if (navTitle === 'blog' || navTitle === 'endeavors') element.hide();
 	});
 
 	// Theme management
 	$('#toggle').click(ldToggle);
 	if(getCookie('theme') === 'dark') ldToggle();
-	
-
 
 	// Position body content from top
-	screenResize();
 	if (page != 'index') $('#bodyContent').css( 'margin-top', 'calc(' + $('#navbar').outerHeight() + 'px + var(--bodyContent-margin)');
-	console.log($('#navbar').outerHeight());
 
-	// Adjust with of body content
-	window.onresize = $.debounce(50, screenResize);
+	$(window).on({
+		load: screenResize(),
+		// Adjust with of body content
+		resize: $.debounce(50, screenResize), 
+		// Detect scroll, bring/hide navbar
+		scroll: $.debounce(150, function(){ 
+			if (page != 'index') bringmenu(); })
+	});
 
-	// Detect scroll, bring/hide navbar
-	$(window).scroll($.debounce(150, function(){
-		if (page != 'index')  bringmenu();
-	}));
+	// Navbar expand/collapse
 	$('#menuButton').click(toggleHamStack);
 	$('#bodyContent').click( function() {
 		if ($('#navbar').hasClass('hamExpand')) toggleHamStack();
 	});
 
-	// Home sticky menu
-	if (page === 'index' ) {$(window).scroll(navStick);}
 });
 
 function ldToggle() {
@@ -106,19 +99,6 @@ function setCookie(cname, cvalue, exdays) {
 	document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
-function navStick() {
-	var headerHeight = $('.header').offset().top + $('.header').outerHeight(); //distance bottom of navbar is from top
-	var st = $(window).scrollTop();
-	
-	if ( !navStuck && headerHeight < st ) {
-		// $('#bodyContent').css('margin-top', 'calc(var(--bodyContent-margin) + '+ $('#navbar').height() + 'px)');
-		navStuck = true;
-	}
-	else if ( navStuck && headerHeight > st ){
-		// $('#bodyContent').css('margin-top', 'var(--bodyContent-margin)');
-		navStuck = false;
-	}
-}
 
 function bringmenu() {
 	var st = window.pageYOffset || document.documentElement.scrollTop;  
@@ -132,17 +112,12 @@ function bringmenu() {
 	lastScrollTop1 = st;
 }
 
-
 // All the thins to do when screen is resized
 function screenResize() {
 	moveLDToggle();
-	// if (navStuck) $('#bodyContent').css('margin-top', 'calc(var(--bodyContent-margin) + '+ $('#navbar').height() + 'px)');
-
 	scale($(".bodyContent-inner"), 'width', '%', window.innerWidth, 650, 95, 900, 90, 2000, 70);
 	scale($("body"), 'font-size', 'px', window.innerWidth, 800, 10, 1000, 10.5, 2000, 11);
-
-	if ( page === 'projects' || page === 'academics') changeNumCards();
-	// console.log('screen resized');
+	if ( $('.grid')[0] ) changeNumCards();
 }
 
 // Scale property of element to another element (x). Set points as (x1, y1), (x2, y2), (x3, y3)
@@ -175,7 +150,6 @@ function sticky(element) {
 	var position = $el.offset().top;
 	if ( $(window).scrollTop() + 11 >= position) {
 		$el.addClass('sticky');
-		// console.log('stuck');
 	}
 	else $el.removeClass('sticky');
 }
@@ -184,11 +158,9 @@ function moveLDToggle(){
 	if (ldToggleEnd == true && window.innerWidth > navbarWidthLimit) {
 		$('#toggle').insertBefore('.home');
 		ldToggleEnd = false;
-		// console.log('moved to start');
 	}
 	else if (ldToggleEnd == false && window.innerWidth <= navbarWidthLimit) {
 		$('#toggle').insertAfter(lastNavLink);
 		ldToggleEnd = true;
-		// console.log('moved to end');
 	}
 }

@@ -50,9 +50,7 @@ form {
 	resize: vertical;
 }
 
-.slInput{
-	line-height: 1.4em;
-}
+.slInput{line-height: 1.4em;}
 
 form button {
 	background-color: #83D8EF;
@@ -61,11 +59,8 @@ form button {
 	margin-top: 10px;
 
 	font-size: 18px;
-	color: black;
-	line-height: 1.8em;
-	font-family: BowmanX;
+	font-family: 'Do Hyeon', sans-serif;
 	text-align: center;
-	text-decoration: none;
 
 	cursor: pointer;
 
