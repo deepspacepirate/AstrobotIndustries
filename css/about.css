@@ -168,9 +168,8 @@
 	content: ' ';
 	position: relative;
 	float: left;
-	right: 0;
 	left: -2.4em;
-	top: -1em;
+	top: -0.9em;
 
 	--triangle-fill: .6em solid var(--chat-border-color);
 	--triangle-empty: .6em solid transparent;
@@ -243,7 +242,7 @@
 
 	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit p {font-size: 1.4em; line-height: 1.6em;}
 	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit.question .chat:before {right: -2.7em; top: -1.5em;}
-	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit.answer   .chat:before {left:  -2.8em; top: -1.6em;}
+	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit.answer   .chat:before {left:  -2.7em; top: -1.6em;}
 
 	.formcontainer form{padding: 1em 1em 0 1em;}
 }
