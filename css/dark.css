@@ -31,12 +31,11 @@ body {
 #bodyContent .bodyContent-inner .bodyContent-inner2 .wrapper .chatUnit.question{
 	--chatQ-bg-color: rgba(250, 237, 38, .9);
 	--chatQ-border-color: rgba(250, 237, 38, .9);
-	/*color: #d8dbd2;*/
 }
 
 #bodyContent .bodyContent-inner .bodyContent-inner2 .wrapper .chatUnit.answer{
 	--chat-bg-color: transparent;
-	--chat-border-color: rgba(255, 255, 255, .3);
+	--chat-border-color: rgb(93, 103, 107); /*rgba(255,255,255,0.3)*/
 	color: rgba(255, 255, 255, 0.7);
 	letter-spacing: .03em;
 }
