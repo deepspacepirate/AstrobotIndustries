@@ -29,8 +29,11 @@ body {
 }
 
 #bodyContent .bodyContent-inner .bodyContent-inner2 .wrapper .chatUnit.question{
-	--chatQ-bg-color: rgba(250, 237, 38, .9);
+	--chatQ-bg-color: none;
 	--chatQ-border-color: rgba(250, 237, 38, .9);
+}
+#bodyContent .bodyContent-inner .bodyContent-inner2 .wrapper .chatUnit.question .chat{
+	color: rgba(250, 237, 38, .8);
 }
 
 #bodyContent .bodyContent-inner .bodyContent-inner2 .wrapper .chatUnit.answer{
@@ -106,10 +109,11 @@ background-image:
 #bodyContent .bodyContent-inner .grid .grid-item .projectCard {
 	background-color: rgba(255, 255, 255, .03);
 	border: 1px solid rgba(255, 255, 255, 0.4);
+	padding: 2em;
 }
 
 #bodyContent .bodyContent-inner .grid .grid-item .projectCard .slideshow {
-	margin:  1em 1em 0 1em;
+	/*margin:  .25em .25em 0 .25em;*/
 }
 
 #bodyContent .bodyContent-inner .grid .grid-item .projectCard h1 a {
@@ -129,7 +133,6 @@ background-image:
 	border: 1px solid var(--yellow);
 	background-color: rgba(255,255,255,.2);
 }
-
 
 /*project post*******************************************/
 

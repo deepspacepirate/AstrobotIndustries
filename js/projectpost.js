@@ -1,93 +1,100 @@
-var firstImage, lastImage, 
-	selectedImage, targetImage; // img object, #id object
-var galOpened = false;
-
 $(document).ready(function() {
-	firstImage = $('.img_link').first();
-	lastImage = $('.img_link').last();
-	selectedImage = firstImage;
-	targetImage = $(selectedImage.attr('href'));
-	targetImage.css('display','block');
+	var gal = new Gallery($('.gallery'));
 
 	// remove x for image gallery
-	$('#close').click(closeGallery);
+	$('.close').click(gal.closeGallery);
 
 	// select gallery images on click
-	$('#thumbs > a').click( function(e) {
-		select($(this));
-		if (!galOpened) openGallery();
+	$('.thumbs > a').click( function(e) {
+		gal.select($(this));
+		if ( !gal.galOpened ) gal.openGallery();
 		e.preventDefault();
 	});
 
 	// horizontal scrolling of gallery thumbs
-	$('#thumbs').mousewheel(function(event, delta) {
+	$('.thumbs').mousewheel(function(event, delta) {
 		this.scrollLeft -= (delta * 60);
 		this.scrollRight -= (delta * 60);
 		event.preventDefault();
 	});
 
 	// navigate gallery thumbs with arrow keys
-	$(document).keydown(function(e) {
-		if (galOpened) {
-			if (e.which == 37 && !selectedImage.is(firstImage)){
-				$('#thumbs').animate({scrollLeft: '-=' + $('#thumbs').height()}, 200); ;
-				select(selectedImage.prev());
-			}
-			if (e.which == 39 && !selectedImage.is(lastImage)) {
-				select(selectedImage.next());
-				$('#thumbs').animate({scrollLeft: '+=' + $('#thumbs').height()}, 200); ;
-			}
-			if (e.which == 27) closeGallery(); // esc key
-		}
+	$(document).keydown(function(e){
+		gal.scrollSelect(e);
 	});
 
 	// fix gallery on resize
-	window.onresize = $.debounce(200, function() {
-		if (galOpened) {
-			select(selectedImage);
-			openGallery();
-		}
-		console.log('bam');
-	});
+	window.onresize = $.debounce(200, gal.resize);
 
 });
 
+function Gallery(el) {
+	this.el = el;
+	this.galOpened = false;
+	this.firstImage = el.find('.img_link').first();
+	this.lastImage =  el.find('.img_link').last();
+	this.selectedImage = this.firstImage;
+	this.targetImage = $(this.selectedImage.attr('href'));
 
-// select image
-function select(imageClicked) {
-	// scroll to gallery
+	this.targetImage.css('display', 'block');
+};
+
+Gallery.prototype.openGallery = function() {
+	this.galOpened = true;
+	this.el.addClass('opened');
+	var galleryHeight = 'calc(100vh - 7px - ' + $('.thumbs').height() + 'px';
+
+	$('.photo').css('height', galleryHeight);
+	$('.images').css('max-height', galleryHeight);
+}
+
+Gallery.prototype.closeGallery = function() {
+	this.galOpened = false;
+	this.el.removeClass('opened');
+	this.el.find('.img_link').removeClass('selected');
+
+	this.el.find('.photo').css('height', '40vw');
+	this.el.find('.images').css('max-height', '1000vh');
+}
+
+// when img thumbnail is clicked
+Gallery.prototype.select = function(imageClicked) {
 	$('html, body').animate({
-		scrollTop: $('#gallery').offset().top
+		scrollTop: this.el.offset().top
 	}, 300);
 
-	if (imageClicked !== selectedImage) {
-		selectedImage.removeClass('selected');
-		targetImage.css('display', 'none');
+	if (imageClicked !== this.selectedImage) {
+		this.selectedImage.removeClass('selected');
+		this.targetImage.css('display', 'none');
 
-		selectedImage = imageClicked;
-		targetImage = $(selectedImage.attr('href'));
+		this.selectedImage = imageClicked;
+		this.targetImage = $(this.selectedImage.attr('href'));
 
-		targetImage.css('display', 'block');
-		selectedImage.addClass('selected');
+		this.targetImage.css('display', 'block');
+		this.selectedImage.addClass('selected');
 	}
 
 	$('#navbar').css('top', '-' + ( $('#navbar').height() + 20 ) +'px'); // hide navbar
 }
 
-function openGallery() {
-	galOpened = true;
-	$('#gallery').addClass('opened');
-	var galleryHeight = 'calc(100vh - 7px - ' + $('#thumbs').height() + 'px';
-
-	$('#photo').css('height', galleryHeight);
-	$('.images').css('max-height', galleryHeight);
+// scroll to gallery
+Gallery.prototype.scrollSelect = function(event) {
+	if (this.galOpened) {
+		if (event.which == 37 && !this.selectedImage.is(this.firstImage)){
+			$('.thumbs').animate({scrollLeft: '-=' + $('.thumbs').height()}, 200); ;
+			this.select(this.selectedImage.prev());
+		}
+		if (event.which == 39 && !this.selectedImage.is(this.lastImage)) {
+			this.select(this.selectedImage.next());
+			$('.thumbs').animate({scrollLeft: '+=' + $('.thumbs').height()}, 200); ;
+		}
+		if (event.which == 27) this.closeGallery(); // esc key
+	}
 }
 
-function closeGallery() {
-	galOpened = false;
-	$('#gallery').removeClass('opened');
-	$('.img_link').removeClass('selected');
-
-	$('#photo').css('height', '40vw');
-	$('.images').css('max-height', '1000vh');
+Gallery.prototype.resize = function(){
+	if (this.galOpened) {
+		this.select(this.selectedImage);
+		this.openGallery();
+	}
 }

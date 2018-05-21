@@ -1,5 +1,4 @@
 #search {
-	border-radius: 5px;
 	max-width: 910px;
 	width: 100%;
 	margin: 0 auto 2em;
@@ -7,14 +6,15 @@
 	line-height: 2.3em;
 	background-color: rgba(50,50,50, .1);
 	overflow: hidden;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 #search .searchbox {
-	box-sizing: border-box;
-	width: 200px;
+	/*box-sizing: border-box;*/
 	margin: 1em;
 	padding: 0 1em;
-	float: right;
+	float: left;
 
 	color: gray;
 	font-size: 1em;
@@ -22,7 +22,7 @@
 	border: 1px solid;
 	border-radius: 5px;
 	background-color: white;
-	width: calc(100% - 2em - 2px);
+	width: calc(100% - 2em - 40px - 2em);
 }
 
 #search .searchbox .icon {
@@ -38,6 +38,28 @@
 			transform: rotate(-45deg);
 }
 
+#search .chevron{
+	width: calc(40px + 2em);
+	height: 65px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: scale
+}
+
+#search .chevron img {
+	padding-right: 0.5em;
+	width: 40px;
+	height: 20px;
+	transform: scaleY(-1);
+	-webkit-transition: -webkit-transform 0.1s ease;
+}
+
+#search.expand .chevron img {
+	transform: scaleY(1);
+	-webkit-transition: -webkit-transform 0.1s ease;
+}
+
 #search #searchParams{
 	display: flex;
 	display: none;
@@ -48,7 +70,7 @@
 	margin-right: auto;
 	padding: 0 .1em .1em .1em;
 }
-#search #searchParams.expand{display: flex;}
+#search.expand #searchParams{display: flex;}
 
 #search #searchParams .selector-group{
 	padding: 1em;

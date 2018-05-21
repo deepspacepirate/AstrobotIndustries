@@ -1,12 +1,6 @@
+var CookiesNS = CookiesNS || {};
 
-
-$(document).ready(function() {
-	setCookie('theme', 'dark', 4);
-	if (getCookie('theme') == 'dark' ) ldToggle();
-	console.log(setCookie('theme'));
-});
-
-function getCookie(cname) {
+CookiesNS.getCookie = function(cname) {
     var name = cname + "=";
     var decodedCookie = decodeURIComponent(document.cookie);
     var ca = decodedCookie.split(';');
@@ -22,7 +16,8 @@ function getCookie(cname) {
     return "";
 }
 
-function setCookie(cname, cvalue, exdays) {
+CookiesNS.eraseCookie = function(cname) {setCookie(cname, '', -1);}
+CookiesNS.setCookie = function(cname, cvalue, exdays) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     var expires = "expires="+ d.toUTCString();

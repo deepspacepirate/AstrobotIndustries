@@ -1,24 +1,38 @@
-var navStuck = false;
 
 $(document).ready(function() {
-	$(window).on({
-		load: navStick,
-		scroll: navStick
-	});
+	var homeNav = new NavbarNS.home();
 });
 
-function navStick() {
+NavbarNS.home = function(){
+	navStuck = false;
+
+	var $this = this;
+
+	window.onload = this.navStick();
+	$(window).scroll(function(){ $this.navStick(); });
+
+	$('.chevron').click($this.scrollToTop);
+	$('#menuButton').click($this.scrollToTop)
+}
+
+NavbarNS.home.prototype.scrollToTop = function(){
+	var dist = $("#navbar").offset().top;
+	console.log(dist);
+	$("html, body").animate({ scrollTop: dist }, "fast");
+}
+
+NavbarNS.home.prototype.navStick = function() {
 	var headerHeight = $('.header').offset().top + $('.header').outerHeight(); //distance bottom of navbar is from top
 	var st = $(window).scrollTop();
 	
-	if ( !navStuck && headerHeight < st ) {
+	if ( !this.navStuck && headerHeight < st ) {
 		$('#navbar').css('position', 'fixed');
 		$('#bodyContent').css('margin-top', 'calc(2em + '+ $('#navbar').height() + 'px)');
-		navStuck = true;
+		this.navStuck = true;
 	}
-	else if ( navStuck && headerHeight > st ){
+	else if ( this.navStuck && headerHeight > st ){
 		$('#navbar').css('position', 'relative');
 		$('#bodyContent').css('margin-top', '2em');
-		navStuck = false;
+		this.navStuck = false;
 	}
 }

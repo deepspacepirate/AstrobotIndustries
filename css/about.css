@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+@import url('https://fonts.googleapis.com/css?family=Hind');
+
 
 @font-face {
 	font-family: HackX;
@@ -8,7 +10,7 @@
 }
 
 :root{
-	--chat-bg-color: rgb(220, 220, 225);
+	--chat-bg-color: rgb(230, 230, 235);
 	--chat-border-color: rgb(220, 220, 225);
 
 	--chatQ-bg-color: rgba(135, 208, 229, 1);
@@ -35,7 +37,7 @@
 	border-bottom: var(--scroll-border);
 }
 
-
+/* Scrollbar */
 #bodycontent .bodycontent-inner .bodycontent-inner2::-webkit-scrollbar-track {
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
 	background-color: rgba(255,255,255,.07);
@@ -56,46 +58,13 @@
 	margin-right: auto;
 }
 
+/* Chat holder */
 #bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit{width: 100%; overflow: hidden; --icon-dims: 44px; --icon-padding: 1em;}
 #bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit.big {--icon-dims: 130px;}
 
-#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit h1 {
-	font-size: 2.0em;
-	line-height: 1em;
-	font-weight: normal;
-	text-decoration: none;
-	margin: 0;
-}
-
-#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit h2 {
-	font-size: 1.15em;
-	line-height: 1.4em;
-	width: 100%;
-	margin: 0;
-}
-
-#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit p {
-	font-size: 1.15em;
-	line-height: 1.5em;
-	margin: 0;
-}
-
-/* Style chatbox */
-#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit .chat.appear {opacity: 1;}
-#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit .chat {
-	opacity: 0;
-	transition: 
-			border-color .4s ease,
-			opacity 0.4s ease;
-	padding: .9em 1.2em;
-	margin: .4em 0;
-	border-radius: 1em;
-	max-width: calc(90% - var(--icon-dims) - 2em);
-	clear: both;
-}
-
-
+/* Icon holder */
 #bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit .iconHolder.appear {opacity: 1;}
+#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit.big .iconHolder {--icon-dims: 130px;}
 #bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit .iconHolder{
 	border-radius: 50%;
 	opacity: 0;
@@ -103,28 +72,58 @@
 	width: var(--icon-dims);
 	height: var(--icon-dims);
 	
-	margin-top: 0;
-	padding: 0.4em;
-}
-
-#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit.big .iconHolder {
-	--icon-dims: 130px;
-	margin: 0.4em 3em 1em 0;
+	margin-top: 0.4em;
 }
 
 
-/* Style question */
+/* Icon images */
+#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit .iconHolder img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	max-width: var(--icon-dims);
+	max-height: var(--icon-dims);
+}
+
+#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit .iconHolder img.chaticon {
+	border-radius: 50%;
+	-webkit-transition: -webkit-transform 0.5s ease;
+	border: 1px solid rgba(100,100,100,0.2);
+}
+
+#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit .iconHolder img.ring {
+	opacity: 0;
+	-webkit-transition: opacity 2s;
+}
+
+/* Chatbox */
+#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit .chat.appear {opacity: 1;}
+#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit .chat {
+	display: block;
+	clear: both;
+
+	padding: .9em 1.2em;
+	margin: .4em 0;
+	border-radius: 1em;
+	max-width: calc(90% - var(--icon-dims) - 2em);
+	
+	opacity: 0;
+	transition: 
+			border-color .4s ease,
+			opacity 0.4s ease;
+}
+
+
+/* Chat question */
 #bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit.question .iconHolder {position: absolute; right: 0;}
 #bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit.question .chat {
-	font-family: "HackX";
-	font-size: .9em;
 	color: rgba(37, 37, 42, 1);
 	background-color: var(--chatQ-bg-color);
+	border: 1px solid var(--chatQ-border-color);
 	border-top-right-radius: 0;
 	
 	max-width: 35%;
 	float: right;
-	display: block;
 	position: relative;
 	right: calc(var(--icon-dims) + var(--icon-padding));
 }
@@ -133,8 +132,8 @@
 	content: ' ';
 	float: right;
 	position: relative;
-	right: -2.4em;
-	top: -0.9em;
+	right: -2.5em;
+	top: -1em;
 
 	--triangle-fill: .6em solid var(--chatQ-border-color);
 	--triangle-empty: .6em solid transparent;
@@ -148,14 +147,11 @@
 	width: 0;
 }
 
-/* Style answer*/
+/* Chat answer*/
 #bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit.answer .iconHolder {position: absolute; left: 0;}
 #bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit.answer .chat {
-	font-family: 'Roboto Slab', serif;
 
 	float: left;
-	display: block;
-	clear: both;
 	position: relative;
 	left: calc(var(--icon-dims) + var(--icon-padding));
 
@@ -168,8 +164,8 @@
 	content: ' ';
 	position: relative;
 	float: left;
-	left: -2.4em;
-	top: -0.9em;
+	left: -2.5em;
+	top: -1em;
 
 	--triangle-fill: .6em solid var(--chat-border-color);
 	--triangle-empty: .6em solid transparent;
@@ -185,28 +181,29 @@
 	-webkit-transition: border-color .4s ease;
 }
 
-#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit .iconHolder img {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	max-width: var(--icon-dims);
-	max-height: var(--icon-dims);
+/* Chat text*/
+#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit .chat h1 {
+	font-family: 'Roboto Slab', serif;
+	font-size: 2.0em;
+	line-height: 1em;
+	font-weight: normal;
+	margin: 0;
 }
 
-/* Style rotating circles */
-#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit .iconHolder img.ring {
-	opacity: 0;
-	-webkit-transition: opacity 2s;
+#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit .chat h2 {
+	font-size: 1.15em;
+	line-height: 1.5em;
+	font-weight: normal;
+	margin: 0;
 }
 
-
-/* Style chat circle icon */
-#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit .iconHolder img.chaticon {
-	border-radius: 50%;
-	-webkit-transition: -webkit-transform 0.5s ease;
-	border: 1px solid rgba(100,100,100,0.2);
+#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit .chat p {
+	font-size: 1.15em;
+	line-height: 1.5em;
+	margin: 0;
 }
 
+/* Reply box */
 .formcontainer {
 	margin: 0;
 	width: 100%;
@@ -225,9 +222,10 @@
 	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit {--icon-dims: 50px; --icon-padding: 1.2em;}
 	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit .chat {max-width: 60%;}
 
-	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit h1 {font-size: 3em;}
-	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit h2 {font-size: 1.3em;}
-	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit p {font-size: 1.3em; line-height: 1.6em;}
+	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit .chat h1 {font-size: 3em; line-height: 1.3em}
+	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit #first.chat {width: 250px;}
+	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit .chat h2 {font-size: 1.3em; line-height: 1.6em;}
+	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit .chat p  {font-size: 1.3em; line-height: 1.6em;}
 }
 
 @media screen and (min-width: 720px){
@@ -240,16 +238,10 @@
 		max-width: calc(70% - var(--icon-dims) - 2em);
 	}
 
-	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit p {font-size: 1.4em; line-height: 1.6em;}
-	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit.question .chat:before {right: -2.7em; top: -1.5em;}
+	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit .chat h2 {font-size: 1.5em;}
+	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit .chat p  {font-size: 1.5em;}
+	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit.question .chat:before {right: -2.8em; top: -1.6em;}
 	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit.answer   .chat:before {left:  -2.7em; top: -1.6em;}
 
 	.formcontainer form{padding: 1em 1em 0 1em;}
 }
-
-
-.clear {
-	clear: both;
-}
-
-

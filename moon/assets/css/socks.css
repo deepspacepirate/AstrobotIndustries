@@ -1,0 +1,27 @@
+.options.sock{
+	--icon-size: 120px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: calc(3 * (var(--icon-size) + 2em));
+}
+.options.sock .iconContainer{
+	border-radius: 50%;
+	width: var(--icon-size);
+	height: var(--icon-size);
+	margin: 1em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgb(123, 209, 193);
+}
+.options.sock .icon{
+	border-radius: 50%;
+	width: var(--icon-size);
+	height: var(--icon-size);
+	transition: transform 0.4s;
+}
+.options.sock .icon:hover{
+	transform: scale(0.85);
+	transition: transform 0.4s;
+}

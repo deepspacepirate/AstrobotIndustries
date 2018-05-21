@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Play|Hind');
+@font-face { /* for navbar */
+	font-family: VT220;
+	src: url('../../assets/fonts/VT220.ttf') format('truetype');
+}
+
+body{font-size: 10px;
+	background-color: rgb(20, 20, 20); /*rgb(237, 225, 208)*/;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.passage{
+	color: white;
+	font-family: VT220;
+	font-size: 4em;
+	margin-top: 1em;
+	margin-bottom: 0.5em;
+}
+
+.choiceBox {
+	margin-top: 1em;
+	width: 500px;
+}
+
+a.choice{
+	font-family: 'Hind', sans-serif;
+	color: rgb(123, 209, 193);
+	font-size: 2em;
+	text-decoration: none;
+}
+a.choice:before{
+	content: "> ";
+	opacity: 0;
+}
+a.choice:hover:before{
+	opacity: 1;
+}

@@ -16,10 +16,9 @@ ASTROBOT!
 
 	<script src="../js/isotope.pkgd.min.js"></script>
 	<script src="../js/isoMasonry.js"></script>
-	<script src="../js/isoMultiParam.js"></script>
-	<script src="../js/isoSearch.js"></script>
 	
 	<script src="../js/general.js"></script>
+	<script src="../js/cookies.js"></script>
 	<script src="../js/projects.js"></script>
 
 </head>
@@ -51,6 +50,10 @@ ASTROBOT!
 		<div class="bodyContent-inner">
 			<div id="search">
 				<input type="text" id="quicksearch" class="searchbox" placeholder="Search" />
+
+				<div class="chevron">
+					<img src="../assets/images/chevronC.png">
+				</div>
 				<!-- <div class="searchicon">&#9906;</div> -->
 
 				<div id="searchParams" class="button-group">					
@@ -101,11 +104,10 @@ ASTROBOT!
 							<label id="reset">				<input type="checkbox" class="button all" data-filter="">Reset</label>
 						</div>
 					</div>
-
-					<!-- <button class="button" data-filter=".metal:not(.transition)">metal but not transition</button> -->
 				</div>
-
 			</div>
+
+			<p style="font-size: 1.4em; margin-left: 1em; text-align: center; font-style: italic;">Only <a class="compShortcut">completed</a> projects have working links.</p>
 
 			<div class="grid">
 
@@ -115,8 +117,8 @@ ASTROBOT!
 
 						<div class="slideshow"
 							style="
-								/*background-image: url(https://k32.kn3.net/taringa/B/A/3/6/E/B/pollo989/BDA.jpg);*/
-								background-image: url(../assets/images/project-thumbnails/BDA.jpg);
+								/*--project-thumbnail: url(https://k32.kn3.net/taringa/B/A/3/6/E/B/pollo989/BDA.jpg);*/
+								--project-thumbnail: url(../assets/images/project-thumbnails/BDA.jpg);
 							">
 						</div>
 
@@ -145,8 +147,8 @@ ASTROBOT!
 
 						<div class="slideshow"
 							style="
-								/*background-image: url(http://www.cosmiclight.com/ofquasars/images/lightcone1.gif);*/
-								background-image: url(../assets/images/project-thumbnails/lightcone1.gif);
+								/*--project-thumbnail: url(http://www.cosmiclight.com/ofquasars/images/lightcone1.gif);*/
+								--project-thumbnail: url(../assets/images/project-thumbnails/lightcone1.gif);
 							">
 						</div>
 
@@ -175,8 +177,8 @@ ASTROBOT!
 						<div class="slideshow"
 							style="
 
-								background-image: url(../assets/images/project-thumbnails/tanyong-submarine-c.jpg);
-								/*background-image: url(https://www.scmp.com/sites/default/files/2014/12/01/tanyong-submarine-c.jpg);*/
+								--project-thumbnail: url(https://www.scmp.com/sites/default/files/2014/12/01/tanyong-submarine-c.jpg);
+								--project-thumbnail: url(../assets/images/project-thumbnails/tanyong-submarine-c.jpg);
 							">
 						</div>
 
@@ -205,7 +207,7 @@ ASTROBOT!
 						<div class="slideshow"
 							style="
 								background-position: 35% 50%;
-								background-image: url(https://78.media.tumblr.com/43a4de15e2117649354b3e55868ca7aa/tumblr_ntiqo4Y5qd1uadx00o2_r1_500.gif);
+								--project-thumbnail: url(https://78.media.tumblr.com/43a4de15e2117649354b3e55868ca7aa/tumblr_ntiqo4Y5qd1uadx00o2_r1_500.gif);
 							"
 							script="
 
@@ -231,12 +233,12 @@ ASTROBOT!
 					</div>
 				</div> -->
 
-				<div id="project-0000" class="grid-item software interactive planned lowcost intermediate">
+				<div id="project-0000" class="grid-item costumes highcost">
 					<div class="projectCard">
 
 						<div class="slideshow"
 							style="
-								background-image: url(../assets/images/project-thumbnails/courier.jpg);
+								--project-thumbnail: url(../assets/images/project-thumbnails/courier.jpg);
 							">
 						</div>
 
@@ -264,7 +266,7 @@ ASTROBOT!
 
 						<div class="slideshow"
 							style="
-								background-image: url(https://www.popsci.com/sites/popsci.com/files/styles/1000_1x_/public/images/2016/04/spacestationmediterranean.jpg?itok=MAOGU-9h);
+								--project-thumbnail: url(https://www.popsci.com/sites/popsci.com/files/styles/1000_1x_/public/images/2016/04/spacestationmediterranean.jpg?itok=MAOGU-9h);
 							">
 						</div>
 
@@ -292,7 +294,7 @@ ASTROBOT!
 
 						<div class="slideshow"
 							style="
-								background-image: url(https://i.ytimg.com/vi/12y_7k5zqH4/maxresdefault.jpg);
+								--project-thumbnail: url(https://i.ytimg.com/vi/12y_7k5zqH4/maxresdefault.jpg);
 							">
 						</div>
 
@@ -320,8 +322,8 @@ ASTROBOT!
 
 						<div class="slideshow"
 							style="
-								background-image: url(../assets/images/project-thumbnails/Wilder-Mann-series-Charles-Freger-2010-2.jpg);
-								/*background-image: url(http://www.pocproject.com/wp-content/uploads/2011/08/Wilder-Mann-series-Charles-Freger-2010-2.jpg);*/
+								--project-thumbnail: url(../assets/images/project-thumbnails/Wilder-Mann-series-Charles-Freger-2010-2.jpg);
+								/*--project-thumbnail: url(http://www.pocproject.com/wp-content/uploads/2011/08/Wilder-Mann-series-Charles-Freger-2010-2.jpg);*/
 							">
 						</div>
 
@@ -352,7 +354,7 @@ ASTROBOT!
 
 						<div class="slideshow"
 							style="
-								background-image: url(../assets/images/project-thumbnails/holmes.jpg);
+								--project-thumbnail: url(../assets/images/project-thumbnails/holmes.jpg);
 							">
 						</div>
 
@@ -383,8 +385,8 @@ ASTROBOT!
 							style="
 								background-size: 140% auto;
 								background-position: 50% 35%;
-								/*background-image: url(https://www.tinyme.com/blog/wp-content/uploads/10-illuminating-kids-lights/10-Illuminating-Kids-Lights-5.jpg);*/
-								background-image: url(../assets/images/project-thumbnails/10-Illuminating-Kids-Lights-5.jpg);
+								/*--project-thumbnail: url(https://www.tinyme.com/blog/wp-content/uploads/10-illuminating-kids-lights/10-Illuminating-Kids-Lights-5.jpg);*/
+								--project-thumbnail: url(../assets/images/project-thumbnails/10-Illuminating-Kids-Lights-5.jpg);
 							">
 						</div>
 
@@ -412,7 +414,7 @@ ASTROBOT!
 
 						<div class="slideshow"
 							style="
-								background-image: url(https://lh3.googleusercontent.com/-0fDx54CbFJs/VIDdV5tVKVI/AAAAAAAABMI/3-TCIrKU4pUPnRTdwmZLK39WLlpmS0suwCK8B/s360/TinyAstronaut_Waving.png);
+								--project-thumbnail: url(https://lh3.googleusercontent.com/-0fDx54CbFJs/VIDdV5tVKVI/AAAAAAAABMI/3-TCIrKU4pUPnRTdwmZLK39WLlpmS0suwCK8B/s360/TinyAstronaut_Waving.png);
 								background-color: white;
 							">
 						</div>
@@ -442,7 +444,7 @@ ASTROBOT!
 
 						<div class="slideshow"
 							style="
-								background-image: url(https://i1.wp.com/nerdbastards.com/wp-content/uploads/2015/10/nuka_cola_quantum_poster_by_markuzr-e1446181179818.jpg?resize=500%2C383);
+								--project-thumbnail: url(https://i1.wp.com/nerdbastards.com/wp-content/uploads/2015/10/nuka_cola_quantum_poster_by_markuzr-e1446181179818.jpg?resize=500%2C383);
 							">
 						</div>
 
@@ -470,7 +472,7 @@ ASTROBOT!
 
 						<div class="slideshow"
 							style="
-								background-image: url(https://s-media-cache-ak0.pinimg.com/originals/5b/dc/9d/5bdc9d8ad7de93c8b8ff4415378cb3cb.jpg);
+								--project-thumbnail: url(https://s-media-cache-ak0.pinimg.com/originals/5b/dc/9d/5bdc9d8ad7de93c8b8ff4415378cb3cb.jpg);
 							">
 						</div>
 
@@ -498,7 +500,7 @@ ASTROBOT!
 
 						<div class="slideshow"
 							style="
-								background-image: url(https://ak6.picdn.net/shutterstock/videos/15238906/thumb/1.jpg);
+								--project-thumbnail: url(https://ak6.picdn.net/shutterstock/videos/15238906/thumb/1.jpg);
 							">
 						</div>
 
@@ -526,7 +528,7 @@ ASTROBOT!
 
 						<div class="slideshow"
 							style="
-								background-image: url(https://cdn3.dualshockers.com/wp-content/uploads/2012/10/Zer0.jpg);
+								--project-thumbnail: url(https://cdn3.dualshockers.com/wp-content/uploads/2012/10/Zer0.jpg);
 							">
 						</div>
 
@@ -554,7 +556,7 @@ ASTROBOT!
 
 						<div class="slideshow"
 							style="
-								background-image: url(https://i.pinimg.com/originals/eb/d4/be/ebd4be7c6bd37e45eab05fe582dd6172.jpg);
+								--project-thumbnail: url(https://i.pinimg.com/originals/eb/d4/be/ebd4be7c6bd37e45eab05fe582dd6172.jpg);
 							">
 						</div>
 
@@ -582,7 +584,7 @@ ASTROBOT!
 
 						<div class="slideshow"
 							style="
-								background-image: url(https://s-media-cache-ak0.pinimg.com/originals/d5/26/8b/d5268b2a768c8fa1c6339072fbd15cb8.jpg);
+								--project-thumbnail: url(https://s-media-cache-ak0.pinimg.com/originals/d5/26/8b/d5268b2a768c8fa1c6339072fbd15cb8.jpg);
 							">
 						</div>
 
@@ -612,8 +614,8 @@ ASTROBOT!
 
 						<div class="slideshow"
 							style="
-								background-image: url(../assets/images/project-thumbnails/particleMist.jpg);
-								/*background-image: url(http://physicsopenlab.org/wp-content/uploads/2017/05/particleMist.jpg);*/
+								--project-thumbnail: url(../assets/images/project-thumbnails/particleMist.jpg);
+								/*--project-thumbnail: url(http://physicsopenlab.org/wp-content/uploads/2017/05/particleMist.jpg);*/
 							">
 						</div>
 
@@ -642,7 +644,7 @@ ASTROBOT!
 
 						<div class="slideshow"
 							style="
-								background-image: url(http://www.yotrioint.com/blog/wp-content/uploads/2014/03/london_2012_olympics_led_umbrellas_1.jpg);
+								--project-thumbnail: url(http://www.yotrioint.com/blog/wp-content/uploads/2014/03/london_2012_olympics_led_umbrellas_1.jpg);
 							">
 						</div>
 
@@ -671,8 +673,8 @@ ASTROBOT!
 
 						<div class="slideshow"
 							style="
-								/*background-image: url(https://s-media-cache-ak0.pinimg.com/originals/68/bb/8a/68bb8a26a47e7eba3c0c7f6d27b0004f.jpg);*/
-								background-image: url(../assets/images/project-thumbnails/mopman.jpg);
+								/*--project-thumbnail: url(https://s-media-cache-ak0.pinimg.com/originals/68/bb/8a/68bb8a26a47e7eba3c0c7f6d27b0004f.jpg);*/
+								--project-thumbnail: url(../assets/images/project-thumbnails/mopman.jpg);
 								">
 						</div>
 
@@ -701,8 +703,8 @@ ASTROBOT!
 						<div class="slideshow"
 							style="
 								background-position: 20% 0;
-								background-image: url(../assets/images/project-thumbnails/enoch.jpg);
-								/*background-image: url(https://flipermag.com/wp-content/uploads/2014/12/fhmvMVq.png);*/
+								--project-thumbnail: url(../assets/images/project-thumbnails/enoch.jpg);
+								/*--project-thumbnail: url(https://flipermag.com/wp-content/uploads/2014/12/fhmvMVq.png);*/
 							">
 						</div>
 
@@ -730,8 +732,8 @@ ASTROBOT!
 
 						<div class="slideshow" 
 							style="
-								/*background-image: url(https://media1.tenor.com/images/f472454536fea982cae64bd8c63b07f8/tenor.gif);*/
-								background-image: url(../assets/images/project-thumbnails/fox.jpg);
+								/*--project-thumbnail: url(https://media1.tenor.com/images/f472454536fea982cae64bd8c63b07f8/tenor.gif);*/
+								--project-thumbnail: url(../assets/images/project-thumbnails/fox.jpg);
 							">
 						</div>
 
@@ -759,7 +761,7 @@ ASTROBOT!
 
 						<div class="slideshow" 
 							style="
-								background-image: url(http://affinitymagazine.us/wp-content/uploads/2017/02/depression-1-1.jpg);
+								--project-thumbnail: url(http://affinitymagazine.us/wp-content/uploads/2017/02/depression-1-1.jpg);
 							">
 						</div>
 

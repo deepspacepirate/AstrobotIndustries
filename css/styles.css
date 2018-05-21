@@ -15,7 +15,7 @@
 	--electric-blue: #68d1ed;
 	--medium-electric-blue: #19B7E0;
 	--pale-blue: #83D8EF;
-	--dark-blue: #1D3048;
+	--dark-blue: #1D3048; /*rgb(17,17,17)*/
 
 	--dim-white: #edede8;
 
@@ -61,7 +61,7 @@ body {
 	color: var(--dim-black);
 	text-decoration: none;
 	
-	border-bottom: 2px solid var(--medium-electric-blue);
+	border-bottom: 2px solid var(--pale-blue);
 
 	-webkit-transition: background-color .3s;
 			transition: background-color .3s;
