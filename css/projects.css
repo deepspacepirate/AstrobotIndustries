@@ -25,19 +25,6 @@
 	width: calc(100% - 2em - 40px - 2em);
 }
 
-#search .searchbox .icon {
-	font-size: 1.5em;
-	width: 1em;
-	height: 1em;
-	position: relative;
-	top: -.1em;
-	float: right;
-	-webkit-transform: rotate(-45deg); 
-	   -moz-transform: rotate(-45deg); 
-		 -o-transform: rotate(-45deg);
-			transform: rotate(-45deg);
-}
-
 #search .chevron{
 	width: calc(40px + 2em);
 	height: 65px;
@@ -64,6 +51,7 @@
 	display: flex;
 	display: none;
 	flex-wrap: wrap;
+	width: 100%;
 
 	margin: 0;
 	margin-left: auto;
@@ -79,7 +67,6 @@
 }
 #search #searchParams #tags-sg{
 	flex-grow: 2;
-	/*background-color: red;*/
 	min-width: 250px;
 }
 
@@ -88,7 +75,8 @@
 	font-family: 'Rajdhani', cursive;
 	font-size: 1.5em;
 	padding: .3em .6em;
-	background-color: rgba(10,10,10,.2);
+	background-color: rgba(100,100,100,.3);
+	color: rgba(80,80,80,.8);
 	margin: 0 0 .5em;
 }
 

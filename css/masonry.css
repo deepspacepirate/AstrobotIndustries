@@ -65,6 +65,7 @@
 	overflow: hidden; /* allows floated items to be within */ 
 	padding: .6em .1em; /* use padding bc margin collapse with h1 */
 
+	/*font-family: Mylodon Light;*/
 	font-size: 1.6em;
 	color: gray;
 	font-style: italic;

@@ -1,4 +1,10 @@
 /** {border: 1px solid red;}*/
+/*@font-face { 
+	font-family: SmouchyB;
+	src: url('../fonts/BebasNeueB.eot?') format('eot'),
+		 url('../fonts/BebasNeueB.woff') format('woff'),
+		 url('C:/Users/Tatiana/Desktop/flashdrive spare/fonts/good fonts/Smouchy.ttf') format('truetype');
+}*/
 
 #bodyContent .bodyContent-inner {
 	max-width: 1100px;

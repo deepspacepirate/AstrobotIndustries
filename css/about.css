@@ -240,7 +240,7 @@
 
 	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit .chat h2 {font-size: 1.5em;}
 	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit .chat p  {font-size: 1.5em;}
-	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit.question .chat:before {right: -2.8em; top: -1.6em;}
+	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit.question .chat:before {right: -2.8em; top: -1.5em;}
 	#bodycontent .bodycontent-inner .bodyContent-inner2 .wrapper .chatUnit.answer   .chat:before {left:  -2.7em; top: -1.6em;}
 
 	.formcontainer form{padding: 1em 1em 0 1em;}
